@@ -1,0 +1,249 @@
+\documentclass[a4paper,reqno,11pt]{amsart}
+
+\usepackage{amsmath,amsfonts,mathtools,amsthm,amscd,amsxtra,amstext}
+\usepackage{amssymb,latexsym,verbatim}
+\usepackage{color,graphics}
+\usepackage{mathrsfs,listings,hyperref,cleveref,enumerate}
+
+\usepackage[top=2.7cm,bottom=2.7cm,left=2.4cm,right=2.4cm]{geometry}
+\renewcommand{\baselinestretch}{1.2}
+
+\theoremstyle{plain}%default 
+\newtheorem{thm}{Theorem}[section] 
+
+
+\begin{document}
+	
+
+	\title{\textbf{Calculus}}
+	
+	\author[Kagita Meenakshi]{Kagita Meenakshi}
+	\email{ma23btech11013@iith.ac.in}
+	
+	
+	
+	\address{Department of Mathematics, Indian Institute of Technology Hyderabad, Kandi, Sangareddy - 502285}
+	
+	
+	\date{\today}
+	
+	
+	
+	\begin{abstract}
+	 In this report, we see how calculus had emerged and evolved through centuries.Many mathematicians worked on calculus and gave fundamental results. All of us have an assumption that Newton is the only mathematician who worked on calculus completely but what we need to know is that many other mathematicians actually put in a lot of efforts for obtaining results of calculus. In this report, we see the discoveries in calculus of mathematicians before Newton's era and then we see how Newton and Leibniz rediscovered some of the earlier results and gave an overall outline for calculus.
+	\end{abstract}
+	
+	\maketitle
+\section{Introduction}
+Calculus became prominent from the 17th century and it replaced method of exhaustion which was used by people back then. Method of exhaustion involves polygons to find areas of curved figures that is, finding areas of circles by inscribing polygons of certain number of sides. Integration, differentiation, finding lengths,areas,volumes,tangents,normals of curves all these are included in calculus. Calculus is also helpful in solving problems of mechanics. In order to understand mathematical physics, one must understand calculus first. Chapters like number theory,combinatorial proofs, probability are also linked with calculus.Calculus got a huge hype as it replaced method of exhaustion. Calculus means ``rules for calculating results." In the year 1659, Huygens wrote,\\
+\\
+\textit{''Mathematicians will never have enough time to read all the
+discoveries in Geometry (a quantity which is increasing from
+day to day and seems likely in this scientific age to develop
+to enormous proportions) if they continue to be presented in a
+rigorous form according to the manner of the ancients."}\cite{ref 1}\\
+\vspace{2ex}
+\hfill{-Huygens (1659), p. 337}
+\\
+\indent There is a reason behind Huygen's words that is,the progress in geometry was too high. Whereas, the case is opposite with calculus. People in the early seventeenth century barely had knowledge about calculus. They only knew differentiation and integration of terms which are in powers of $x$ and implicit differentiation of polynomials which contains variables $x$
+and $y$. Later on, mathematicians gained interest in this particular topic. We can integrate and differentiate algebraic functions which can be expressed as power series (for instance, Newton's infinite series $(1+x)^r$ is integrable and differentiable as well).\\
+\\
+\indent Mathematicians gave a complete set of rules for differentiation whereas set of rules for integration is incomplete. For instance, the rules were not sufficient to integrate algebraic functions like 
+$\sqrt{1+x^3}$ and rational functions which contain undetermined constants
+like $1/(x^5-x-A)$. \textbf{Davneport(1981)} gave us an idea about integrable functions,that is to distinguish the functions which can be integrable using the rules they gave and the functions which are not integrable. 
+Books such as Boyer (1959), Baron (1969), Edwards (1979), and Bressoud
+(2019) gives idea of history of calculus. In the 17th century, people used method of exhaustion, in the 19th century, people gave a logical justification for their results. Robinson(1966) gave new theory of infinitesimals in the 20th century.\\
+\\
+\section{Results on Areas and Volumes}
+Integration can be viewed in terms of approximations of the area under the curves $y = x^k$ by rectangles (refer to Figure 5.1), limits running from 0 to 1. If we divide the base of the region(that is region between 0 and 1) into $n$ equal parts, we obtain the heights of the rectangles as $(1/n)^k,(2/n)^k,...,(n/n)^k$, and the area of all the rectangles depends on the series $1^k + 2^k + \cdots + n^k$. We can view rectangles as cylinders of crosss-sectional area $\pi r^2$ if the curve is revolved around the $x$-axis, where $r = (1/n)^k,(2/n)^k,..,(n/n)^k$, whose sum depends on the series $ 1^{2k} + 2^{2k} + \cdots + n^{2k}$.\\
+\\
+\indent Mathematicians tried to find results by summing up the series. The Arab mathematician al-Haytham (965–1039) found the volume of the solid obtained by rotating the parabola about its base by summing up the series $1^k + 2^k + \cdots + n^k$ for $k = 1, 2, 3, 4$. One can refer to Baron (1969), p. 70, or Edwards(1979), p. 84 in order to understand al-Haytham’s method. In the year 1635, Cavalieri extended these results up to $k = 9$ and used the results to obtain\\
+\\
+$$\int_{0}^{a} x^k dx = \frac{a^{k+1}}{k+1}$$
+\\
+\\
+and then stated this formula for all positive integers $k$. Fermat, Descartes, and Roberval proved the result in 1630s. Fermat even obtained the result not only for integral $k$ but also for fractional $k$ (refer Baron (1969), pp. 129, 185, and Edwards (1979), p. 116 \cite{ref 2}).\\
+\\
+\indent Method of indivisibles was given by Cavalieri, it involves division of areas into infinitely thin strips and volumes into infinitely thin slices. Archimedes tried to prove using similar ideas but his methods were not known until 20th century. Cavalieri’s contemporary Torricelli stated that the same method might have been used by the Greeks. Torricelli discovered that the infinite solid obtained by revolving
+$y = 1/x$ about the $x$ axis from 1 to $\infty$ has finite volume (Torricelli (1643)). In the year 1672, Hobbes wrote in response to Torricelli's discovery, \textit{“to understand this for sense, it is not required that a man should
+be a geometrician or logician, but that he should be mad.”}
+\newpage
+\begin{figure}
+\includegraphics[width=12cm]{WhatsApp Image 2024-04-30 at 6.09.12 PM.jpeg}
+\end{figure}
+$$\textbf{Figure 5.1 : Approximating an area by rectangles}$$
+\section{Maxima, Minima, and Tangents}
+Mathematicians found a complete set of rules to differentiate a function and hence differentiation seems simpler than integration, but if we view in terms of history, it developed later. Archimedes constructed tangent to the spiral $r = a\theta$. Limiting process\\
+$$lim_{\Delta x\to0} \frac{f(x + \Delta x) - f(x)}{\Delta x}$$
+\\
+was introduced by Fermat in the year 1629 for polynomials $f$ and this led to a way of finding maxima, minima, and tangents. Fermat’s work was not published until 1679 (same has happened with his discovery of analytic geometry), but other mathematicians came to know it through letters after tangent method was published by Descartes in the year 1637.\\
+\indent Fermat used some references from Newton's and others works while calculating results.For instance, he introduced a “small” or “infinitesimal” element $E$, then divided by $E$ to simplify, then he neglected $E$ assuming it was zero. Also, in order to find the slope of the tangent to the curve $y = x^2$ at any value $x$, take a chord between the points $(x, x^2)$ and $(x + E,(x + E)^2)$ on the curve:\\
+\begin{align*}
+slope =& \frac{(x+E)^2 - x^2}{E}\\
+=& \frac{2xE + E^2}{E} = 2x + E.\\
+\end{align*}
+We can now obtain slope of the tangent by neglecting $E$.  Hence, $2x + E = 2x$ but $E \neq 0$, Hobbes had worked on this. Now,it is enough to claim that
+$\lim_{E\to0} (2x + E) = 2x$, but mathematicians in the 17th century did not know ways to prove this. And for these reasons, they used to face criticisms. One can apply Fermat’s methods to all the polynomials $p(x)$, and this is because we can cancel the highest degree term in polynomial $p(x + E)$ with the highest-degree term in polynomial $p(x)$, and we will be left with terms divisible by $E$. Fermat also used the same to the curves formed by polynomial equations $p(x, y) = 0$. Fermat did this in the year 1638.\\
+\\
+\indent Fermat was regarded as one of the founders of calculus for the efforts he put it and for the results he gave. His methods gives a reasoning in finding tangents to all curves given by the polynomial equations $y = p(x)$ and to the algebraic curves $p(x, y) = 0$. In the year 1655, Sluse found rules to find tangent to algebraic curves but it was not published until Sluse (1673). In the year 1657, Hudde also worked on the same proof and it was published in the year 1659 edition of Descartes’s \textit{La Geometrie}, Schooten (1659). That is, if,\\
+$$P(x,y) = \sum a_{ij}x^iy^j = 0$$
+then \\
+$$ \frac{dy}{dx} = -\frac{\sum ia_{ij}x^{i-1}y^j}{\sum ja_{ij}x^iy^{j-1}} $$
+\\
+\indent However, the result for same can be obtained by implicit differentiation or by manipulating polynomials accordingly.
+\\
+\section{ The \textit{Arithmetica Infinitorum} of Wallis}
+Wallis(1655), in his book \textit{Arithmetica Infinitorum}, made efforts to arithmetize geometry, that is to arithmetize theories of areas and volumesof curved figures. For instance, he gave a proof for the following result\\
+$$\int_{0}^{1}x^p dx = \frac{1}{p+1}$$
+\\
+which is valid for all positive integers $p$ by showing that \\
+$$\frac{0^p + 1^p + 2^p + \cdots + n^p}{n^p + n^p + n^p + \cdots + n^p} \to \frac{1}{p+1}$$
+\\
+as $n \to \infty.$\\
+\begin{figure}
+\includegraphics[width=12cm]{WhatsApp Image 2024-04-30 at 6.09.13 PM.jpeg}
+\end{figure}
+$$\textbf{Figure 5.2: Area used by Wallis}$$
+\\
+\indent Wallis tried to find integration of expressions which involve fractional powers, say $\int_{0}^{1}x^{\frac{m}{n}} dx$ without using the substitution $y^n = x^m,$ which was given by Fermat. Firstly, he found $\int_{0}^{1}x^{\frac{1}{2}} dx$, $\int_{0}^{1}x^{\frac{1}{3}},... dx$ by finding areas complementary to those under $y = x^2, y = x^3,....$ From these results, he obtained the results for other fractional powers of $x$.
+\indent There were quantities that tended to zero and Wallis was ambivalent about
+such quantities. Wallis treated them as nonzero once and
+zero the next. His arch-enemy Thomas Hobbes commented Wallis very badly regarding this:\\
+\\
+\textit{``Your scurvy book of Arithmetica infinitorum; where
+your indivisibles have nothing to do, but as they are supposed to have
+quantity, that is to say, to be divisibles.”}\cite{ref 3}\\
+\vspace{2ex}
+\hfill{Hobbes (1656), p. 301.}\\
+However, the reasoning
+of Wallis is incomplete by today’s standards because it is not correct to estimate a formula for all positive integers $p$ ''by induction” and for all fractional $p$ ``by interpolation” just by taking formulas for $p=1,2,3,...$ He neglected these flaws. Wallis gave infinite product formula,
+$$\frac{\pi}{4} = \frac{2}{3}\cdot\frac{4}{3}\cdot\frac{4}{5}\cdot\frac{6}{5}\cdot\frac{6}{7}\cdots$$
+\\
+The reasoning for Wallis's result was mentioned in Edwards (1979), pp. 171–176 \cite{ref 4}, and it was described as \textit{''one of the more audacious investigations by analogy and intuition that has ever yielded a correct result.”}
+In the year 1593, Viete had discovered
+\begin{eqnarray*}
+\frac{2}{\pi} =& \cos\frac{\pi}{4}\cos\frac{\pi}{8}\cos\frac{\pi}{16}\cdots\\
+=& \sqrt{\frac{1}{2}}\cdot\sqrt{\frac{1}{2}\left(1+\sqrt{\frac{1}{2}}\right)}\cdots
+\end{eqnarray*}
+Later on, based on rational operations, Wallis gave a result which involves $\pi$:\\
+$$\frac{4}{\pi} = 1 + \frac{1^2}{2 + \frac{3^2}{2 + \frac{5^2}{2 + \frac{7^2}{2 + \cdots}}}}$$
+\\
+and 
+$$\frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots.$$
+\\
+Brouncker obtained the continued fraction using Wallis’s result. This series is a special case of the following series
+$$\tan^{-1}x = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots$$
+\\
+which was discovered by the Indian mathematician named Madhava in the 15th century and the same was rediscovered by Newton, Gregory, and Leibniz.
+Brouncker’s continued fraction is linked with Euler's transformation of the series for $\pi/4$ ((1748a), p. 311). Using Wallis’s interpolation, Newton discovered the binomial theorem for fractional powers $r$ for the infinite series $(1+x)^r.$
+\\
+
+\section{Newton’s Calculus of Series}
+Works of Descartes, Viete, and Wallis had an impact of Newton's works. Most of the Newton's discoveries were in the year 1665. Newton discovered Hudde's rule for finding tangents to algebraic curves in Schooten’s edition
+of \textit{La Geometrie} and it is a complete differential calculus from Newton’s point of view. Using infinite series, Newton found chain rule, differentiation was a part of Newton's calculus. We cannot call Newton as the founder of calculus based on this. In Newton's calculus differentiation and integration are trivial as they are calculated term by term on powers of $x$.\\
+\\
+\indent When Newton just started his main work on calculus,\textit{A Treatise of the Methods of Series and Fluxions} (Latin name of \textit{De methodis}),Newton wrote:\\
+\\
+\textit{''Since the operations of computing in numbers and with variables are closely similar ... I am amazed that it has occurred
+to no one (if you except N. Mercator with his quadrature of
+the hyperbola) to fit the doctrine recently established for decimal numbers in similar fashion to variables, especially since
+the way is then open to more striking consequences. For since
+this doctrine in species has the same relationship to Algebra
+that the doctrine in decimal numbers has to common Arithmetic, its operations of Addition, Subtraction, Multiplication,
+Division and Root extraction may be easily learnt from the
+latter’s."}\cite{ref 5}\\
+\vspace{2ex}
+\hfill{Newton (1671), pp. 33–35}\\
+The quadrature (area determination) of the hyperbola which was mentioned by
+Newton was the following result\\
+$$\int_{0}^{x} \frac{dt}{1+t} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots,$$
+\\
+which was first published in the year 1668 by Mercator. Newton had rediscovered the same result
+in 1665, and this was a sign of distress for him and then he wrote \textit{De methodis} and an earlier work \textit{De analysi} in the year 1669; English title for this is \textit{On Analysis by Equations Unlimited in Their Number of
+Terms}. Newton discovered the series for $\tan^{-1}x, \sin x,$
+and $\cos x$ in \textit{De analysi}, without actually knowing that Indian mathematicians had already discovered all these three series before.
+Using method of expansion of a geometric series and integrating term by term, Newton rediscovered the results of Mercator and Indian mathematicians.\\
+\begin{align*}
+\int_{0}^{x} \frac{dt}{1+t} =& \int_{0}^{x}( 1 - t + t^2 - t^3 + \cdots)dt\\
+=& x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots\\
+\end{align*}
+and
+\begin{align*}
+\tan^{-1}x =& \int_{0}^{x}\frac{dt}{1+t^2}\\
+=& \int_{0}^{x} (1 - t^2 + t^4 - t^6 + \cdots)dt\\
+=& x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots.
+\end{align*}
+Newton used these methods frequently in \textit{De analysi} and \textit{De methodis}, and he extended their scope by algebraic manipulation. Newton found inverse functions by inverting infinite series along with finding sums,
+products, quotients, and roots. For instance, after Newton (1671), p. 61, found the series expansion $x - (x^2/2) + (x^3/3) - \cdots,$
+for $\int_{0}^{x} dt/(1 + t)$, which is $\log(1 + x)$, Newton put\\
+$$y = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots \hspace{3cm} (1)$$\\
+and found value of $x$(precisely what we remember is $e^{y}$, minus 1) by solving(1). Newton set $x = a_{0} + a_{1}y + a_{2}y^2 + \cdots$, then he substituted these values in the right-hand side of equation (1), and he determined values of  $a_{0}, a_{1}, a_{2},...$
+by comparing with the coefficients on the left-hand side of the equation.
+Newton found few terms,\\
+$$x = y + \frac{y^2}{2} + \frac{y^3}{6} + \frac{y^4}{24} + \frac{y^5}{120} + \cdots,$$\\
+and then Newton guessed $a_{n} = 1/n!$ so as Wallis did. Newton told \textit{''Now after the roots have been extracted to a suitable period, they may
+sometimes be extended at pleasure by observing the analogy of the series.”}\\
+\\
+\indent In the year 1698, De Moivre gave a formula for inverting series that justifies the results; Newton must be appreciated for giving such an extraordinary result. Also, his method of discovery of sine series (Newton (1669),
+pp. 233, 237) is using binomial series is interesting\\
+$$(1+a)^p =  1 + pa + \frac{p(p-1)}{2!}a^2 + \frac{p(p-1)(p-2)}{3!}a^3 + \cdots$$\\
+Newton substituted $a = -x^2, p = -\frac{1}{2} $ to obtain\\ 
+$$ \sin^{-1}x = z = x + \frac{1}{2}\frac{x^3}{3} + \frac{1\cdot3}{2\cdot4}\frac{x^5}{5} + \frac{1\cdot3\cdot5}{2\cdot4\cdot6}\frac{x^7}{7} + \cdots$$\\
+by term-by-term integration and then Newton found root of the equation that is,\\
+$$x = z - \frac{1}{6}z^3 + \frac{1}{120}z^5 - \frac{1}{5040}z^7 + \frac{1}{362880}z^9 - \cdots.$$\\
+Later, he added that coefficient of $z^{2n+1}$ is $1/(2n+1)!.$
+\section{The Calculus of Leibniz}
+Newton’s important works which were made in 1669, 1671 that seem extraordinary today were circulated among only some people and were not published
+at that time. There are reasons for this—one can see Westfall (1980), p. 231 for the reasons. However, shocking thing is that the first published paper on calculus was not by Newton but
+by Leibniz in the year 1684. Leibniz received credit due to this but then Newton and his followers questioned him of the about priority for the discovery and there was a dispute between them.\\
+
+\indent Leibniz discovered calculus independently, and he had a better notation. His followers helped in spreading the calculus way more than Newton's followers. However Leibniz’s work lacked the depth when compared with Newton's works but then Leibniz has only a part-time interest in mathematics. His \textit{Nova methodus}(1684) deals with some fundamentals such as the sum, product, and quotient rules for differentiation and it also introduces the $dy/dx$ notation. To Leibniz, $dy/dx$ was more than a symbol. He viewed it as quotient of infinitesimals $dy$ and $dx$, which he viewed it in terms of differences(the symbol $d$ is thus used) between neighboring values of $y$ and $x$, respectively.
+Leibniz also introduced the integral sign in his work \textit{De geometria} (1686) and
+proved the fundamental theorem of calculus that is, integration is the inverse
+of differentiation. This result was earlier known to Newton and Newton’s teacher Barrow, but it became more clear in Leibniz's terms. For Leibniz, $\int$ meant “sum,” and $\int f(x) dx$ meant sum of terms $f(x)dx$, which represents infinitesimal areas of height
+$f(x)$ and width $dx$. The difference operator $d$ gives us the term $f(x) dx$
+in the sum, and when we divide the same with $dx$, we get $f(x)$. \\
+\\
+$$\frac{d}{dx}\int f(x) dx = f(x)$$\\
+- the fundamental theorem of calculus ( integration is inverse of differentiation).
+The fundamental theorem given by Leibniz can be viewed in terms of infinitesimal geometry by estimating $\int f(x) dx$ as the area $A(x)$ under the curve $y = f(t)$
+between $t = a$ to $t = x$ (as shown in Figure 5.3). With infinitesimal increase in $t$ from $x$ to $x + dx$, $A(x)$ increases by an infinitesimal amount $dA(x)$, which is the area of an infinitesimal rectangle of width $dx$ and height $f(x)$.
+\begin{figure}
+\includegraphics[width=12cm]{WhatsApp Image 2024-04-30 at 6.09.12 PM (1).jpeg}
+\end{figure}
+$$\textbf{Figure 5.3: Fundamental theorem of calculus as infinitesimal geometry}$$
+\\
+\\
+Hence, $A(x)$ is an \textit{antiderivative} of $f(x)$:\\
+$$dA(x) = f(x)dx,$$
+$$\frac{dA(x)}{dx} = f(x).$$
+\\
+What makes Leibniz's works special is that he identifies important concepts.For instance, he introduced the word ''function” and was the first to lay a path for it. He identified differences between algebraic and transcendental functions. Leibniz and Newton's approaches were different. For Leibniz, in order to evaluate $\int f(x) dx$, he need to find function whose derivative is f(x), whereas for Newton viewed the same problem in terms of expansion of $f(x)$ in series, then integration would be easier.\\
+\\
+\indent Before integrating a function, one must know whether the given algebraic function can be integrated or not with the set of rules they have and mathematicians found the logic for the same. Howver, there was not a much more advance in calculus textbooks more than what Leibniz had done. But one thing for sure is, Newton faced a lot of problems in publishing his book and that job is much more easier now.
+\\
+\\
+\\
+\begin{thebibliography}{99}
+		\addcontentsline{toc}{chapter}{References}
+		
+		\bibitem{ref 1} Huygens, p. 337, 1659
+		
+		\bibitem{ref 2} Baron, pp. 129, 185, 1969 and
+Edwards, p. 116,1979
+  \bibitem{ref 3} Hobbes, p. 301,1656
+  \bibitem{ref 4} Edwards, pp. 171–176,1979
+  \bibitem{ref 5} Newton, pp. 33–35, 1671
+    \bibitem{ref 6}  Descartes, \textit{La Geometrie},Schooten (1659)
+		
+
+		
+		
+	\end{thebibliography}
+	
+
+
+\end{document}
+	
+	
+	

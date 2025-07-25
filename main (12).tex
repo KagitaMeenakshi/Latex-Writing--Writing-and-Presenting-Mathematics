@@ -1,0 +1,1653 @@
+\documentclass[a4paper,reqno,11pt]{book}
+
+\usepackage{amsmath,amsfonts,mathtools,amsthm,amscd,amsxtra,amstext}
+\usepackage{amssymb,latexsym,verbatim}
+\usepackage{color,graphics}
+\usepackage{mathrsfs,listings,hyperref,cleveref,enumerate}
+
+\usepackage[top=2.7cm,bottom=2.7cm,left=2.4cm,right=2.4cm]{geometry}
+\renewcommand{\baselinestretch}{1.2}
+
+\theoremstyle{plain}%default 
+\newtheorem{thm}{Theorem}[chapter]
+
+
+
+\theoremstyle{definition} 
+\newtheorem{defn}{Definition}[chapter]
+\begin{document}
+	
+	\chapter{Euler and Number theory}
+ 
+	\begin{abstract}
+		Positive integers are the most fundamental part of mathematical entries. In this report, we deal with perfect numbers first and we will see interesting and fundamental proofs given by mathematicians based on perfect numbers. Euclid (ca. 300 BCE) gave a theorem about perfect 
+numbers in his book, the ``Elements". Twenty centuries later, Leonhard 
+Euler made some changes in the topic given by Euclid .
+Victor Klee and Stan Wagon wrote, \textit{``Perfect numbers is perhaps the oldest unfinished project of mathematics.}" 
+
+	\end{abstract}
+\section{Prologue}
+Euclid devoted three of the thirteen chapters of the book, the Elements to number 
+theory. Euclid started writing Book VII of the Elements with 22 definitions. For example,these definitions include prime numbers, perfect numbers. Euclid defined 
+a ``prime number" to be one that is \textit{``measured by a unit alone.}" \\
+\\
+\begin{defn}\label{defn:Type 1}A perfect number is that which is equal to its own parts.\\ 
+According to Euclid, ``part" meant ``proper 
+whole number divisor" and  ``equal to" meant ``equal to the sum of."Thus the Euclid's definition now becomes:\\
+\end{defn}
+\begin{defn}\label{defn:Type 1}
+ A whole number is perfect if it is equal to the sum of its proper 
+divisors. \\
+(Proper divisor is a postive divisor of a number,excluding itself.)\\
+For example, \\
+\textbf{1.} Proper divisors of 6 are 1,2,3.
+1+2+3 = 6. Thus it is a perfect number according to the definition.\\
+\textbf{2.} Proper divisors of 28 are 1,2,4,7,14.
+1+2+4+7+14 = 28. Hence it is a perfect number.\\
+\textbf{3.} Proper divisors of 496 are 1,2,4,8,16,31,62,124,248.
+1 + 2 + 4 + 8 + 16 + 31 + 62 + 124 + 248 = 496. It is a perfect number.\\
+\noindent \textbf{4.} Proper divisors of 8128 are 1,2,4,8,16,32,64,127,254,504,1016,2032,4064. \\1+2+4+8+16+32+64+127+254+508+1016+2032+4064 = 8128. A perfect number according to the definition.\\
+\\
+\end{defn}
+These four numbers were the only perfect numbers known in ancient Greece. Nicomachus, a Greek mathematician ,worked on perfect numbers and observed that perfect numbers are rare. Scholars identified number 6 as the \textit{``perfect union of the sexes"} i.e., $ 6=3\times2$, where 3 is a ``male" number and 2 is a ``female" number.\\
+Euler began Book VII with perfect numbers ,but then, he did not mention about perfect numbers again until the end of Book IX.\\
+
+\noindent \textbf{Proposition 36 of Book IX, was stated by Euclid as: }\\
+
+\textit{``If as many numbers as we please beginning from a unit be set out 
+continuously in double proportion, until the sum of all becomes 
+prime, and if the sum multiplied into the last make some number, the 
+product will be perfect."}\\
+\vspace{2ex}
+\hfill {- Euler-The Master of Us All, Chapter 1, pg3.}
+\\
+Beginning from a unit and proceeding in double 
+proportion means the series 1 + 2 + 4 + 8 + · · · . 
+Euler supposed that, if the above process is continued, the sum will be a prime 
+number at certain stage i.e., he assumed that,\\
+$$1 + 2 + 4 +\cdots+2^{k
+-
+1}$$ is prime. 
+If this sum is multiplied with the last term, we get 
+$1 + 2 + 4 + \cdots + 2^
+{k
+- 1}$ by $ 2^
+{k- 1}$ and Euclid
+asserted that this product is a perfect number. \\
+ $ 1 + 2 + 4 + \cdots + 2^{
+k
+- 1}$  = $(2^k - 1 )/(2 - 1) = 2^
+k - 1.$ Thus, Euclid's 
+proposition in simpler terms:\\
+\\
+\begin{thm}\label{thm:Type 1} If $2^k - 1$ is prime and if $N = 2^{
+k-1}
+(2^k - 1)$, then $N $ is perfect. \\
+\end{thm}
+\textit{Proof.} Let $p = 2^k - 1 $ and this is supposed to be the prime number mentioned in the definition. The 
+proper divisors of $N$ = $2^
+{k-1}(2^k - 1) = 2^{
+k
+- 1}p$ must  contain only 
+the primes 2 and p since p is a prime. Hence, we can easily find sum of proper divisors of $N$. \\
+Sum of proper divisors of $ N $
+\begin{align*}
+=& 1 + 2 + 4 +\cdots + 2^{k- 1} + p + 2p + 4p + \cdots + 2^{k-2} p \\
+=& (1 + 2 + 4 + \cdots+ 2^{k- 1}) + p(1 + 2 + 4 + \cdots+ 2^{k-2})\\
+=& (2^k -1) + p(2^{k- 1}- 1) = p + p2^{k- 1} - p \\
+=& p2^{k- 1} = N.\\
+\end{align*}
+$ N $ is equal to the sum of its proper divisors,hence it is perfect.\\
+\\
+Thus, Euclid found sufficiency condition for a perfect number. For instance,\\ \textbf{1.} If k = 2, then $2^
+2 -1 = 3$ is prime, and so $N= 2(2^2 -1) = 
+6$ is perfect.\\ \textbf{2.} If k = 3, then $2^
+3 - 1 = 7$ is prime, and 
+$N = 2^2(2^3 -1) = 28$ is perfect.\\ \textbf{3.} If $k$ = 13 , we see that $2^{13}-1 = 8191$ is prime, 
+ $ N = 2^{12}(2^{13}-1) = 33,550,336$ is a perfect number.\\
+  \\
+
+The prime numbers of the form $M_{p} = 2^p - 1$ where $p$ is a prime number are called \textbf{"Mersenne primes"} given by Marin
+Mersenne (1588-1648). \\
+\begin{thm}\label{thm:Type 1} If $k$ is composite, then so is $2^k - 1.$\\ 
+\end{thm} \textit{Proof.}  Let k=ab where 1 $<$ a,b $<$ k.
+\begin{align*}
+2^k - 1 =& (2^a)^b - 1.\\
+=& [2^a-1] [(2^a)^{b-1} + (2^a)^{b-2} + (2^a)^{b-3} + ... + (2^a) + 1].
+\end{align*}
+Hence $ 2^
+a - 1$ is  a factor which makes $2^k-1$ composite.\\\textbf{Example.} If $k = 6 = 2 \times 3$, then,\\
+$2^
+6 - 1 = (2^2
+)^
+3 -1 = [2^2 -1][(2^2
+)^
+2 + 2^
+2 + 1].$ \\
+Hence 63 (i.e., $2^
+6 - 1)$ is divisible by 3 (i.e., $2^
+2 - 1)$ and thus it is not prime.\\
+\\
+Thus we can easily dismiss certain numbers like $2^
+{75} - 1$ from 
+ Mersenne primes because the exponent is composite. 
+It cannot be said that if $k$ is 
+prime, then so is $ 2^
+k - 1. $ For example, consider $2^
+{11} - 1,$ \\
+$$2^
+{11} - 1 = 2047 = 23 \times 89. $$
+Hence it is not a prime number despite having a prime exponent.\\
+ In  1772 ,
+ Euler claimed that $2^
+{31} -1$ is prime.\cite{ref 1}
+This is the eighth-largest Mersenne prime and applying Euclid's theorem ,
+we get a perfect number
+$2^
+{30}
+(2^{31} - 1) = 2,305,843,008,139,952,128. $\\
+In 1998, it was announced that$ 2^
+{3021377} - 1$ is a Mersenne prime. Combining this with Euclid's theorem, we get a perfect number.
+ 
+\noindent \textbf{Corollary.} $ 2^
+{3021376}(2^{3021377} - 1)$ is a perfect number.\\
+This number has 1.8 million digits approximately and it takes weeks to  right the value.\\
+\\
+\noindent \textbf{Sufficiency and necessity are two different things.}\\The former statement implies latter does not necessarily means latter implies former. \\
+\\
+\noindent In 1509, \textbf{Carolus Bovillus (1470-1553)} claimed that every perfect number is even.\cite{ref 2} 
+Bovillus claimed that the perfect number must be in the form $2^
+{k- 1 }(2^k - 1 )$, 
+where $(2^k - 1)$ is prime and 2 is a factor of this number which makes the number even.\\
+This proof is wrong because he confused sufficiency with necessity. Hence it is very important to understand difference between sufficiency and necessity.\\
+\\
+In 1598,  \textbf{Unicornus (1523-1610)} claimed :
+\\
+\noindent \textbf{ If $k$ is odd, then $ N = 2^
+{k-1 }(2^k - 1) $ is perfect.} \\
+This would definitely guarantee that there are infinitely many perfect numbers because
+ there are infinitely many odd $k$ but we see that the above claim is wrong.\\ If $k = 9$, we have 
+$N = 2^
+8
+(2^9 - 1) = 130,816,$ the sum of proper divisors is 171,696(not a perfect number).
+\\
+\textbf{Rene Descartes 
+(1596-1650)} in the year 1638, stated that
+even perfect number is ``Euclidean" that is,every even perfect number looks 
+like $ 2^
+{k-1}
+(2^k - 1 ),$ where $ k > 1$ and $2^k-1$ is prime.\\
+However, We don't have the proof for his assertion. People are confused whether he guessed it or he gave a proof but it was lost.\\
+\section{Enter Euler}
+In 1729, Christian Goldbach gave the following words about the work of Pierre de Fermat: 
+\textit{``Is Fermat's observation known to you, that all numbers $2^{2^n} + 1$ are 
+prime? He said he could not prove it; nor has anyone else done so to 
+my knowledge."}\\
+\\
+Euler proved that Fermat's lemma was 
+wrong by taking counterexample i.e., $2^{2^5}+1$
+ = 4,294,967,297 is divisible by 641 \cite{ref 3} and thus it is not a prime.\\
+Euler had a challenge to find four different whole numbers such that the sum 
+of any two should be a perfect square. Euler found a correct answer and successfully completed this challenge and those four numbers are 18530, 
+38114, 45986, and 65570.\\
+\\
+Euler devoted four volumes of \textit{Opera Omnia} to number theory.\\ \textbf{Harold Edwards} gave the following words about Euler's work, \textit{``his contributions to number theory alone would suffice 
+to establish a lasting reputation in the annals of mathematics."}\\
+In comprehensive paper \textit{``De numeris amicabilibus"}, Euler mentioned about perfect numbers and amicable numbers.\\
+\textbf{Amicable Numbers : } Two numbers m and n are said to be amicable numbers if the sum of the proper divisors of m is n and \textit{vice versa}. These pairs are rare. The smallest pair of amicable numbers are 
+220 and 284. In earlier centuries, only three such pairs were known. Euler provided 59 such pairs later.\\
+\\
+\begin{defn}{Definition} $\sigma(n)$ is the sum of all whole number divisors of $n$.\\
+\end{defn}
+For example, $\sigma(6)$ = 1+2+3+6 = 12 and $\sigma$(8) = 1+2+4+8 = 15.
+The sum of the proper divisors of $n$ will be $\sigma(n) - n$. Hence, two numbers are amicable if and only if they exhibit the following symmetry:
+$$\sigma(m) = m+n = \sigma(n).$$
+Now, we come across some basic conclusions.\\
+\textbf{1.} $p$ is prime if and only if $\sigma(p) = p + 1$ because the only divisors of a prime number are 1 and itself.\\
+\textbf{2.} $N$ is perfect if and only if $\sigma(N) = N + N = 2N$. Explanation: A number is perfect if sum of all proper divisors of a number equals the number.
+Hence, $\sigma(N) - N = N$,thus, $\sigma(N) = 2N.$\\
+\textbf{3.} If $p$ is prime, then $\sigma(p^s) = (p^{s+1} - 1 )/(p - 1)$.\\
+\textit{Proof.} We know that all the divisors of $p^s$ will be in the form of $p^t$ where\\ 0 $\leq t \leq s.$\\
+$$\sigma(p^s) = 1 + p + p^2 + \cdots + p^s = \frac{p^{s+1} - 1}{p-1}. $$
+* If $N = 2^s$, then
+$\sigma(N) = \sigma(2^s) = 2^{s+1}-1 = 2N - 1.$\\
+Hence, it is clear that numbers which are in the form of powers of 2 that is, numbers of the form $2^s$ are not perfect because $\sigma(N) \neq 2N.$\\
+\textbf{4.} If $p$ and $q$ are distinct primes, then $\sigma(pq) = \sigma(p)\sigma(q)$. \\
+\textit{Proof.} The only divisors of two distinct primes $p$ and $q$ are $1, p, q$
+and $pq.$\\
+ $\sigma(pq) = l + p + q + pq = (1+p) + q(1+p) = (1+p)(1+q) = \sigma(p)\sigma(q).$ \\
+ \textbf{Example.} Consider two primes 3 and 5.\\
+ $\sigma(15) = 1 + 3 + 5 + 15 = (1+3)(1+5) = \sigma(3) \times \sigma(5).$\\
+\textbf{5.} If $a$ and $b$ are relatively prime, then $\sigma(ab) = \sigma(a)\sigma(b).$\\
+This property is called \textbf{multipicative property} of $\sigma$.\\
+We shall prove this statement by taking a specific case i.e.,
+$a = p^2$ and $b = qr$, where $p, q,$ and $r$ three distinct primes which gives us the fact that $a$ and $b$ relatively prime.\\
+\textit{Proof.}
+\begin{align*}
+\sigma(ab) =& \sigma(p^2qr) \\
+=& 1 + p + p^2 + q + pq + p^2q + r + pr + p^2r + qr + pqr + p^2qr \\
+=& (1 + p + p^2) + q(1 + p + p^2) + r(1 + p + p^2) + qr(l + p + p^2) \\
+=& (1 + p + p^2)(1 + q + r + qr) = (1 + p + p^2)(1 + q)(l + r) \\
+=& \sigma(p^2)\sigma(q)\sigma(r) \\
+=& \sigma(p^2)\sigma(qr)\\
+=& \sigma(a)\sigma(b).
+\end{align*}
+The proof for 5th point is taken from :\\
+\vspace{2ex}
+\hfill {- Euler-The Master of Us All, Chapter 1, pg9.}\\
+This multiplicative property plays an important role in finding sum of divisors of bigger numbers. First, we need to find prime factorisation of the given number and then we can proceed with multiplicative property. For example,\\
+$\sigma(1500) = \sigma(2^2\times3\times5^3) = \sigma(2^2)\sigma(3)\sigma(5^3) = 7 \times 4 \times 156 = 4368.$\\
+Euler gave the following theorem. This states that Euclid's sufficient condition is necessary when even perfect numbers are taken into consideration.\\
+\begin{thm}\label{thm:Type 1} If $N$ is an even perfect number; then $N = 2^{k- 1} (2^k-1)$, where $2^k - 1 $ is prime. \\
+\end{thm}
+\noindent \textit{Proof.} Consider $N$ to be an even and perfect number.\\
+Let $N = 2^{k-1}b$ where $b$ is an odd number that is, $2^{k-1}$ and $b$ are relatively primes. It is clear that $k > 1$ since $N$ is an even number and it must have 2 in its prime factorisation.\\
+We know that $\sigma(N) = 2N$ because $N$ is perfect.\\
+$$\sigma(N) = 2N = 2^kb.$$
+Using multiplicative property of $\sigma$, we get,\\
+$\sigma(N) = \sigma(2^{k-1})\sigma(b) = (2^k-1)\sigma(b).$\\
+Thus, $2^kb = (2^k-1)\sigma(b). $\\
+$$\frac{2^k}{2^k-1} = \frac{\sigma(b)}{b}.$$
+$2^k > 2^k-1$ and hence left hand side fraction is greater than 1 which gives us the fact that $\sigma(b) > b.$ Consider $c \geq 1$,\\
+$$\sigma(b) = c2^k.$$
+$$b = c(2^k-1).$$
+\textbf{Case 1.} Let $c > 1$.\\
+Then 1,$ b, c$, and $2^k - 1$ are clearly the divisors of $b$. We claim that these four divisors are distinct and thus we prove that there is no pairwise equality between them. \\
+\textbf{(a)} 1 $\neq b$.\\
+If 1 = $b$, then $N=2^{k-1}$ which cannot be a perfect number(any number which is in the form of power of 2 alone cannot be perfect.)\\
+\textbf{(b)} 1 $\neq c$ because our case is $c > 1$.\\
+\textbf{(c)} 1 $\neq 2^k-1.$\\
+If $2^k-1 = 1 $ then $2^k =2$ which gives $k=1$ and $N=b$ and this contradicts that $N$ is an even number.\\
+\textbf{(d)} $b \neq c$.\\
+If $b=c$, then $2^k-1 = 1$ which is already eliminated.\\
+\textbf{(e)} $b \neq 2^k-1$.\\
+Otherwise $b = c(2^k-1) = cb$ which gives $c=1$ and this is not possible because we began by taking $c > 1.$\\
+\textbf{(f)}  $c \neq 2^k-1.$\\
+If $c = 2^k-1$ ,then $b=c^2$ . Thus factors of $b$ contains $1,c,c^2$ which are distinct since $c > 1$. Thus,
+$\sigma(b) \geq 1+c+c^2$. From $\sigma(b)= c2^k,$ we get, $\sigma(b)$ = $c(c+1)$= $c^2 + c$ and this leads to a contradiction that $\sigma(b) \geq 1+c+c^2$.\\
+\\
+Thus, our claim is correct and hence,\\
+$\sigma(b) \geq 1 + b + c + (2^k-1) = b + c + 2^k = c(2^k-1) + c + 2^k 
+= 2^k(c+1)>c2^k = \sigma(b). $ \\
+This gives us a contradiction that $\sigma(b) > \sigma(b).$ Hence case 1 is not possible. Now the only option left is :\\
+\\
+\textbf{Case 2.} Let $c=1$.\\
+From our assumption that $b = c(2^k-1)$ and $\sigma(b) = c2^k,$ we get $b = 2^k-1 $ and $\sigma(b) = 2^k$ that is, \\
+$$\sigma(b) = b + 1.$$
+Hence, the only divisors of $b$ are 1 and $b$ and thus $b$ is a prime number.\\
+\\
+This leads to the conclusion that if $N$ is an even perfect number, then 
+$N = 2^{k- 1} b = 2^{k-1} (2^k-1)$, where $2^k - 1$ is prime. This establishes the necessity of Euclid's condition when even perfect numbers are taken into consideration.\\
+\\
+This completes the theorem and it is called as \textbf{``Euclid-Euler theorem."}\\
+\section{EPILOGUE}
+
+So far we have seen some important theorems and proofs given by Euler and Euclid about perfect numbers. But the question which arises is whether there are infinitely many perfect numbers. This would follow from infinitude of Mersenne primes but the proof of later is not clear. Hence, this question remained unsolved.\\
+We must note that all the perfect numbers we have seen so far are even (Exampes : 6, 28, 496) and the question which arises now is ``Are there any odd perfect numbers ?" Now we shall calculate $\sigma(n)$ for some odd numbers.\\
+\\
+$\sigma(3) = 4$ \hspace{1cm} $\sigma(9) = 13$ \hspace{1.1cm}   $\sigma(15) = 24$\\
+$\sigma(5) = 6$ \hspace{1cm} $\sigma(11) = 12$ \hspace{1cm} $\sigma(17) = 18$\\
+$\sigma(7) = 8$ \hspace{1cm} $\sigma(13) = 14$ \hspace{1cm}  $\sigma(19) = 20$\\
+A number is perfect if and only if $\sigma(N) = 2N.$
+In all the above cases $\sigma(N) < 2N $ and these numbers are not perfect.\\
+An even number has 2 as its divisor and thus it contains a proper divisor which is half of it whereas that it not possible when odd numbers are taken into consideration.\\
+For example, 2 divides 496 and thus 496/2 = 248 is the biggest proper divisor of 496. For this number to be perfect, sum of all other proper divisors of 496 should be equal to 496-248=248 and this makes sense because\\ 496 = $2^4(2^5-1).$\\
+Consider an odd number, say 497, the biggest proper divisor of 497 is 71 and for this number to be perfect, sum of all other proper divisors of 497 should be equal to 497 - 71 = 426 but this number is far bigger than what we actually get.\\
+\\
+\textbf{Conjecture.} If $N$ is odd, then $\sigma(N)$ is always less than $2N$. \\
+This conjecture is true for every odd number till 943.\\ $\sigma(943) = 1008 < 2 \times 943$. \\
+The immediate next odd number 945 violates this conjecture that is, \\$\sigma(945) = 1920 > 2 \times 945$ and thus it disproves the conjecture.\\
+\\
+If there are examples of odd numbers for which $\sigma(N) < 2N$ and $\sigma(N) > 2N$, why can't we think of odd numbers which follows $\sigma(N) = 2N ? $\\
+\\
+Euler addressed this matter in his 1747 paper,\textit{``Whether .... there are any odd perfect numbers, is a most difficult (difficillima) question."}
+Richard Guy told ,the existence of odd perfect numbers is \textit{``one of the 
+more notorious unsolved problems of number theory."}\\
+\\
+J. J. Sylvester (1814-1897) gave the following proof :\\
+\begin{thm}\label{thm:Type 1} \textit{An odd perfect number must have at least three different prime factors.}\\
+\end{thm}
+\noindent \textit{Proof.} Consider $N$ to be an odd perfect number with a single prime 
+factor that is, $N = p^r$ where $p$ is an odd prime and $r \geq$ 1. If it is perfect, then $2N = \sigma(N)$. We get,\\
+$$ 2p^r = \sigma(p^r) = \frac{p^{r+1}-1}{p-1}.$$
+Solving this, we get, $2p^r - p^{r+1} = 1$ and this leads to a contradiction because we can divide prime $p$ as shown in the left hand side of the equation but not into right hand side of the equation.\\
+Thus odd perfect number cannot have a single prime factor.\\
+\\
+\noindent Now consider $N$ to be an odd perfect number with exactly two prime factors that is, $N = p^kq^r$, where $p < q$ are odd primes. \\
+$$2N = \sigma(N) = \sigma(p^kq^r) = \sigma(p^k)\sigma(q^r).$$
+We use multiplicative property to solve $\sigma(N)$.\\
+$2N = (1 + p + p^2 + \cdots + p^k) \times (1 + q + q^2 + \cdots + q^r).$\\
+Divide both left hand side and right hand side of the expression by $N = p^kq^r$:\\
+$2 = (1 + \frac{1}{p} + \frac{1}{p^2} + \cdots + \frac{1}{p^k}) \times (1 + \frac{1}{q} + \frac{1}{q^2} + \cdots + \frac{1}{q^r}).$\\
+Since $p$ and $q$ are odd primes and $p<q$, it is clear that $p \geq 3 $ and $q \geq 5$. Thus, the above expression can be modified as follows :\\
+$2 \leq (1 + \frac{1}{3} + \frac{1}{9} + \cdots + \frac{1}{3^k}) \times (1 + \frac{1}{5} + \frac{1}{5^2} + \cdots + \frac{1}{5^r}).$\\
+Now,we can replace the finite geometric series in each parenthesis with the infinite geometric series and doing in that way , we get,\\
+$$2 \leq \sum_{h=0}^{\infty} \frac{1}{3^h} \times \sum_{j=0}^{\infty} \frac{1}{5^j} = \frac{3}{2} \times \frac{5}{4} = \frac{15}{8}.$$
+Thus, we obtain $2 \leq \frac{15}{8}$ which is a contradiction.\\
+Hence, it is proved that odd perfect number cannot contain only two prime factors.\\
+\\
+In this way, \textbf{J. J. Sylvester} concluded that an odd perfect number, if it exists, must contain atleast three prime factors.
+Sylvester continued his work further and proved that an odd perfect number must have at least four, and then at least five distinct prime factors. \\
+\indent However, he failed in giving a number which is odd and perfect. He was unable to prove the existence of odd perfect numbers. Thus, this theorem could lead to a proof of non-existence too.\\
+\\
+The following are certain properties exhibited by odd perfect numbers(if they exist) :\\
+1. An odd perfect number cannot be divisible by 105. \\
+2. An odd perfect number must contain at least 8 different prime factors (an 
+extension of Sylvester's work). \\
+3. The smallest odd perfect number must exceed $10^{300}$.\\
+4. The second largest prime factor of an odd perfect number exceeds 1000. \\
+5. The sum of the reciprocals of all odd perfect numbers is finite.Symbolically,
+$$ \sum_{odd perfect} \frac{1}{n} < \infty.$$
+The above five points are taken from the book :\\
+\vspace{2ex}
+\hfill {- Euler-The Master of Us All, Chapter 1, pg15.}\\
+\noindent In 1888, Sylvester wrote,\textit {``a prolonged meditation on the subject has satisfied me that the 
+existence of any one such-its escape, so to say, from the complex 
+web of conditions which hem it in on all sides-would be little short 
+of a miracle."}\\
+\\
+We did not prove the existence of odd perfect numbers and at the same time, we did not disprove it. Eric Temple Bell wrote, \textit{``To 
+say that number theory is mistress of its own domain when it cannot subdue 
+a childish thing like odd perfect numbers is undeserved flattery."} \\
+\\
+In this chapter, though the existence of odd perfect numbers remained unsolved, we have seen the exact nature of the even perfect numbers and also interesting theorems and proofs related to even perfect numbers given by Euclid and Euler.\\
+\\
+\\
+\begin{thebibliography}{99}
+		\addcontentsline{toc}{chapter}{References}
+		
+		\bibitem{ref 1} Leonard Eugene Dickson, History of the Theory of Numbers, Vol I, G. E. Stechert and Co., New 
+York, 1934, p. 19 
+
+		
+		\bibitem{ref 2} Dickson, p 7 
+  \bibitem{ref 3} Weil, p. 172
+  \bibitem{ref 4} For Euler's argument, see William Dunham, Journey Through Genius· The Great Theorems of 
+Mathematics, Wiley, New York, 1990, Chapter 10
+
+
+ 
+		
+
+		
+		
+	\end{thebibliography}
+\chapter{Euler and Logarithms}
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	\begin{abstract}
+		Euler published \textit{``Introductio in analysin infinitorum"} which is a two volume masterpiece in the year 1748. It is a prerequisite for calculus i.e. a pre-calculus text which is useful in studying calculus.In this report, we study about functions and logarithms.
+	\end{abstract}
+	\section{Introduction}
+\noindent Carl Boyer gave the following words after referring Introductio, \textit{``It was this 
+work which made the function concept basic in mathematics."}\cite{ref 1}
+Euler defined function as follows: 
+\textit{``A function of a variable quantity is an analytic expression composed in any way whatsoever of the variable quantity and numbers 
+or constant quantities."}\cite{ref 2}\\
+\\
+\indent E.W. Hobson complemented Euler for his work Introductio,
+\textit{``Hardly any other work in the history of Mathematical Science gives 
+to the reader so strong an impression of the genius of the author as 
+the Introductio."}\cite{ref 3} We have different kinds of functions involving different variable terms say,
+polynomial functions, trignometric functions, multinomial functions, exponential functions.This chapter is about logarithms and we arrive at so called logarithms by taking inverse of exponential functions.This way, we enter the most important concept logarithms.
+\\
+\section{Prologue}
+\\
+Pierre-Simon de Laplace (1749-1827) gave the following words on
+logarithms:
+\textit{``Logarithms,by shortening the labors, doubled the life of the astronomer."}\cite{ref 4}
+According to Euler,\textit{``logarithms are useful in finding intricate roots."}\\
+
+\indent John Napier(1550-1617) termed the word ``logarithm".
+Henry Briggs(1561-1631) constructed logarithmic table by taking commom base-10. Firstly he set the following: log 1 = 0 and log 10 =1 .However, we see later that this contradicts Napier's assertion which states log 10,000,000=0\\
+\\
+\indent Briggs took the standard base as 10, hence it will be easier to find the logarithm of a number which is in the integral or rational powers of 10.
+But the question is how do we find the logarithm of a number which is not easier to represent in rational powers of 10.For example, how do we find log 5 in base 10 ?\\
+\\
+\\
+\indent In order to calculate $\log_{10}5$, First, we need to construct a logarithmic table by taking logarithm of  numbers which are in powers of 10 (and base is 10) say,\\
+
+\noindent log 1 =0;\\
+log 10 =1;\\
+log $\sqrt{10}$ = log ( $10^\frac{1}{2}$) =$\frac{1}{2}$log 10 = 0.50000;\\
+We know that $\sqrt{10}$= 3.1622777, hence log 3. 1622777 = 0.5000. Similarly,\\
+$\log \sqrt{\sqrt{10}}= \log 1.7782794= 0.250000.$\\
+\\
+Continuing the process further, we would get,\\
+$\log 10^{1/4096} = \log 1.0005623 = 0.0002441,$\\
+$\log 10^{1/8192} = \log 1.0002811 = 0.00012207.\\$
+\\
+In order to find $\log 5 $:\\
+We know that $ \sqrt{5}$ = 2.2360980 and $\sqrt{\sqrt{5}}$ = 1.4953488.\\
+Continuing the process, we obtain $5^{1/4096}$ = 1.0003930 and this value is between $10^{1/4096}$ and $10^{1/8192}.$ Hence we use ratio and proportion to find the logarithm of unknown number.\\
+\\
+\textbf{NUMBER} \hspace{6.1cm} \textbf{LOGARITHM}\\
+$1.0005623 = 10^{1/4096}\hspace{5cm} 0.00024414 $\\
+$1.0003930 =  5^{1/4096} \hspace{5.2cm}  x$\\
+$1.0002811 = 10^{1/8192}\hspace{5cm} 0.00012207 $\\
+\\
+Using proportions, we get,\\
+$$\frac{x - 0.00012207}{0.00024414 -0.00012207} = \frac{1.0003930-1.0002811} {1.0005623 -1.0002811} $$
+ Hence,  $\log(5^{1/4096})
+ = x = 0.000170646$ . Therefore, 
+$\log 5 = 4096 (0.000170646) = 0.698966 . $ Approximating to six decimal places, we get,\\
+$$ \log 5 = 0.698970. $$
+
+\noindent This method is time-taking especially when we are aiming to find logarithm of decimal numbers say,log 6.34. \\
+\\
+Nicholas Mercator (1620-1687), James Gregory (1638-1675) and the great Isaac Newton (1642-1727) came up with the idea of infinite series which reduces the complexity of solving logarithms.\\
+\textbf{Newton expanded $(1 + x)^r$ as follows :}\\
+
+$(1+x)^r$ $=$ 1 + $rx$ +   $\frac{r(r-1)}{2\cdot1}$$x^2$ +  $\frac{r(r-1)(r-2)}{3\cdot2\cdot1}$$x^3$ + $\cdots\cdots.\\$
+\\
+
+\noindent This formula is valid for all r ,that is, r can be negative, positive , rational etc.
+For example , we can find $\sqrt{1.2}$ by substituting x=$\frac{1}{5}$ and r=$\frac{1}{2}$ in the above formula :\\
+\begin{align*}
+\sqrt{1.2}=& \left(1 + \frac{1}{5}\right)^{1/2} \\
+\indent \thickapprox& 1 +  \frac{1}{2}\left(\frac{1}{5}\right)  +  \frac{ \frac{1}{2}(\frac{1}{2}-1)}{2\cdot1}\left(\frac{1}{5}\right)^2  + \frac{ \frac{1}{2}(\frac{1}{2}-1)(\frac{1}{2}-2)}{3\cdot2\cdot1}\left(\frac{1}{5}\right)^3 \\
+\indent =& 1 +  \frac{1}{10}  -  \frac{1}{200} + \frac{1}{2000} = \frac{2191}{2000} = 1.09550.\\
+\end{align*}
+Hence $\sqrt{1.2} \thickapprox 1.09545$ (rounded off to 5 decimal places).\\
+Until now, we found square roots of numbers using infinite series expansion.
+Now, we are left with finding logarithms using the obtained values.
+\textbf{St. Vincent (1584--1667) and Alfonso de Sarasa (1618-1667)} linked logarithms with area under portions of a hyperbola and obtained wonderful results.\\
+Let $A(x)$ be the area under the hyperbola $y =\frac{1}{u}$  between $u = 1 $ and $u = x$(as shown in figure 2.1).
+$$A(x) = \int_{1}^{x}\frac{1}{u}du .$$ \\
+Then $A(ab)$ is the area under the hyperbola $y=\frac{1}{u}$ between $u=1$ and $u=ab$:\\
+$A(ab) = \int_{1}^{ab}\frac{1}{u}du $ = $\int_{1}^{a}\frac{1}{u}du$ + 
+$\int_{a}^{ab}\frac{1}{u}du$,\\
+By substituting $u=at$ in the second integral($du=adt$), we get :\\
+$A(ab)= \int_{1}^{a}\frac{1}{u}du$ + $\int_{1}^{b}\frac{1}{t}dt$.\\
+\noindent $A(ab)= \int_{1}^{a}\frac{1}{u}du$ + $\int_{1}^{b}\frac{1}{u}du$.\\
+$$\textbf{$A(ab)=A(a)+A(b).$}$$\\
+Now consider A($a^r$),\\
+A($a^r$) = $\int_{1}^{a^r}\frac{1}{u}du$.\\
+By substituting u=$t^r$, we get,\\
+A($a^r$) = $\int_{1}^{a}\frac{1}{t^r}r(t^{r-1})dt$ = $r\int_{1}^{a}\frac{1}{t}dt$ = $r\int_{1}^{a}\frac{1}{u}du.$\\
+$$\textbf{$A(a^r) = rA(a).$}$$
+\\
+Hence, it is clear that these two properties resemble logarithmic properties.\\
+Now, we make a minor modification in the above formula by introducing a left shift, i.e.,\\
+$$\textbf{$l(1+x) = \int_{0}^{x}\frac{1}{1+u}du$.}$$\\
+\begin{figure}
+   \centering
+   \includegraphics[width=9cm]{WhatsApp Image 2024-03-30 at 4.11.32 PM (1).jpeg}
+\end{figure}
+$$ \textbf{FIGURE 2.1}$$
+
+$\frac{1}{1+u}$ = $(1+u)^{-1}$. Expanding this using Newton's infinite series, we get:
+$l(1+x) = \int_{0}^{x}(1-u+u^2-u^3+u^4-\cdots)dt$ = x - $ \frac{x^2}{2} $ + $\frac{x^3}{3}$-$\cdots.$\\
+For small values of x, this series gives the exact values of logarithms.\\
+For example, if we put x=0.1 in the above expression, we get :\\
+$$\textbf{$l(1.1)=\int_{0}^{0.1}\frac{1}{1+u}du.$}$$\\
+These approximations (almost rounded off to 57 decimal places) made it possible to construct a table of base-10 logarithms.\\
+Until now, we have seen how Napier, Briggs and Newton approached logarithms.
+Now, we shall see how Euler defined logarithms.
+\section{Enter Euler}
+\\
+Euler defined the exponentials as the functions 
+of the form $y = a^z$ where $a>1.$
+Euler wrote,
+\textit{``The extent to which y depends on z,is easily understood from 
+the nature of exponents.''}
+To Euler, logarithms are nothing but the inverse of exponential functions.
+We need to obtain value of $z$ such that $a^z = y$ and this $z$ would be in terms of function of $y$ which is \textbf{logarithm} of $y$. Euler stated the following rules for logarithms :\\
+\\
+\textbf{GOLDEN RULE FOR LOGARITHMS:}\\
+\textbf{1st rule:}\\
+We can tranform logarithms from one base to the other base.For example, if we know $\log_ax$, we can easily find $\log_bx$.\\
+Consider, $\log_bx$= z, then x=$b^z$.\\
+$\log_ax$=$\log_a$b^z$$=z$\log_ab$.\\
+$$ \textbf{z= $\frac{\log_ax}{\log_ab}$.}\\$$
+\\
+\textbf{2nd rule:}\\
+The ratio of logarithms of two numbers remains the same even if we change the base of logs.\\
+$$\textbf{$\frac{\log_bt}{\log_bs}$ = $\frac{\log_at/\log_ab}{\log_as/\log_ab}$ = $\frac{\log_at}{\log_as}.$}\\$$
+\\
+Now, let us look into series expansion of the exponential function $y = a^x$, 
+where $a > 1$ (given by Euler). Let $\omega$ be an infinitely small number such that
+$a^\omega$  = l + $\psi$, where $\psi$ is also an 
+infinitely small number. $\omega$ is almost 0, so 
+$a^\omega $= $a^0$ =1,
+This gives us an infinitely small quantity $\psi$ = $a^\omega$ - 1.
+We have two infinitely small quantities $\omega$ and $\psi$.\\
+\\
+Now, the task is to relate both of them, let $\psi$ = k$\omega$,this gives us :
+$$\textbf{$a^\omega$ = 1 + $k\omega$.}$$
+We take two numerical 
+examples to find how k depends on a .\\
+\textbf{(1)} Let a = 10 and $\omega$= 0.000001,\\ so 
+ $10^{0.000001}$ = 1 + k(0.000001 ) . From table of logarithms, we find that\\ 
+k = 2.3026.\\ \textbf{(2)} Let a = 5 and $\omega$ = 0.00000 1,\\
+which gives us $5^{0.000001}$ = 1 + k(0.000001). \\We find that k=1.60944.\\
+\\
+With this, Euler concluded,\textit{`` k is a finite number that depends 
+on the value of the base a."}\\
+\\
+Now, we shall look into the expansion of $a^x$ for the finite values of $x$, let $j = x/w$,then \\
+
+\noindent \textbf{$a^x$ = $(a^\omega)^{x/\omega}$ = $(1 + k\omega)^j$ = $(1 + kx/j)^j$.}\\
+
+\noindent Now, we expand the latter using Newton's infinite series expansion.\\
+\\
+\textbf{$a^x$ = 1 + $j(\frac{kx}{j})$ + $\frac{j(j-1)}{2\cdot1}(\frac{kx}{j})^2$ + $\frac{j(j-1)(j-2)}{3\cdot2\cdot1}(\frac{kx}{j})^3$ + $\cdots$.}\\
+\\
+Since, $x$ is finte number and $\omega$ is infinitely small number, $j=x/\omega$ will be an infinitely large number.\\
+Hence,$ \lim_{j\to\infty}(j-n)/j = 1$ for $n\geq1.$. Thus,\\
+\\
+\indent $a^x$ = 1 + $kx$ + $\frac{k^2x^2}{2\cdot1}$ +  $\frac{k^3x^3}{3\cdot2\cdot1}$  + $\cdots$. \hspace{2cm} (2.1)\\
+\\
+Put x=1 in the above formula and then we get,\\
+\\
+\indent $a = 1 + k + \frac{k^2}{2\cdot1}$ + $\frac{k^3}{3\cdot2\cdot1}$ + $\cdots$.\\
+\\
+Euler had chosen 'a' as the particular base 
+for which $k = 1$. That means, select value of 'a' initially such that $a^\omega$ = 1 + $\omega$
+where $\omega$ is infinitely small. Putting $x = k = l$ into (2.1), we get,
+\\
+\\
+\indent $a = 1 + 1 + \frac{1}{2\cdot1}$ + $\frac{1}{3\cdot2\cdot1}$ + $\cdots$.\\
+\\
+\noindent Euler calculated this number to be approximately 
+$2. 71828182845904523536028$, 
+a constant which he designated as $e$. Euler called the logarithms associated with this base as \textit{``natural or hyperbolic."}\\ 
+\\
+Put $k = 1$ and $a = e$, the series in (2.1) would become,\\
+$$ e^x = 1 + x + \frac{x^2}{2\cdot1} + \frac{x^3}{3\cdot2\cdot1} + \cdots = 
+\sum_{r=0}^{\infty}\frac{x^r}{r!} $$.\\
+Now, we will look into the series expansion of logarithmic function using above formulae. Euler knew that, for infinitely small $\omega$,
+\textbf{$ e^\omega $ =1 + $\omega$}.
+Then, $\omega =\ln(1+\omega)$ and $j\omega = j\ ln(l + \omega) = \ln(l + \omega )^j$. \\
+We must note that $\omega$ is positive (though it is a infinitely small value)
+and $j$ is infinitely large and hence  $( 1 + \omega)^j$ exceeds 1.
+We need to find j such that $x = ( 1 + \omega)^j$ - 1.\\
+One must note three important points from above formulae :\\
+\textbf{(1)} $\omega$ = $(1 + x)^{1/j}$ - 1 \\
+\textbf{(2)}  $1 + x =  (1 + \omega)^j = e^{\omega j} $\\
+Hence, $\ln(1 + x) = j\omega$.\\
+\textbf{(3)}  $\ln(1 + x)$ is finite quantity and $\omega$ is infinitely small, hence $j$ must be 
+infinitely large. \\
+\\
+\\
+Now, we shall see the infinite series expansion of natural log function given by Euler:\\
+$\ln(1 + x) = j\omega = j [(1 + x)^{1/j} - 1] = j[ 1 + \frac{1}{j}x + \frac{\frac{1}{j}(\frac{1}{j}-1)}{2\cdot1}x^2 + \cdots] - j\\
+= x - \frac{j-1}{2j}x^2 + \frac{(j-1)(2j-1)}{2j\cdot3j}x^3 + \cdots$.\\
+Since, $j$ is infinitely large, $ \lim_{j\to\infty}(j-n)/j = 1$ for $n\geq1.$\\ 
+\noindent Hence,\\
+$$\textbf{$\ln(1+x)$ =  x - $\frac{x^2}{2}$ + $\frac{x^3}{3}$ - $\cdots$.}$$\\
+Replacing x with -x, we get,
+$$\textbf{$\ln(1-x)$ = - x - $\frac{x^2}{2}$ - $\frac{x^3}{3}$ - $\cdots$.}$$\\
+Thus,\\
+$$ \ln\frac{1+x}{1-x} = 2[ x + \frac{x^3}{3} + \frac{x^5}{5} + \cdots].$$
+\\
+Euler called this series ``strongly convergent" for small values of x.
+This makes our logarithmic calculations easier. For example if we want to calculate $\log_{10}5$ , \\
+Put x=$\frac{1}{3}$ in the above expression,\\
+$\ln\frac{1+\frac{1}{3}}{1-\frac{1}{3}}$ = 2[$\frac{1}{3}$ + $\frac{1}{81}$ + $\frac{1}{1215}$ + $\cdots$ ].or $\ln2$ = 0.693135.\\
+Now, put  x=$\frac{1}{9}$ in the above expression,\\
+$\ln\frac{1+\frac{1}{9}}{1-\frac{1}{9}}$ = 2[$\frac{1}{9}$ + $\frac{1}{2187}$ + $\cdots$ ], that means, $\ln(\frac{5}{4})$ = 0.223143.\\
+We know that, $\ln5$ = $\ln(\frac{5}{4}\times4)$ = $\ln(\frac{5}{4})$ + 2$\ln2$.\\
+Hence,  $\ln5$ = 1.609413.\\
+$\ln10$ = $\ln 5$ + $\ln 2$ = 1.609413 + 0.693135 = 2.302548.\\
+Now, using 2nd rule in \textbf{GOLDEN RULE OF LOGARITHMS},\\
+$$ \log_{10}5 = \frac{\ln5}{\ln10} = \frac{1.609413}{2.302548} = 0.698970.$$ \\
+Euler, in his 1755 textbook, the \textit{``Institutiones calculi differentialis"} found
+ differential of $\ln x$. \\
+Consider $y = \ln x$, \\
+Whenever $y=f(x)$, $\frac{dy}{dx}$= $\frac{f(x+h)-f(x)}{h}$. Consider $h=dx$ here,\\
+then $dy$= $\ln(x + dx)$ - $\ln x$ = $\ln( 1 + \frac{dx}{x})$.\\
+$$ dy= \left(\frac{dx}{x}\right) - \frac{(dx/x)^2}{2} +  \frac{(dx/x)^3}{3} + \cdots. $$\\
+$dx$ is a small quantity and hence higher powers of $dx$ are infinitely small and we could neglect all the higher powers of $dx$.\\
+\\
+Hence $dy = dx/x$.\\
+$dy/dx = 1/x$.\\
+Thus,Differential of $\ln x$ is 1/$x$.\\
+$$D_{x}{[ln x]} = dy/dx = 1/x. $$
+\\
+\section{Epilogue}
+Now, we will see how logarithms and harmonic series are related.
+Let us consider a harmonic series $\sum_{k=1}^{\infty}1/k$. The rate at which sum grows is too less. $\sum_{k=1}^{20}1/k \approx$ 3.60 , $\sum_{k=1}^{220}1/k \approx $ 5.98;
+From these two values, it is clear that sum of first 20 terms is greater than sum of next two-hundred terms and this slow increase in sum is termed as 
+\textit{``glacial slowness".}\\
+\textbf{The harmonic Series $\sum_{k=1}^{\infty}1/k$ diverges to infinity:}\\
+Though the increase in sum of numbers is too less when compared to number of terms added, there is certainly atleast a minute increase (to the previous terms) which makes the series to diverge even when the individual terms tend to zero.\\
+\\
+\textbf{Jakob Bernoulli},  in his 1689 classic, \textit{``Tractatus de 
+seriebus infinitis (Treatise on infinite series)"},  proved that the harmonic series diverges.\\
+\\
+\textbf{Theorem.} \textit{The harmonic series diverges.}\\
+\textit{Proof.} Let $a>1$ , then we need to show that\\
+ $$ \frac{1}{a} + \frac{1}{a+1} + \frac{1}{a+2} + \cdots + \frac{1}{a^2} \geq 1. $$\\
+Now, consider the sum $ \frac{1}{a+1} + \frac{1}{a+2} + \cdots + \frac{1}{a^2} .$ \\
+This series has $a^2 - a$ fractions and we know that,\\
+Whenever $n \leq a$, $a+n \leq 2a \leq a^2$.\\
+Hence $\frac{1}{a+n} \geq \frac{1}{a^2}. $\\
+Thus  $ \frac{1}{a+1} + \frac{1}{a+2} + \cdots + \frac{1}{a^2} \geq (a^2-a)(\frac{1}{a^2}) = 1 - \frac{1}{a}. $\\
+Now, add 1/a to both sides, we get,\\
+ $\frac{1}{a} + \frac{1}{a+1} + \frac{1}{a+2} + \cdots + \frac{1}{a^2} \geq 1.$ \\
+ Now, let us consider,\\
+  $$\sum_{k=1}^{\infty}\frac{1}{k} = 1 + (\frac{1}{2} + \frac{1}{3} + \frac{1}{4}) +
+  (\frac{1}{5} + \frac{1}{6} + \cdots + \frac{1}{25}) + \cdots. $$\\
+        $$\sum_{k=1}^{\infty}\frac{1}{k}  \geq 1 + 1 + 1 + \cdots. $$\\
+This proves that harmonic series diverges to infinity because it grows larger than the previous quantity.Leibniz provided his own derivation for the formula $\frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots. $ Euler gave divergence proof for harmonic series in his book Introductio.Now, we shall see Euler's divergence proof for harmonic series:\\
+\begin{thm}\label{thm:Type 1} The harmonic series diverges.\\
+\end{thm}
+\textit{Proof.} Euler started by taking the infinite series expansion of  $\ln(1-x)$.\\
+$$ \ln(1-x) = -x - \frac{x^2}{2} - \frac{x^3}{3} - \cdots. $$
+Put $x=1$, we get,\\
+$ \ln0 = -(1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots) $,\\
+$ 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots = -\ln0 = \ln\infty = \infty. $
+Now, Euler tried to find a relation between harmonic series and logartithmic series by substituting\\ $x = 1/n$ in $\ln (1+x)$ series.\\
+$ \ln(1+\frac{1}{n}) = \frac{1}{n} - \frac{1}{2n^2} + \frac{1}{3n^3} - \cdots. $\\
+$$ \frac{1}{n} = \ln(1+\frac{1}{n}) + \frac{1}{2n^2} - \frac{1}{3n^3} + \cdots. $$
+For large $n$, $\frac{1}{n} = \ln\left(1+\frac{1}{n}\right)$. Substituting $n$ = 1, 2, 3, ...we get :
+\begin{align*}
+1 =& \ln2 + \frac{1}{2} - \frac{1}{3} + \frac{1}{4} - \cdots\\
+\frac{1}{2} =& \ln\left(\frac{3}{2}\right) + \frac{1}{8} - \frac{1}{24} + \frac{1}{64} - \cdots\\
+\vdots& \hspace{0.5cm} \vdots \hspace{0.5cm} \vdots \hspace{0.5cm} \vdots \\
+\frac{1}{n} =& \ln\left(\frac{n+1}{n}\right) + \frac{1}{2n^2} - \frac{1}{3n^3} + \frac{1}{4n^4} - \cdots.\\
+\end{align*}
+We can add all the terms down the column to get :
+\begin{align*}
+\sum_{k=1}^{n} \frac{1}{k} =& [ \ln2 + \ln\frac{3}{2} + \ln\frac{4}{3} + \cdots + \ln(\frac{n+1}{n})]\\ +& \frac{1}{2}
+[1 + \frac{1}{4} + \cdots + \frac{1}{n^2}] - \frac{1}{3} [1 + \frac{1}{8} + \cdots + \frac{1}{n^3}] + \cdots. 
+\end{align*}
+We know that,\\
+$ \ln2 + \ln\frac{3}{2} + \ln\frac{4}{3} + \cdots + \ln(\frac{n+1}{n}) = \ln2 + \ln3 -\ln2 + \ln4 - \ln3 + \cdots + \ln(n+1) - \ln n = \ln(n+1) . $\\
+Euler approximated sum of remaining terms to be 0.577218.
+\\
+$$ \sum_{k=1}^{n} \frac{1}{k} \approx \ln(n+1) + 0.577218. $$ \\
+Greek letter $\gamma$ is known as \textbf{"EULER'S CONSTANT."}\\
+$$ \gamma = \lim_{n\to\infty}[\sum_{k=1}^{n} \frac{1}{k} - \ln(n+1) ].$$\\
+Now, we prove that that above defined number exists.\\
+\begin{thm}\label{thm:Type 1}  $ \lim_{n\to\infty}[\sum_{k=1}^{n} \frac{1}{k} - \ln(n+1) ]$ exists.\\
+\end{thm}
+\noindent \textit{Proof.}  Let,\\
+$$  c_{n} = \sum_{k=1}^{n} \frac{1}{k} - \ln(n+1). $$\\
+\begin{figure}
+    \centering
+    \includegraphics[width=10cm]{WhatsApp Image 2024-03-30 at 4.02.22 PM (1).jpeg}
+\end{figure}
+$$\textbf{FIGURE 2.2}$$
+Consider,
+\begin{align*}
+c_{n+1} - c_{n}  =& [\sum_{k=1}^{n+1} \frac{1}{k} - \ln(n+2)] - [\sum_{k=1}^{n} \frac{1}{k} - \ln(n+1)] \\
+ =&  \frac{1}{n+1} - \ln(n+2) + \ln(n+1) \\
+=& \frac{1}{n+1} - \int_{n+1}^{n+2}\frac{1}{x}dx > 0,\\
+\end{align*}
+As shown in Figure 2.2, the integral is the shaded area below the hyperbola $y = 1/x$   and $1/(n + 1)$ is the area of larger rectangle (part under the hyperbola.)
+it. Hence $c_{1} < c_{2} < \cdots < c_{n} < c_{n+1}
+ < \cdots$ , thus the sequence \{$c_{n}$\} is 
+increasing.\\
+\\
+From Figure 2.3, it is clear that the sum of the rectangular blocks 
+will be less than the  area under the curve.\\
+Hence,\\
+$\sum_{k=1}^{n}\frac{1}{k} = 1 + \sum_{k=2}^{n}\frac{1}{k}  < 1 + \int_{1}^{n}\frac{1}{x}dx = 1 + \ln n < 1 + \ln (n+1).$\\
+Thus,\\
+$$  c_{n} = \sum_{k=1}^{n} \frac{1}{k} - \ln(n+1) < 1$$ for all n.\\
+With this, we can conclude that \{$c_{n}$\} is an increasing sequence bounded above by 1. Hence,
+\begin{figure}
+          \centering
+        \includegraphics[width=13cm]{WhatsApp Image 2024-03-30 at 4.02.08 PM (1).jpeg}
+\end{figure}
+$$\textbf{FIGURE 2.3}$$
+$\gamma = \lim_{n\to\infty}c_{n}$ exists.\\
+\\
+Slight modification of the formula gives,\\
+$$ \gamma = \lim_{n\to\infty}[\sum_{k=1}^{n} \frac{1}{k} - \ln n ].$$\\
+However there isn't a big difference between above two formulas and we will prove that.
+\begin{align*}
+\lim_{n\to\infty}[\sum_{k=1}^{n} \frac{1}{k} - \ln n ]
+=& \lim_{n\to\infty}[\sum_{k=1}^{n} \frac{1}{k} -\ln(n+1) + \ln(n+1) - \ln n ]\\
+=& \lim_{n\to\infty}[\sum_{k=1}^{n} \frac{1}{k} -\ln(n+1)] + \lim_{n\to\infty}\ln(1+\frac{1}{n})\\
+=& \gamma + 0 = \gamma. 
+\end{align*}
+$\gamma$ is the most important constant term. 
+\\It was termed as \textit{``worthy of serious attention"} by Euler.\\
+\\
+We have many formulas for $\gamma$. Some of them are:\\
+$\gamma = -\int_{0}^{\infty}e^{-x}\ln x  dx .$\\
+$\gamma = [\frac{1}{2.2!} - \frac{1}{4.4!} + \frac{1}{6.6!} - \cdots] - \int_{1}^{\infty} \frac{cosx}{x} dx.$\\
+$\gamma = \lim_{x\to1^+} \sum_{n=1}^{\infty} ( \frac{1}{n^x} - \frac{1}{x^n} ) $ with symmetry in x and n.\\
+\\
+
+\noindent Lorenzo 
+Mascheroni (1750-1800) computed $\gamma$ upto 32-place accuracy. 
+Johann Georg von Soldner ( 1776-1833) gave $\gamma$ value which differs from that of
+Mascheroni's at the \textit{twentieth} decimal place. F. B. G. Nicolai ( 1793-1846) found the constant upto 40 places and proved that  von Soldner 
+was right and Mascheroni was wrong.\\
+\\
+Despite the fact that Mascheroni gave the wrong value for $\gamma$ (at twentieth decimal place) ,the effort Mascheroni put was appreciated and \\$\gamma$ is termed as \textbf{``EULER-MASCHERONI CONSTANT".}\\
+\\
+In this report, we have seen logarithms as functions and expansion of $\ln(1+x)$ as given by Euler. We have also seen how logarithms and harmonic series are related, which in turn led to the discovery of constant $\gamma.$
+\\
+\\
+\begin{thebibliography}{99}
+		\addcontentsline{toc}{chapter}{References}
+		
+		\bibitem{ref 1} Carl Boyer. History of Analytic Geometry, Scnpta Mathematica, New York, 1956, p 1 80
+		
+		\bibitem{ref 2} Euler, Introduction to Analvsis of the Infinite, Book I. trans John Blanton, Spnnger-Verlag, New 
+York. 1988, p 3
+  \bibitem{ref 3} E. W. Hobson, "Squanng the Circle: A History of the Problem," in Squaring the Circle and Other 
+Monographs. Chelsea, New York. p 42 
+\bibitem{ref 4} Victor Katz, A History of Mathematics An Introduction, Addison-Wesley, Reading, MA, 1998, 
+p. 420
+
+		
+
+		
+		
+	\end{thebibliography}
+ 
+ \chapter{Euler and Infinite Series}
+ \begin{abstract}
+	 Before seventeenth century, people had very less knowledge about infinite series but by the end of seventeenth century, Jakob Bernoulli and Euler gave interesting theorems and proofs on infinite series and thus people gained knowledge on this particular topic too.Jakob Bernoulli mentioned infinite series in his book \textit{Tractatus de seriebus infinitis} in the year 1689.
+Euler worked on infinite series and found so-called ``Basel Problem".\\
+	\end{abstract}
+	
+\section{PROLOGUE}
+Jakob Bernoulli proved the divergence of 
+the harmonic series $\sum_{k=1}^{\infty}\frac{1}{k}$. Along with this, he found exact sums of many convergent series. For instance, he gave the exact sum for simplest infinite geometric series.\\
+$$a + ar + ar^2 + ar^3 + \cdots + ar^k + \cdots = \frac{a}{1-r}$$
+where $-1 < r < 1.$\\
+\\
+Consider the infinite series $1 + \frac{1}{3} + \frac{1}{6} + \frac{1}{10} + \cdots.$\\
+We observe that the denominators in the above infinite series are in the form of $k(k+1)/2$ for some value of $k$ and hence $kth$ denominator in the infinite series is the $kth$ triangular number.\\
+We proceed in the following manner :\\
+$1 + \frac{1}{3} + \frac{1}{6} + \frac{1}{10} + \cdots.$\\
+= $2[\frac{1}{2} + \frac{1}{6} + \frac{1}{12} + \cdots ]$\\
+= $2[(1-\frac{1}{2}) + (\frac{1}{2}-\frac{1}{3}) + (\frac{1}{3}-\frac{1}{4}) + \cdots]$\\
+= 2[1]=2.\\
+This is because we can cancel all the terms in the square bracket in pairs except the first and this procedure is known as \textbf{''telescoping series."}\\
+$$\sum_{k=1}^{\infty} \frac{1}{k(k+1)/2} = 2.$$
+\noindent Now, we shall see how Jakob Bernoulli found the exact sum of the following infinite series :\\
+$$ \frac{a}{b} + \frac{a+c}{bd} + \frac{a+2c}{bd^2} + \frac{a+3c}{bd^3} + \cdots.$$
+\\
+It is clear that the numerators $a,a+c,a+2c,a+3c,.... $ are in arithmetic progression and denominators $b,bd^2,bd^3,.....$ are in geometric progression.
+Jakob solved this infinite series in Section XIV of his book \textit{Tractatus} by splitting up the terms :\\
+\begin{eqnarray*}
+\frac{a}{b} + \frac{a+c}{bd} + \frac{a+2c}{bd^2} + \frac{a+3c}{bd^3} + \cdots.\\
+= (\frac{a}{b} + \frac{a}{bd} + \frac{a}{bd^2} + \frac{a}{bd^3} + \cdots)\\
+ \indent + (\frac{c}{bd} + \frac{c}{bd^2} + \frac{c}{bd^3} + \cdots)\\
+\indent + (\frac{c}{bd^2} + \frac{c}{bd^3} + \cdots)\\
+  \indent + (\frac{c}{bd^3} + \cdots)\\
+  \end{eqnarray*}
+  \\
+We find that each infinite series in parentheses is in geometric progression and, given $d > 1$, each infinite series will be convergent. Hence, we can use sum of infinite geometric series to proceed further.\\
+\begin{align*}
+\frac{a}{b} + \frac{a+c}{bd} + \frac{a+2c}{bd^2} + \frac{a+3c}{bd^3} + \cdots\\
+\indent =& \frac{a/b}{1-1/d} + \frac{c/bd}{1-1/d} + \frac{c/bd^2}{1-1/d} + \cdots\\
+\indent =& \frac{ad}{bd-b} + \frac{c}{bd-b}[1 + \frac{1}{d} + \frac{1}{d^2} + \cdots] \\
+\indent =& \frac{ad}{bd-b} + \frac{c}{bd-b}[\frac{1}{1-1/d}] \\
+\indent =& \frac{ad^2 - ad + cd}{bd^2 - 2bd + b}.\\
+\end{align*}
+For example, take $a = 1, b = 3, c = 5, d = 7$, then,\\
+$$\frac{1}{3} + \frac{6}{21} + \frac{11}{147} + \cdots = \frac{77}{108}.$$
+Jakob Bernoulli also found exact sum of some other convergent series like,\\
+$$\sum_{k=1}^{\infty}\frac{k^2}{2^k} = 6.$$
+$$\sum_{k=1}^{\infty}\frac{k^3}{2^k} = 26.$$
+Now, we shall look into the series of the form $\sum_{k=1}^{\infty}\frac{1}{k^p}$.\\
+$$\sum_{k=1}^{\infty}\frac{1}{k^p} = 1 + \frac{1}{2^{p}} + \frac{1}{3^p} + \cdots + \frac{1}{k^p} + \cdots.$$
+The above series is called as \textbf{"$p$-series"} and if $p=1$, this series becomes divergent harmonic series which Jakob had proved already. Now, we deal with the case where $p=2$ and the above series becomes :\\
+$$ 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots + \frac{1}{k^2} + \cdots .$$
+Pietro Mengoli and Leibniz tried solving the above infinite series but failed in doing so.\\
+Bernoulli solved this infinite series using the equation $2k^2 \geq k(k+1)$ which is obvious and can be proved using induction.Thus, he established :\\
+$$ \frac{1}{k^2} \leq \frac{1}{k(k+1)/2}. $$
+Thus,\\
+$ 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots + \frac{1}{k^2} + \cdots \leq 1 + \frac{1}{3} + \frac{1}{6} + \frac{1}{10} + \cdots \frac{1}{k(k+1)/2} + \cdots.$\\
+\\
+We proved earlier that the latter series converges to 2 and hence\\
+$\sum_{k=1}^{\infty}1/k^2 \leq 2.$ For $p \geq 2$, $k^p \geq k^2$ and $1/k^p \leq 1/k^2.$ Hence , for all $p \geq 2,$\\
+$$\sum_{k=1}^{\infty}1/k^p \leq 2.$$
+Thus $\sum_{k=1}^{\infty}1/k^p$ converges for $p=3,4,5....$
+The method used above is termed as \textbf{''comparison test"} which led us to the conclusion that the given infinite series converges.
+However, Jakob Bernoulli failed in giving the exact sum of the above infinite series. He wrote in his book \textit{Tractatus} from Basel :\\
+\indent \textit{"If anyone finds and communicates to us that which thus far has eluded our efforts, great will be our gratitude."}\\
+Years later, the challenging ''Basel Problem" was solved by Euler.\\
+\section*{ENTER EULER}
+
+Euler started approximating the infinite series $\sum_{k=1}^{\infty}1/k^2$
+by adding first few terms.He found that the series converges very slowly.For instance, he found sum of the first ten, hundred and thousand terms to be 
+1.54977, 1.63498, 1.64393 respectively.\\
+$$1 + \frac{1}{4} + \frac{1}{9} + \cdots + \frac{1}{100} = 1.54977;$$
+$$1 + \frac{1}{4} + \frac{1}{9} + \cdots + \frac{1}{10000} = 1.63498;$$
+$$1 + \frac{1}{4} + \frac{1}{9} + \cdots + \frac{1}{1000^2} = 1.64393.$$
+\\
+Though the number of terms added is huge, the sum is getting increased only by a bit i.e., the rate at which sum grows is too less and this is termed as \textbf{``glacial slowness"} in increase in the sum. We must note that all three values of sum are less than 2 (follows Jakob's comparison test). However, direct numerical approximation cannot be done for infinite number of terms.\\
+\\
+Thus, Euler changed his approach and then he started solving the following improper integral :\\
+$$I = \int_{0}^{1/2} -\frac{\ln(1-t)}{t} dt.$$
+He solved this integral in two different ways and linked both of them. Firstly, he solved the integral using expansion of $\ln(1-t).$\\
+We know that $\ln(1-t) = -t -t^2/2 -t^3/3 - \cdots.$ Thus,\\
+\begin{align*}
+I =& \int_{0}^{1/2} -\frac{-t -t^2/2 -t^3/3 - \cdots}{t} dt\\
+=& \int_{0}^{1/2} (1 + \frac{t}{2} + \frac{t^2}{3} + \frac{t^3}{4} + \cdots)dt\\
+= & \left[t + \frac{t^2}{4} + \frac{t^3}{9} + \frac{t^4}{16} + \cdots\right]_0^{1/2}\\
+= & \frac{1}{2} + \frac{1/2^2}{4} + \frac{1/2^3}{9} + \frac{1/2^4}{16} + \cdots. \hspace{3cm} (3.1)\\
+\end{align*}
+Then, he solved the same integral by substituting $z=1-t$ and the above intregral tranforms as follows :\\
+\\
+$I = \int_{0}^{1/2} -\frac{\ln(1-t)}{t} dt = \int_{1}^{1/2} \frac{\ln z}{1-z} dz \\
+\\
+\indent = \int_{1}^{1/2} (1 + z + z^2 +\cdots)\ln zdz\\
+\indent = \int_{1}^{1/2}\ln zdz + \int_{1}^{1/2}z\ln zdz + \int_{1}^{1/2} z^2\ln zdz + \cdots,$\\
+\\
+this is because,\\$1/(1-z) = (1-z)^{-1} = 1 + z + z^2 + z^3 + \cdots.$\\
+\\
+We could use integration by parts to find $\int_{1}^{1/2}z^n\ln zdz$ :\\
+$$\int_{1}^{1/2}z^n\ln zdz = \left[\frac{z^{n+1}}{n+1}\ln z - \frac{z^{n+1}}{(n+1)^2}\right]_1^{1/2}.$$
+Thus, we obtain :
+\begin{align*}
+I =&  \left[(z\ln z - z) + \left(\frac{z^2}{2}\lnz - \frac{z^2}{4}\right) + \left(\frac{z^3}{3}\lnz - \frac{z^3}{9}\right) + \cdots\right]_1^{1/2}\\
+=& \left[\lnz\left[z + \frac{z^2}{2} + \frac{z^3}{3} + \frac{z^4}{4} + \cdots\right] - \left(z + \frac{z^2}{4} + \frac{z^3}{9} + \frac{z^4}{16} + \cdots\right)\right]_1^{1/2}\\
+=& \left[\ln z[-\ln(1-z)] - \left(z + \frac{z^2}{4} + \frac{z^3}{9} + \frac{z^4}{16} + \cdots\right)\right]_1^{1/2}\\
+=& -\left[\ln\left(\frac{1}{2}\right)\right]^2 - \left(\frac{1}{2} + \frac{1/2^2}{4} + \frac{1/2^3}{9} + \cdots\right) + [\ln1][\ln0] + \sum_{k=1}^{\infty}\frac{1}{k^2}.
+\end{align*}
+We know that, $lim_{z\to1^-}[\ln z][\ln(1-z)]$ = 0, Hence $[\ln1][\ln0]$ can be neglected. Thus,\\
+$I = -[\ln2]^2 - \left(\frac{1}{2} + \frac{1/2^2}{4} + \frac{1/2^3}{9} + \cdots\right) + \sum_{k=1}^{\infty}\frac{1}{k^2}.$ \hspace{3cm} (3.2)\\
+\\
+We can equate (3.1) and (3.2) to get :\\
+\begin{align*}
+\sum_{k=1}^{\infty}\frac{1}{k^2} =& 2\left(\frac{1}{2} + \frac{1/2^2}{4} + \frac{1/2^3}{9} + \cdots\right) + [\ln2]^2. \\
+=& \sum_{k=1}^{\infty}\frac{1}{k^22^{k-1}}  + [\ln2]^2.
+\end{align*}
+The above proof was given a huge hype and there is a clear reason behind it. It is not easy to find an integral which finally leads us to obtain the value of $\sum_{k=1}^{\infty}1/k^2$ and Euler had done that. Euler's effort was appreciated.Euler used many topics like integration by parts, logarithmic expansions etc, to solve the proof and final result which Euler gave is as follows :
+
+$$\sum_{k=1}^{\infty}\frac{1}{k^2} = \sum_{k=1}^{\infty}\frac{1}{k^22^{k-1}}  + [\ln2]^2.$$
+This is a rapidly converging series as it contains $2^{k-1}$ in the denominator and Euler knew the value of $[\ln2]^2$. By taking only fourteen terms in the formula,we get : $$\sum_{k=1}^{\infty}1/k^2 \approx 1.644934,$$ an accurate value upto six decimal places.\\
+Jakob Bernoulli had challenged mathematicians across the world to find the 
+exact value of $\sum_{k=1}^{\infty}1/k^2$ and four years later, in 1735, Euler finally completed this challenge.\\
+\indent Euler asserted that,\\
+$$\sum_{k=1}^{\infty}\frac{1}{k^2} = \frac{\pi^2}{6}.$$
+The proof for this requires two observations: First one is,let us consider an $n$th degree polynomial equation $P(x) = 0$ which has non-zero roots $a_{1},a_{2},a_{3},.....,a_{n}$ such that $P(0) = 1$, then $P(x)$ can be represented as
+$$P(x) = \left(1-\frac{x}{a_{1}}\right)\left(1-\frac{x}{a_{2}}\right)\cdots\left(1-\frac{x}{a_{n}}\right)$$
+This is clear, because if we substitue $x = 0$, we get $P(0) = 1.$ also substituting $x = a_{k}$ gives $P(a_{k}) = 0$ for $k = 1, 2, ... n.$ He also needed series expansion of $\sin x$ for his proof,
+$$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots.$$
+\\
+Now, we shall see Euler's solution of the Basel problem.\\
+\\
+\begin{thm}\label{thm:Type 1} $\sum_{k=1}^{\infty}\frac{1}{k^2} = \frac{\pi^2}{6}.$\\
+\end{thm}
+\textit{Proof}
+Euler considered an infinite polynomial say,\\
+$$P(x) = 1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \cdots.$$
+It is clear that $P(0) = 1.$ In order to find the roots of $P(x)$, for $x \neq 0,$ we must note that,
+\begin{align*}
+P(x) =& x\left[\frac{1 - x^2/2! + x^4/5! - x^6/7! + \cdots}{x}\right]\\
+=& \frac{x - x^3/3! + x^5/5! - x^7/7! + \cdots}{x} = \frac{\sin x}{x}.
+\end{align*}
+$P(x) = 0$ implies that $\sin x = 0$ that means, $x = \pm k\pi$ for 
+$k = 1, 2,....$. $x = 0$ is not a solution to $P(x) = 0$ because $P(0) = 1$. 
+Hence, Euler now factorised $P(x)$ as:\\
+\begin{align*}
+P(x) =& \left(1 - \frac{x}{\pi}\right)\left(1 - \frac{x}{-\pi}\right)\left(1 - \frac{x}{2\pi}\right)\left(1 - \frac{x}{-2\pi}\right)\cdots\\
+=& \left[1 - \frac{x^2}{\pi^2}\right]\left[1 - \frac{x^2}{4\pi^2}\right]\left[1 - \frac{x^2}{9\pi^2}\right]\cdots \hspace{3.7cm} (3.3)
+\end{align*}
+Euler expanded the right-hand side of (3.3) to get:\\
+\\
+$$1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \cdots = 1 - \left(\frac{1}{\pi^2} + \frac{1}{4\pi^2} + \frac{1}{9\pi^2} + \cdots \right)x^2 + \cdots \hspace{0.5cm} (3.4) $$
+Euler neglected the coefficients of $x^4$ and higher even powers. Then, he equated the coefficients of $x^2$ in (3.4) to get:
+\begin{align*}
+-\frac{1}{3!} =& -\left(\frac{1}{\pi^2} + \frac{1}{4\pi^2} + \frac{1}{9\pi^2} + \cdots \right)\\
+=& -\frac{1}{\pi^2}\left(1 + \frac{1}{4} + \frac{1}{9} + \cdots \right),
+\end{align*}
+and then he concluded that
+$$\left(1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots \right) = \frac{\pi^2}{6}.$$
+
+The Basel Problem was finally solved. Euler had answered Bernoulli's unresolved question. For instance, a calculation revealed that $\pi^2 /6 \approx 1.644934$, Euler had discovered the same a few years earlier. So, his proof and numerical value makes sense. John Wallis (1616-1703) demonstrated that\\
+$$ \frac{2}{\pi} = \frac{1\cdot3\cdot3\cdot5\cdot5\cdot7\cdot7\cdot9\cdots}{2\cdot2\cdot4\cdot4\cdot6\cdot6\cdot8\cdot8\cdots}.$$
+Euler showed that the infinite product in expression (3.3) leads to an 
+alternate derivation of Wallis's formula. He put $x = \pi/2$ in the expressiona and obtained the following:
+$$P\left(\frac{\pi}{2}\right) = \left[1 - \frac{(\pi/2)^2}{\pi^2}\right]\left[1 - \frac{(\pi/2)^2}{4\pi^2}\right]\left[1 - \frac{(\pi/2)^2}{9\pi^2}\right]\cdots,$$
+which gives,\\
+\begin{align*}
+\frac{\sin(\pi/2)}{\pi/2} =& \left[1-\frac{1}{4}\right]\left[1-\frac{1}{16}\right]\left[1-\frac{1}{36}\right]\cdots\\
+=&  \frac{3}{4} \times \frac{15}{16} \times \frac{35}{36} \times \cdots.
+\end{align*}
+which in  turn gives,
+$$ \frac{2}{\pi} = \frac{1\cdot3\cdot3\cdot5\cdot5\cdot7\cdot7\cdot9\cdots}{2\cdot2\cdot4\cdot4\cdot6\cdot6\cdot8\cdot8\cdots}.$$
+\\
+Johann Bernoulli,after learning the solution, wrote : \textit{``Utinam Frater superstes effet !" (If only my brother were alive!)}
+Andre Weil called this as \textit{``One of Euler's most sensational early discoveries, perhaps the one which established his growing reputation most firmly."} Euler turned his attention to find the exact sum of p-series 
+with $p > 2$. Euler realized that he need to find coefficients of $x^4, x^6,$ and so on in equation (3.4) for this. The tools to determine these coefficients could be found in ``Newton's formulas." These formulae describes the link between the roots and the coefficients of a polynomial equations. According to Newton:\\
+\indent \textit{``he coefficient of the second term in an equation is, if its sign be changed, equal to the aggregate of all the roots under their proper 
+signs; that of the third equal to the aggregate of the products of the 
+separate roots two at a time; that of the fourth, if its sign be changed, 
+equal to the aggregate of the products of the individual roots three at 
+a time; that of the fifth equal to the aggregate of the products of the 
+roots four at a time; and so on indefinitely."}\cite{ref 1}\\
+\vspace{2ex}
+\hfill{-Euler-The Master of Us All,Chapter 3,pg.50}
+\begin{thm}\label{thm : Type 1}If the $n$th degree polynomial $P(y) = y^n - Ay^{n-1} + By^{n-2} - Cy^{n-3} + \cdots \pm N$ is factorised as $P(y) = (y-r_{1})(y-r_{2})\cdots(y-r_{n}),$ then 
+\begin{align*}
+    \sum_{k=1}^{n}r_{k} =& A,\\
+    \sum_{k=1}^{n}r_{k}^2 =& A\sum_{k=1}^{n}r_{k} - 2B,\\
+    \sum_{k=1}^{n}r_{k}^3 =& A\sum_{k=1}^{n}r_{k}^2 - B\sum_{k=1}^{n}r_{k} + 3C,\\
+    \sum_{k=1}^{n}r_{k}^4 =& A\sum_{k=1}^{n}r_{k}^3 -B\sum_{k=1}^{n}r_{k}^2 + C\sum_{k=1}^{n}r_{k} - 4D,...
+    \end{align*}
+    \end{thm}
+\textit{Proof.}
+Euler's main objective was to connect the coefficients of polynomial equation $A,B,C,....,N$ with its roots $r_{1},r_{2},...,r_{n}.$ First, he took logs:\\
+$$\ln P(y) = \ln(y-r_{1}) + \ln(y-r_{2}) + \cdots +\ln(y-r_{n}).$$
+Euler differentiated on both sides to get:\\
+$$\frac{1}{P(y)}\frac{dP}{dy} = \frac{1}{y-r_{1}} + \frac{1}{y-r_{2}} + \cdots + \frac{1}{y-r_{n}}. \hspace{2cm} (3.5) $$
+Euler converted each fraction $1/ (y -r_{k})$ into its geometric series: 
+\begin{align*}
+ \frac{1}{y-r_{k}} =& \frac{1}{y}\left(\frac{1}{1-(r_{k}/y)}\right)\\
+ =& \frac{1}{y}\left(1 + \frac{r_{k}}{y} + \frac{r_{k}^2}{y^2} + \cdots\right)\\
+ =& \frac{1}{y} + \frac{r_{k}}{y^2} + \frac{r_{k}^2}{y^3} + \cdots
+ \end{align*}
+ From (3.5), we get
+\begin{align*}
+\frac{P'(y)}{P(y)} =& \frac{1}{y-r_{1}} + \frac{1}{y-r_{2}} + \cdots + \frac{1}{y-r_{n}}\\
+ =& \frac{n}{y} + [\sum_{k=1}^{n}r_{k}]\frac{1}{y^2} + [\sum_{k=1}^{n}r_{k}^2]\frac{1}{y^3} + \cdots. \hspace{2cm} (3.6)
+ \end{align*}
+We have,\\
+$$\frac{P'(y)}{P(y)} = \frac{ny^{n-1} - A(n-1)y^{n-2} + B(n-2)y^{n-3} - \cdots}{y^n - Ay^{n-1} + By^{n-2} - Cy^{n-3} + \cdots \pm N}, \hspace{1cm} (3.7)$$
+Euler equated the expressions from (3.6) and (3.7) to get:\\
+\\
+$ny^{n-1} - A(n-1)y^{n-2} + B(n-2)y^{n-3} - \cdots$
+\begin{align*}
+=& (y^n - Ay^{n-1} + By^{n-2} - Cy^{n-3} + \cdots \pm N)\\ \times&  \left(\frac{n}{y} + [\sum_{k=1}^{n}r_{k}]\frac{1}{y^2} + [\sum_{k=1}^{n}r_{k}^2]\frac{1}{y^3} + \cdots\right)\\
+=& ny^{n-1} + \left(-nA + \sum_{k=1}^{n}r_{k}\right)y^{n-2}\\\ +& \left(nB -A\sum_{k=1}^{n}r_{k} + \sum_{k=1}^{n}r_{k}^2\right)y^{n-3} - \cdots.
+\end{align*}
+Now, we compare coefficients of polynomial equation on both sides to get desired relationships which have been stated, that is,\\
+$\sum_{k=1}^{n}r_{k} = A,\\
+\sum_{k=1}^{n}r_{k}^2 = A\sum_{k=1}^{n}r_{k} - 2B,\\
+\sum_{k=1}^{n}r_{k}^3 = A\sum_{k=1}^{n}r_{k}^2 - B\sum_{k=1}^{n}r_{k} + 3C,\\
+\sum_{k=1}^{n}r_{k}^4 = A\sum_{k=1}^{n}r_{k}^3 -B\sum_{k=1}^{n}r_{k}^2 + C\sum_{k=1}^{n}r_{k} - 4D.$
+\\
+Using above results, Euler returned to (3.3) and then gave some more important formulae:
+$$\sum_{k=1}^{\infty}\frac{1}{k^4} = \frac{\pi^4}{90},$$
+$$\sum_{k=1}^{\infty}\frac{1}{k^6} = \frac{\pi^6}{945}.$$
+We are almost at the end of the chapter and now we shall see $p-$series in detail.\\
+\section{EPILOGUE}
+Now, we shall see the Euler's alternate solution for the Basel Problem. As noted, some of Euler's contemporaries, while accepting his answer 
+to the Basel Problem, wondered about the validity of the argument that got 
+him there. Daniel Bernoulli was especially concerned and wrote Euler in this 
+regard.\cite{ref 2}
+Euler gave a proof for the expression $\sum_{k=1}^{\infty}1/k^2 = \pi^2/6.$
+This proof requires three important results, they are :\\
+\textbf{A.} $\frac{1}{2}(\sin^{-1}x)^2 = \int_{0}^{x} \frac{\sin^{-1}t}{\sqrt(1-t^2)}dt :$\\
+The proof for this is simple, we get it by substituting $u = \sin^{-1}t$, therefore $du = \frac{1}{\sqrt(1-t^2)}dt$ . Hence,\\
+$\int_{0}^{x} \frac{\sin^{-1}t}{\sqrt(1-t^2)}dt = \int_{0}^{\sin^{-1}x}u du = \frac{1}{2}(\sin^{-1}x)^2. $\\
+\\
+\textbf{B.} We need to find a series expansion for $\sin^{-1}x:$\\
+We know that, $\sin^{-1}x = \int_{0}^{x} \frac{1}{\sqrt(1-t^2)} dt = \int_{0}^{x} (1-t^2)^{-1/2} dt.  $\\
+Using binomial series to solve the above expression, we get :\\
+\begin{align*}
+\sin^{-1}x =& \int_{0}^{x} \left(1 + \frac{t^2}{2} + \frac{1\cdot3}{2^2\cdot2!}t^4 + \frac{1\cdot3\cdot5}{2^3\cdot3!}t^6 + \cdots\right)dt \\
+=& x + \frac{1}{2} \times \frac{x^3}{3} + \frac{1\cdot3}{2\cdot4} \times \frac{x^5}{5} + \frac{1\cdot3\cdot5}{2\cdot4\cdot6} \times \frac{x^7}{7} + \cdots.
+\end{align*}
+\\
+\textbf{C.} We need to prove that $\int_{0}^{1} \frac{t^{n+2}}{\sqrt(1-t^2)}dt = \frac{n+1}{n+2}\int_{0}^{1}\frac{t^{n}}{\sqrt(1-t^2)}dt$ for all $n \geq 1 :$ \\
+Let, $$J = \int_{0}^{1} \frac{t^{n+2}}{\sqrt(1-t^2)}dt,$$
+We can apply integration by parts to the above expression with $u = t^{n+1}$ and $dv = (t/\sqrt{1-t^2})dt$, then we get :\\
+\begin{align*}
+J =& \left[(-t^{n+1}\sqrt{1-t^2})\right]_0^{1} + (n+1)\int_{0}^{1} t^{n}\sqrt{1-t^2} dt\\
+=& 0 + (n+1)\int_{0}^{1} t^{n}\frac{1-t^2}{\sqrt{1-t^2}} dt\\
+=& (n+1)\int_{0}^{1} \frac{t^{n}}{\sqrt{1-t^2}} dt - (n+1)J.
+\end{align*}
+This gives us :\\
+$$(n+2)J = (n+1)\int_{0}^{1} \frac{t^{n}}{\sqrt{1-t^2}} dt.$$
+Now, put $x=1$ in (A), we get :
+$$ \frac{\pi^2}{8} = \frac{1}{2}(\sin^{-1}1)^2 = \int_{0}^{1} \frac{\sin^{-1}t}{\sqrt(1-t^2)}dt $$
+From (B), we can use series expansion to get :\\
+\\
+\begin{eqnarray*}
+\frac{\pi^2}{8} = \int_{0}^{1}\frac{t}{\sqrt{1-t^2}}dt + \frac{1}{2\cdot3}\int_{0}^{1}\frac{t^3}{\sqrt{1-t^2}}dt + \frac{1\cdot3}{2\cdot4\cdot5}\int_{0}^{1}\frac{t^5}{\sqrt{1-t^2}}dt + \frac{1\cdot3\cdot5}{2\cdot4\cdot6\cdot7}\int_{0}^{1}\frac{t^7}{\sqrt{1-t^2}}dt +\cdots.\\
+\end{eqnarray*}
+\\
+We know that,$\frac{d}{dt}(-\sqrt{1-t^2}) = \frac{t}{\sqrt{1-t^2}}.$\\
+Hence,\\
+$$\int_{0}^{1} \frac{t}{\sqrt{1-t^2}}dt = 1.$$
+Using the result obtained in (C), we get :\\
+\begin{align*}
+\frac{\pi^2}{8} =& 1 + \frac{1}{2\cdot3}\left[\frac{2}{3}\right] + \frac{1}{2\cdot4\cdot5}\left[\frac{2}{3} \times \frac{4}{5}\right] + \frac{1}{2\cdot4\cdot6\cdot7}\left[\frac{2}{3} \times \frac{4}{5} \times \frac{6}{7}\right] + \cdots\\
+=& 1 + \frac{1}{9} + \frac{1}{25} + \frac{1}{49} + \cdots\\
+=& \sum_{k=0}^{\infty}\frac{1}{(2k+1)^2},
+\end{align*}
+It is clear that this summation contains squares of odd numbers only.\\
+Then, Euler proceeded in the following way to prove the result :\\
+\begin{thm}\label{thm : Type 3} $\sum_{k=1}^{\infty}\frac{1}{k^2} = \frac{\pi^2}{6}.$\\
+\end{thm}
+\begin{Proof}
+\begin{align*}
+\sum_{k=1}^{\infty}\frac{1}{k^2} =& \left[1 + \frac{1}{9} + \frac{1}{25} + \frac{1}{49} + \cdots\right] + \left[\frac{1}{4} + \frac{1}{16} + \frac{1}{36} + \frac{1}
+{64} + \cdots\right]\\
+=& \left[1 + \frac{1}{9} + \frac{1}{25} + \frac{1}{49} + \cdots\right] + \frac{1}{4}\left[1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots\right]\\
+=& \frac{\pi^2}{8} + \frac{1}{4}\sum_{k=1}^{\infty}\frac{1}{k^2}.
+\end{align*}
+Hence, \\
+$$\frac{3}{4}\sum_{k=1}^{\infty}\frac{1}{k^2} = \frac{\pi^2}{8},$$
+which in turn gives :
+$$\sum_{k=1}^{\infty}\frac{1}{k^2} = \frac{4}{3} \times \frac{\pi^2}{8} = \frac{\pi^2}{6}.$$
+\end{Proof}
+In this way, Euler completed the proof for Basel problem. Euler told,\textit{"the principal use of these results is in the calculation of logarithms."} Now, we shall see how the above results are used in computing logarithms.
+Consider the following equation again :\\
+$$P(x) = \left[1-\frac{x^2}{\pi^2}\right]\left[1-\frac{x^2}{4\pi^2}\right]\left[1-\frac{x^2}{9\pi^2}\right]\left[1-\frac{x^2}{16\pi^2}\right]\cdots.$$
+For $x \neq 0,$ $P(x) = \sin x/x.$ Substitute this in the above formula, we get:\\
+$$\sin x = x \left[1-\frac{x^2}{\pi^2}\right]\left[1-\frac{x^2}{4\pi^2}\right]\left[1-\frac{x^2}{9\pi^2}\right]\left[1-\frac{x^2}{16\pi^2}\right]\cdots,$$
+The above result is true for $x = 0$ also. Now, apply logarithm on both sides to get :\\
+\begin{eqnarray*} \ln(\sin x) = \ln x + \ln\left(1-\frac{x^2}{\pi^2}\right) + \ln\left(1-\frac{x^2}{4\pi^2}\right) + \ln\left(1-\frac{x^2}{9\pi^2}\right) + \cdots,\\ \end{eqnarray*}
+Put $x = \pi/n,$ the above equation becomes :\\
+\begin{eqnarray*} \ln(\sin \frac{\pi}{n}) = \ln \pi - \ln n + \ln\left(1-\frac{1}{n^2}\right) + \ln\left(1-\frac{1}{4n^2}\right) + \ln\left(1-\frac{1}{9n^2}\right) + \cdots.\\ \end{eqnarray*}
+\\
+We know that,\\
+$$\ln(1-x) = -x -\frac{x^2}{2} -\frac{x^3}{3} -\frac{x^4}{4} -\cdots.$$
+Substituting this logarithmic expansion in the above expression, we get :\\
+\begin{align*}
+\ln(\sin \frac{\pi}{n}) =& \ln \pi - \ln n + \left[-\frac{1}{n^2} -\frac{1}{2n^4} -\frac{1}{3n^6} \cdots\right]\\ +& \left[-\frac{1}{4n^2} -\frac{1}{32n^4} -\frac{1}{192n^6}\cdots\right]\\ +& \left[-\frac{1}{9n^2} -\frac{1}{162n^4} -\frac{1}{2187n^6} \cdots\right] + \cdots\\
+=& \ln \pi - \ln n - \frac{1}{n^2}\left(1 + \frac{1}{4} + \frac{1}{9} + \cdots\right)\\ -& \frac{1}{2n^4}\left(1 + \frac{1}{16} + \frac{1}{81} + \cdots\right)\\ -& \frac{1}{3n^6}\left(1 + \frac{1}{64} + \frac{1}{729} + \cdots\right) - \cdots.
+\end{align*}
+It is clear that the above formula contains the $p$ -series given by Euler.\\
+Hence,\\
+\begin{eqnarray*} \ln(\sin \frac{\pi}{n}) = \ln \pi - \ln n -\frac{1}{n^2}\left(\frac{\pi^2}{6}\right) -\frac{1}{2n^4}\left(\frac{\pi^4}{90}\right) -\frac{1}{3n^6}\left(\frac{\pi^6}{945}\right) -\cdots.\\ \end{eqnarray*}
+This is a rapidly converegent series. For instance, let $n = 7,$ we get,\\
+\begin{align*}
+\ln(\sin \frac{\pi}{7}) =& \ln \pi - \ln 7 -\frac{1}{49}\left(\frac{\pi^2}{6}\right) -\frac{1}{4802}\left(\frac{\pi^4}{90}\right) -\frac{1}{352947}\left(\frac{\pi^6}{945}\right) -\cdots\\
+\approx& -0.83498,
+\end{align*}
+and it is accurate to within $\pm0.00000005.$ Hence, Euler was able to find logarithms of sines accurately.
+ Euler wrote :\\
+\indent \textit{``with these formulas, we can find both the natural and the common 
+logarithms of the sine and cosine of any angle, even without knowing 
+the sines and cosines."} \\
+
+Now, we shall see how Euler evaluated the p-series for odd values of p. Consider,\\
+$$\sum_{k=1}^{\infty}\frac{1}{k^3} = 1 + \frac{1}{8} + \frac{1}{27} + \frac{1}{64} + \frac{1}{125} + \cdots. $$
+But Euler's original proof from expression (3.3) involves only even powers of $x$, and thus only even values of $p$. So, Euler evaluated the following series
+$$1 - \frac{1}{27} + \frac{1}{125} - \frac{1}{343} + \cdots = \sum_{k=0}^{\infty} \frac{1}{(2k+1)^3} = \frac{\pi^3}{32}.$$
+Euler took numerical approximations. Because $\sum_{k=1}^{\infty} =1/k^2 = \pi^2/6$ and $\sum_{k=1}^{\infty} =1/k^4 = \pi^4/90$, he claimed that $\sum_{k=1}^{\infty} =1/k^3 = \pi^3/m$, where $6 < m < 90.$ Finally, Euler calculated the value $\sum_{k=1}^{\infty} =1/k^3 = \pi^3/m \approx  1.202056903$, Euler deduced that $m = 25.79435$. Finally, Euler gave the formula,\\
+$$\sum_{k=1}^{\infty}\frac{1}{k^3} = \alpha(\ln2)^2 + \beta\frac{\pi^2}{6} -\ln2,$$
+where $\alpha$ and $\beta$ are rational numbers\cite{ref 3}. In 1978, Roger Apery had shown that $\sum_{k=1}^{\infty}1/k^3$ sums to an irrational number. But that was too broad, mathematicians wanted specific value as the answer.\\
+\indent So, we did not get a perfect solution for odd-valued $p$-series and thus Jakob's challenge from 1689: \textit{``If anyone finds and 
+communicates to us that which has thus far eluded our efforts, great will be our gratitude."} makes sense because it was really hard to find a specific value for such a series. In this chapter, we have seen interesting theorems and proofs on infinite series given by Jakob Bernoulli and Euler.\\
+\begin{thebibliography}{99}
+		\addcontentsline{toc}{chapter}{References}
+		
+		
+		\bibitem{ref 1} Whiteside, ed , \textit{The Mathematical Papers of Isaac Newton}, Vol 5, p. 359
+		\bibitem{ref 2} Euler, \textit{Opera Omnia}, Ser. I, Vol 14, p 141 
+		\bibitem{ref 3} Euler, \textit{Opera Omnia}, Ser I, Vol 4, pp 143-144 
+		
+		
+		
+	\end{thebibliography}
+
+\chapter{Polynomial Equations}
+\begin{abstract}
+		Finding solutions of a polynomial equation was given much importance. For instance,the ``degree of difficulty” of solving an equation is directly linked with the ``degree of polynomial".When we move onto higher degree equations, the complexity of solving polynomial equations increases.
+	\end{abstract}
+	
+It is easy to solve linear equations. Using \textbf{``Gaussian elimination"}, the Chinese solved $n$ linear equations containing $n$ unknowns(2000 years ago). 
+The question is how do we solve higher degree polynomial equations say, how do we solve \textbf{quintic} polynomials ( equations with degree 5) ? The methods used for solving lower degree equations are not enough to solve quintic polynomials. We need some special methods to solve them.
+Algebra laid a foundation to understand concepts like number theory, combinatorics and probability.\\
+\\
+\section{Algebra}
+The word ``algebra” is derived from the Arabic word \textit{al-jabr} which means ``restoring.” Al-Khwarizmi's book Al-jabr \textit{wal muqabala} that it science of restoring and opposition gives us the basis for algebra. Here, ``restoring” means adding equal terms on both sides of the equation and ``opposition” means making two sides of the equation equal. The surgical meaning of al-jabr is resetting of broken bones. Later on, the word al-jabr became \textbf{``algebra"} in Spanish, Italian and English. The surgical meaning is included in the \textit{Oxford English Dictionary}. \\
+\\
+\indent Al-Khwarizmi had given the word \textbf{``algorithm"}. His work was quite elementary and important too. He did not work on higher degree equations. He dealt with the solution of quadratic equations and gave some important conclusions.There is another mathematician named \textbf{Brahmagupta} who had done advanced work in algebra. His work was much more advanced than Al-Khwarizmi's work in terms of notations, consideration of negative numbers and treatment of Diophantine equations.\\
+\indent Despite doing all these, Al-Khwarizmi's algebra is known as \textbf{definitive algebra} because this algebra gives us elementary and fundamental conclusions.
+Algebra goes hand-in-hand with number theory and geometry. \\
+\section{Linear Equations and Elimination}
+The Chinese solved linear equations containing unknowns using so-called Gaussian elimination, a method in which we obtain triangular system to solve the equations. This method is included in the book \textit{Jiuzhang suanshu} (Nine Chapters of Mathematical Art;Shen et al. (1999)).\\
+\\
+Consider $n$ linear equations with unknowns :\\
+\begin{align*}
+a_{11}x_{1} + a_{12}x_{2} + \cdots + a_{1n}x_{n} =& b_{1}\\
+\vdots&\\
+a_{n1}x_{1} + a_{n2}x_{2} + \cdots + a_{nn}x_{n} =& b_{n}
+\end{align*}
+By doing mathematical operations, we can obtain triangular system which looks like :\\
+\begin{align*}
+a\prime_{11}x_{1} + a\prime_{12}x_{2} + \cdots + a\prime_{1n}x_{n} =& b'_{1}\\
+\indent \hspace{2cm} a\prime_{22}x_{2} + \cdots + a\prime_{2n}x_{n} =& b'_{2}\\
+\vdots&\\
+a\prime_{nn}x_{n} =& b'_{n}\\
+\end{align*}
+We can solve the last equation first and then use back substitution to solve the above linear equations. Long back, these calculations were done on a Chinese device called counting board which uses row operations similar to what we do by taking matrices to solve equations. Detailed explanation is provided by Li and Du (1987) or Martzloff (2006).\\
+Later on, Chinese mathematicians found polynomial equations in two or
+more variables can also be solved using elimination that is, by eliminating one of the variables. Consider the following equations :\\
+$$a_{0}(x)y^m + a_{1}(x)y^{m-1} + \cdots + a_{m}(x) = 0 \hspace{3cm} (1)$$
+$$b_{0}(x)y^m + b_{1}(x)y^{m-1} + \cdots + b_{m}(x) = 0 \hspace{3cm} (2)$$
+Here, $a_{i}(x)$ and $b_{j}(x)$ are polynomials in $x$ where $0 \leq i,j \leq m.$ We can eliminate $y^m$ by doing $b_{0}(x) \times (1) - a_{0}(x) \times (2)$ and the equation transforms as follows :
+$$c_{0}(x)y^{m-1} + c_{1}(x)y^{m-2} + \cdots + c_{m-1}(x) = 0 \hspace{3cm} (3)$$
+Now, we need to form a second equation of degree $m−1$ involving variable $y$ and this can be achieved by multiplying $(3)$ by
+$y$ first and then eliminating $y^m$ term between the equations $(3) \times y$ and $(1)$ which gives :\\
+$$d_{0}(x)y^{m-1} + d_{1}(x)y^{m-2} + \cdots + d_{m-1}(x) = 0 \hspace{3cm} (4)$$
+Now, we can continue the process further to eliminate $y$ terms between the equations (3) and (4). At last, we will be left with the equations which contain $x$ alone.\\ \indent The same method
+was extended to polynomial equations containing four variables in the book written by Zhu Shijie(1303) named
+\textit{Siyuan yujian} (Jade Mirror of Four Unknowns).
+Linear equations can be solved using cramer's rule. This method involves determinants to solve equations.\\
+\\
+\section{Quadratic Equations}
+Earlier, in 2000 BCE, Babylonians were able to solve the pair of equations which are in the form :\\
+$$x + y = p,$$
+$$xy = q,$$
+which gives the quadratic equation,\\
+$$x^2 + q = px.$$
+The two roots of the quadratic equation can be obtained from pair of equations taken, that is,\\
+$$x,y = \frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q},$$
+Babylonians did not take negative roots into consideration. In the above result, both the roots were positive.\\
+The mechanism involved to obtain roots is as follows :\\
+(i) First form $\frac{x+y}{2}.$\\
+(ii) Then $\left(\frac{x+y}{2}\right)^2.$\\
+(iii) Take $\left(\frac{x+y}{2}\right)^2 - xy.$\\
+(iv) Then form $\sqrt{\left(\frac{x+y}{2}\right)^2 - xy} = \frac{1}{2}\sqrt{(x-y)^2} = \frac{x-y}{2}.$\\
+(v) Find $x, y$ using (i) and (iv).\\
+\\
+Brahmagupta expressed the formula in his words as follows :\\
+\\
+\indent \textit{``To the absolute number multiplied by four times the [coefficient of the] square, add the square of the [coefficient of the]
+middle term; the square root of the same, less the [coefficient
+of the] middle term, being divided by twice the [coefficient of
+the] square is the value."}\cite{ref 1}\\
+\vspace{2ex}
+\hfill {-Colebrooke (1817), p.346}\\
+\begin{figure}
+\includegraphics[width=8cm]{WhatsApp Image 2024-04-06 at 12.29.23 PM (2).jpeg}
+\centering
+\end{figure}
+$$\textbf{Figure 4.1}$$
+The solution for quadratic equation $ax^2 + bx = c$ is $x = \frac{\sqrt{4ac + b^2} - b}{2a}$ and the same can also be\\
+written as\\
+$$x = \frac{\sqrt{ac + (b/2)^2} - (b/2)}{a}.$$
+\\
+The basis for Babylonians and Brahmagupta's solutions is not clear. However, one can find and understand the basis for the solutions of quadratic equations in Euclid’s \textit{Elements}, Book VI.\\
+\indent Algebra is linked with geometry and now, we shall solve an algebraic problem using geometry. In order to solve $x^2 + 10x = 39$ using geometry, we can think of squares and rectangles. Let $x^2$ be a square of side $x$, and $10x$ be two $5 \times x$ rectangles as shown in Figure 5.1. We need to add an extra square of area 25 to complete the square of side $x + 5$.Hence,
+$$(x + 5)^2 =39 + 25 =64.$$
+\\
+\\
+That is, $x+5 = 8$ and $x = 3.$ Al-Khwarizmi did not take negative solutions into consideration, that is the reason he avoided $x = -13$ as the solution.Avoiding negative coefficients is not always possible as it causes algebraic complications. The following equations shows different ways of distributing positive terms in between the two sides: $x^2 + ax = b, x^2 = ax + b,
+x^2 + b = ax.$\\
+\section{Quadratic Irrationals}
+The roots of quadratic equations containing rational coefficients are in the form of $a + \sqrt{b}$, where $a, b$ are rational. Euclid gave a detailed study of numbers of the form $\sqrt{\sqrt{a}\pm\sqrt{b}}$, where $a,b$ are rational in Book X of the \textit{Elements}. Book X is
+the longest book in the \textit{Elements}. Apollonius worked on theory of irrationals, but his work was lost.\\
+\indent Fibonacci showed that roots of the cubic equation $x^3 + 2x^2 + 10x = 20$ does not contain Euclid’s irrationals. Historian thought that the roots cannot be constructed by ruler and compass. It is difficult show that a specific number, say, $\sqrt[3]{2}$ cannot be constructed from rational numbers by square roots.\\
+\\
+\section{The Solution of the Cubic}
+\textit{In our own days Scipione del Ferro of Bologna has solved
+the case of the cube and first power equal to a constant, a
+very elegant and admirable accomplishment. Since this art
+surpasses all human subtlety and the perspicuity of mortal
+talent and is a truly celestial gift and a very clear test of the
+capacity of men’s minds, whoever applies himself to it will
+believe that there is nothing that he cannot understand. In
+emulation of him, my friend Niccolo Tartaglia of Brescia, `
+wanting not to be outdone, solved the same case when he got
+into a contest with his [Scipione’s] pupil, Antonio Maria Fior,
+and, moved by my many entreaties, gave it to me ... having
+received Tartaglia’s solution and seeking a proof of it, I came
+to understand that there were a great many other things that
+could also be had. Pursuing this thought and with increased
+confidence, I discovered these others, partly by myself and
+partly through Lodovico Ferrari, formerly my pupil.}\cite{ref 2}\\
+\vspace{2ex}
+\hfill{-Cardano (1545), p.8}\\
+\\
+Finding the solution of cubic equations is indeed a great work. It unfolded the power of algebra. Tartaglia gave his solution for cubic equations on February 12, 1535. Everyone blamed Cardano for copying Tartaglia’s solution, but Cardano thought of giving credit fairly. Carano's algebra goes hand-in-hand with Al-Khwarizmi's geometric style, but without the distinctions caused by avoiding negative coefficients. Cardano tranformed the cubic equation $x^3+ax^2+bx+c = 0$ into one with no quadratic term by taking, $x = y - a/3.$ Say,\\
+$$y^3 = py + q.$$
+Put $y = u + v$, the left-hand side term of the equation becomes
+$$(u^3 + v^3) + 3uv(u + v) = 3uvy + (u^3 + v^3),$$
+by comparing right-hand side terms of both equations, we get
+\begin{align*}
+3uv = p,\\
+u^3 + v^3 = q.
+\end{align*}
+We can eliminate $v$ to get a quadratic in $u^3$,\\
+$$u^3 + \left(\frac{p}{3u}\right)^3 = q,$$
+which has the roots\\
+$$\frac{q}{2} \pm \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3}.$$
+By symmetry, we get the same values for $v^3$. We have $u^3 + v^3 = q$, hence
+one of the roots is $u^3$, and the other will be $v^3$.Thus, we can take
+$$u^3 = \frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3},$$
+$$v^3 = \frac{q}{2} - \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3},$$
+which gives,\\
+$$y = u+v = \sqrt[3]{\frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3}} + \sqrt[3]{\frac{q}{2} - \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3}}.$$\\
+\\
+\section{Angle Division}
+Viete(1540–1603) helped to understand algebra in a better way by introducing letters for unknown terms and using plus and minus signs
+to ease manipulation.He linked algebra with trignometry. Viete found solution of the cubic by circular functions (Viete (1591),
+Ch. VI, Theorem 3), which gives the result that solving the cubic equation is equivalent to trisecting an arbitrary angle.\\
+For example, if we take the cubic equation in the form
+$$x^3 + ax + b = 0,$$
+we can the above equation into
+$$4y^3 - 3y = c,$$\\
+by taking $x = ky$ and choosing $k$ such that $\frac{k^3}{ak} = \frac{-4}{3},$
+$$k = \sqrt{\frac{-4a}{3}}.$$
+We know that, $4\cos^3\theta - 3\cos\theta = \cos3\theta,$ by taking $y = \cos\theta,$ we get $\cos3\theta = c.$
+If we know the value of $c$, then we can construct a triangle with angle $\cos^{-1}c = 3\theta$. By trisecting this angle,we get as solution $y = \cos \theta$ for the equation. 
+Conversely, trisecting an angle with cosine $c$ gives the solutions for the cubic equation $4y^3 - 3y = c.$\\
+\indent When $|c| > 1$, we require complex numbers for its resolution. Complex numbers are involved in Cardano’s formula, since the expression which is present under the square root $(q/2)^2 - (p/3)^3$ can be negative too. However, complex numbers were avoided.\\
+\\
+We see that, if we divide an angle into any odd number
+of equal parts, it has an algebraic solution similar to that of the algebraic solution of the cubic equation. Viete (1579) found expressions for $\cos n\theta$ and $\sin n\theta$ as polynomials in $\cos \theta$ and $\sin\theta$, for some values of $n$. Newton found the equation:\\
+$$y = nx - \frac{n(n^2-1)}{3!}x^3 + \frac{n(n^2-1)(n^2-3^2)}{5!}x^5 + \cdots.$$
+Newton related $y = \sin n\theta$ and $x = \sin \theta$, and asserted the result for any $n$. However, we are interested only in odd integral n.
+Newton’s equation contains a solution by $n$th roots which is similar to that of Cardano's formula for cubic equations,\\
+$$x = \frac{1}{2}\sqrt[n]{y + \sqrt{y^2 - 1}} + \frac{1}{2}\sqrt[n]{y - \sqrt{y^2 - 1}}, \hspace{3cm} (1) $$
+the above formmula is valid only for $n$ of the form $4m + 1$. This formula appears in blue in de Moivre (1707)\cite{ref 3}. Newton gave the following result. However, Newton did not explain how he found it.\\
+$$\sin \theta = \frac{1}{2}\sqrt[n]{\sin n\theta + i\cos n\theta} + \frac{1}{2}\sqrt[n]{\sin n\theta - i\cos n\theta}, \hspace{2cm} (2) $$
+This gives us de Moivre’s formula,\\
+$$(\cos\theta + i\sin\theta)^n = \cos n\theta + i\sin n\theta \hspace{4.5cm} (3)$$
+whenever $n = 4m+1.$ Viete came very close in obtaining (3) in his published work, Viete (1615). He observed that the alternate terms in the expansion
+$(\cos \theta + \sin \theta)^n$ gives the products of $\sin \theta, \cos \theta$ which occur in $\cos n\theta, \sin n\theta$,but he did not notice some minus signs. He failed in noticing that the signs could be explained by giving coefficient $i$ before the $\sin \theta$ term.\\
+\\
+\section{Higher-Degree Equations}
+General quartic equation( fourth degree equation)
+$x^4 + ax^3 + bx^2 + cx + d = 0$
+was solved by Cardano’s student Ferrari. This solution was published
+in Cardano (1545), p. 237. This equation can be reduced to the equation given below using a linear transformation.\\
+\\
+$x^4 + px^2 + qx + r = 0,$  or  $(x^2+p)^2 = px^2 - qx + p^2 - r.$\\
+\\
+For any y, we have,
+\begin{align*}
+(x^2 + p + y)^2 =& (px^2 − qx + p^2 − r) + 2y(x^2 + p) + y^2\\
+=& (p + 2y)x^2 − qx + (p^2 − r + 2py + y^2).
+\end{align*}
+The right-hand side of the equation is in the form of quadratic equation $Ax^2 + Bx + C$ and it will be a square if $B^2 - 4AC = 0$, which will be a cubic equation for $y$. We can solve $y$ and then obtain an equation in $x$ to solve it. Hence, using square and cube roots of rational functions of the coefficients, we can obtain formula for $x$.\\
+\indent However, it was not easy to solve the general equations of fifth degree (quintic equations) using the same basis. We can reduce it to the form of
+$$x^5 - x - A = 0$$
+which contains only one parameter. Bring (1786) had done this and a basis for
+his method could be seen in Pierpont (1895). Bring’s result was unnoticed for 50 years else  or it could have given hope to other mathematicians to find the solution of the quintic by using radicals.
+Ruffini (1799) gave the first proof that this is impossible. Ruffini’s proof
+was not clear, but later on, a satisfactory proof was given by Abel (1826). Galois(1831b) had given general theory of equations.\\
+\indent Hermite (1858) gave analytic solution for the quintic using Bring's result that is,by reducing to an equation which contains only one parameter . Suitable functions, the elliptic modular functions, had been discovered Gauss, Abel, and Jacobi discovered suitable functions, the elliptic modular functions and Galois (1831a) had related them with quintic equation. Klein (1884) took these ideas as the main subject.\\
+\indent Descartes(1637) made two important contributions:\\
+\textbf{(1)} Superscript notation for powers that are in use: $x^3, x^4, x^5$, and so on.\\ \textbf{(2)} A polynomial $p(x)$ which becomes 0 when $x = a$ has factor $(x - a)$.\\
+\\When we divide a polynomial $p(x)$ of degree $n$ by $(x - a)$, we get a polynomial of degree $n-1$, Descartes’s theorem gave the hope for
+factorizing each $n$th-degree polynomial into $n$ linear factors.\\
+\\
+\section{The Binomial Theorem}
+
+Chinese mathematicians discovered ``Pascal’s triangle” in the 17th century. Levi ben Gershon (1321) gave formulas for permutations and combinations.
+The Chinese used Pascal’s triangle as a basis to generate binomial coefficients, that is, the coefficients in the formulas of \\
+\\
+$(a + b)^1=\hspace{2.5cm}a + b\\
+(a + b)^2=\hspace{2cm}a^2 + 2ab + b^2\\
+(a + b)^3=\hspace{1.5cm}a^3 + 3a^2b + 3ab^2 + b^3\\
+(a + b)^4=\hspace{1cm}a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4\\
+(a + b)^5=\hspace{0.5cm}a^5 + 5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + b^5\\
+(a + b)^6=a^6 + 6a^5b + 15a^4b^2 + 20a^3b^3 + 15a^2b^4 + 6ab^5 + b^6$\\
+\\
+and so on. By taking the binomial coefficients of $a$ and $b$ in rows, we find that the $k$th element $\binom{n}{k}$ of the $n$th row can be represented as the sum of the two elements in the above $(n-1)$th row,that is, $\binom{n-1}{k-1} + \binom{n-1}{k}$.\\
+$$(a+b)^n = (a+b)^{n-1}a + (a+b)^{n-1}b.$$
+\\
+Zhu Shijie's(1303) triangle appears to a depth of eight.$\binom{n}{k}$ can be viewed as the number of combinations of $n$ things taken $k$ at a time according to Hebrew writings. Levi ben Gershon (1321) gave the formula\\
+ $$\binom{n}{k} = \frac{n!}{(n-k)!k!}$$
+ \\
+using the fact that there are $n!$ permutations of $n$ elements taken.\\
+\indent We call table of binomial coefficients as Pascal's triangle. In Pascal's \textit{Traite du triangle arithmetique}, he united the
+algebraic and combinatorial theories by showing that the elements of 
+arithmetic triangle could be represented in two ways: first being the coefficients of $a^{n-k}b^k$ in $(a + b)^n$ and second being the number of combinations of $n$ things taken $k$ at a time.\\
+\\
+\section{Fermat’s Little Theorem}
+Fermat(1640) gave a famous theorem on number theory based on algebra of binomial coefficients.\\
+\begin{thm}\label{thm:Type 1}If $p$ is prime and $\gcd(n, p) = 1$, then $n^{p-1} - 1$ is divisible by $p$ or,equivalently, $n^p - n$ is divisible by $p$.\\
+\end{thm}
+The equivalence is true because $p$ divides $n^p - n = n(n^{p-1} - 1)$
+if and only if $p$ divides $n^{p-1} - 1$,this is because $p$ is a prime number and it does not divide $n$. Fermat's actual proof is unknown. Weil(1984), p. 56 told that the theorem follows from the fact that $\binom{p}{1},\binom{p}{2},....,\binom{p}{p-1},$ are divisible by $p$ for any prime $p$:\\
+$$2^p = (1+1)^p = 1 + \binom{p}{1} + \binom{p}{2} + \cdots + \binom{p}{p-1} + 1, $$
+which gives\\
+$$2^p - 2 = \binom{p}{1} + \binom{p}{2} + \cdots + \binom{p}{p-1} $$\\
+is divisible by $p$, and thus $2^{p-1} -1 $ is divisible by $p$.e Levi ben Gershon gave the formula\\
+$$\binom{p}{k} = \frac{p!}{(p-k)!k!},$$
+\\
+from which one can conclude that $\binom{p}{1},\binom{p}{2},....,\binom{p}{p-1}$ are divisible by $p$.
+Because the formula shows that the prime $p$ divides numerator but not the
+denominator. The denominator divides the numerator because $\binom{p}{k}$
+is an integer, and by unique prime factorization) the factor $p$ must
+be there even after the division. Divisibility property could also be understood from the following formula\\
+$$n\binom{n+m-1}{m-1} = m\binom{n+m-1}{m}.$$
+\\
+Till now,we have seen a proof of Fermat’s little theorem for $n = 2$. Weil
+(1984) suggested two possible ways to obtain the general theorem from this result.First,by iteration of the binomial theorem and the second by
+direct application of the \textit{multinomial theorem},this was the method used for the earliest proof and it was in unpublished paper of Leibniz in the late 1670s (Weil (1984), p.56). To extend this,
+coefficient of $a_{1}^{q_{1}}a_{2}^{q_{2}}\cdots a_{n}^{q_{n}}$ in $(a_{1} + a_{2} + \cdots + a_{n})^p$ = $p!/q_{1}!q_{2}!\cdots q_{n}!$
+where $q_{1}+q_{2}+\cdots+q_{n} = p$ and $p$ divides this multinomial coefficient and proof for this follows from the previous argument. This completes the proof.\\
+\indent In this report, we have seen how algebra is linked with geometry, methods to solve higher degree equations, angle division, Pascal's triangle and Fermat's little theorem. \\
+\\
+\begin{thebibliography}{99}
+		\addcontentsline{toc}{chapter}{References}
+		
+		\bibitem{ref 1} Colebrooke,\textit{Algebra}, p.346, 1817
+		
+		\bibitem{ref 2} Cardano, \textit{Ars Magna}, p.8, 1545
+  \bibitem{ref 3} Schneider (1968), pp. 224–228
+  \bibitem{ref } J.Stillwell, \textit{Mathematics and Its History}, Undergraduate Texts in Mathematics,1989.
+ 
+		
+
+		
+		
+	\end{thebibliography}
+ \chapter{Calculus}
+ \begin{abstract}
+	 In this report, we see how calculus had emerged and evolved through centuries.Many mathematicians worked on calculus and gave fundamental results. All of us have an assumption that Newton is the only mathematician who worked on calculus completely but what we need to know is that many other mathematicians actually put in a lot of efforts for obtaining results of calculus. In this report, we see the discoveries in calculus of mathematicians before Newton's era and then we see how Newton and Leibniz rediscovered some of the earlier results and gave an overall outline for calculus.
+	\end{abstract}
+
+\section{Introduction}
+Calculus became prominent from the 17th century and it replaced method of exhaustion which was used by people back then. Method of exhaustion involves polygons to find areas of curved figures that is, finding areas of circles by inscribing polygons of certain number of sides. Integration, differentiation, finding lengths,areas,volumes,tangents,normals of curves all these are included in calculus. Calculus is also helpful in solving problems of mechanics. In order to understand mathematical physics, one must understand calculus first. Chapters like number theory,combinatorial proofs, probability are also linked with calculus.Calculus got a huge hype as it replaced method of exhaustion. Calculus means ``rules for calculating results." In the year 1659, Huygens wrote,\\
+\\
+\textit{''Mathematicians will never have enough time to read all the
+discoveries in Geometry (a quantity which is increasing from
+day to day and seems likely in this scientific age to develop
+to enormous proportions) if they continue to be presented in a
+rigorous form according to the manner of the ancients."}\cite{ref 1}\\
+\vspace{2ex}
+\hfill{-Huygens (1659), p. 337}
+\\
+\indent There is a reason behind Huygen's words that is,the progress in geometry was too high. Whereas, the case is opposite with calculus. People in the early seventeenth century barely had knowledge about calculus. They only knew differentiation and integration of terms which are in powers of $x$ and implicit differentiation of polynomials which contains variables $x$
+and $y$. Later on, mathematicians gained interest in this particular topic. We can integrate and differentiate algebraic functions which can be expressed as power series (for instance, Newton's infinite series $(1+x)^r$ is integrable and differentiable as well).\\
+\\
+\indent Mathematicians gave a complete set of rules for differentiation whereas set of rules for integration is incomplete. For instance, the rules were not sufficient to integrate algebraic functions like 
+$\sqrt{1+x^3}$ and rational functions which contain undetermined constants
+like $1/(x^5-x-A)$. \textbf{Davneport(1981)} gave us an idea about integrable functions,that is to distinguish the functions which can be integrable using the rules they gave and the functions which are not integrable. 
+Books such as Boyer (1959), Baron (1969), Edwards (1979), and Bressoud
+(2019) gives idea of history of calculus. In the 17th century, people used method of exhaustion, in the 19th century, people gave a logical justification for their results. Robinson(1966) gave new theory of infinitesimals in the 20th century.\\
+\\
+\section{Results on Areas and Volumes}
+Integration can be viewed in terms of approximations of the area under the curves $y = x^k$ by rectangles (refer to Figure 5.1), limits running from 0 to 1. If we divide the base of the region(that is region between 0 and 1) into $n$ equal parts, we obtain the heights of the rectangles as $(1/n)^k,(2/n)^k,...,(n/n)^k$, and the area of all the rectangles depends on the series $1^k + 2^k + \cdots + n^k$. We can view rectangles as cylinders of crosss-sectional area $\pi r^2$ if the curve is revolved around the $x$-axis, where $r = (1/n)^k,(2/n)^k,..,(n/n)^k$, whose sum depends on the series $ 1^{2k} + 2^{2k} + \cdots + n^{2k}$.\\
+\\
+\indent Mathematicians tried to find results by summing up the series. The Arab mathematician al-Haytham (965–1039) found the volume of the solid obtained by rotating the parabola about its base by summing up the series $1^k + 2^k + \cdots + n^k$ for $k = 1, 2, 3, 4$. One can refer to Baron (1969), p. 70, or Edwards(1979), p. 84 in order to understand al-Haytham’s method. In the year 1635, Cavalieri extended these results up to $k = 9$ and used the results to obtain\\
+\\
+$$\int_{0}^{a} x^k dx = \frac{a^{k+1}}{k+1}$$
+\\
+\\
+and then stated this formula for all positive integers $k$. Fermat, Descartes, and Roberval proved the result in 1630s. Fermat even obtained the result not only for integral $k$ but also for fractional $k$ (refer Baron (1969), pp. 129, 185, and Edwards (1979), p. 116 \cite{ref 2}).Method of indivisibles was given by Cavalieri, it involves division of areas into infinitely thin strips and volumes into infinitely thin slices. Cavalieri’s contemporary Torricelli stated that the same method might have been used by the Greeks. Torricelli discovered that the infinite solid obtained by revolving
+$y = 1/x$ about the $x$ axis from 1 to $\infty$ has finite volume (Torricelli (1643)). In the year 1672, Hobbes wrote in response to Torricelli's discovery, \textit{“to understand this for sense, it is not required that a man should
+be a geometrician or logician, but that he should be mad.”}
+\begin{figure}
+\includegraphics[width=12cm]{WhatsApp Image 2024-04-30 at 6.09.12 PM (2).jpeg}
+\centering
+\end{figure}
+$$\textbf{Figure 5.1 : Approximating an area by rectangles}$$
+\section{Maxima, Minima, and Tangents}
+Mathematicians found a complete set of rules to differentiate a function and hence differentiation seems simpler than integration, but if we view in terms of history, it developed later. Archimedes constructed tangent to the spiral $r = a\theta$. Limiting process\\
+$$lim_{\Delta x\to0} \frac{f(x + \Delta x) - f(x)}{\Delta x}$$
+\\
+was introduced by Fermat in the year 1629 for polynomials $f$ and this led to a way of finding maxima, minima, and tangents. Fermat’s work was not published until 1679 (same has happened with his discovery of analytic geometry), but other mathematicians came to know it through letters after tangent method was published by Descartes in the year 1637.\\
+\indent Fermat used some references from Newton's and others works while calculating results.For instance, he introduced a “small” or “infinitesimal” element $E$, then divided by $E$ to simplify, then he neglected $E$ assuming it was zero. Also, in order to find the slope of the tangent to the curve $y = x^2$ at any value $x$, take a chord between the points $(x, x^2)$ and $(x + E,(x + E)^2)$ on the curve:\\
+\begin{align*}
+slope =& \frac{(x+E)^2 - x^2}{E}\\
+=& \frac{2xE + E^2}{E} = 2x + E.\\
+\end{align*}
+We can now obtain slope of the tangent by neglecting $E$.  Hence, $2x + E = 2x$ but $E \neq 0$, Hobbes had worked on this. Now,it is enough to claim that
+$\lim_{E\to0} (2x + E) = 2x$, but mathematicians in the 17th century did not know ways to prove this. And for these reasons, they used to face criticisms. One can apply Fermat’s methods to all the polynomials $p(x)$, and this is because we can cancel the highest degree term in polynomial $p(x + E)$ with the highest-degree term in polynomial $p(x)$, and we will be left with terms divisible by $E$. Fermat also used the same to the curves formed by polynomial equations $p(x, y) = 0$. Fermat did this in the year 1638.\\
+\\
+\indent Fermat was regarded as one of the founders of calculus for the efforts he put it and for the results he gave. His methods gives a reasoning in finding tangents to all curves given by the polynomial equations $y = p(x)$ and to the algebraic curves $p(x, y) = 0$. In the year 1655, Sluse found rules to find tangent to algebraic curves but it was not published until Sluse (1673). In the year 1657, Hudde also worked on the same proof and it was published in the year 1659 edition of Descartes’s \textit{La Geometrie}, Schooten (1659). That is, if,\\
+$$P(x,y) = \sum a_{ij}x^iy^j = 0$$
+then \\
+$$ \frac{dy}{dx} = -\frac{\sum ia_{ij}x^{i-1}y^j}{\sum ja_{ij}x^iy^{j-1}} $$
+\\
+\indent However, the result for same can be obtained by implicit differentiation or by manipulating polynomials accordingly.
+\\
+\section{ The \textit{Arithmetica Infinitorum} of Wallis}
+Wallis(1655), in his book \textit{Arithmetica Infinitorum}, made efforts to arithmetize geometry, that is to arithmetize theories of areas and volumesof curved figures. For instance, he gave a proof for the following result\\
+$$\int_{0}^{1}x^p dx = \frac{1}{p+1}$$
+\\
+which is valid for all positive integers $p$ by showing that ($n$ tends to $\infty$\\
+$$\frac{0^p + 1^p + 2^p + \cdots + n^p}{n^p + n^p + n^p + \cdots + n^p} \to \frac{1}{p+1}$$
+\\
+\begin{figure}
+\includegraphics[width=12cm]{WhatsApp Image 2024-04-30 at 6.09.13 PM (1).jpeg}
+\centering
+\end{figure}
+$$\textbf{Figure 5.2: Area used by Wallis}$$
+\\
+\indent Wallis tried to find integration of expressions which involve fractional powers, say $\int_{0}^{1}x^{\frac{m}{n}} dx$ without using the substitution $y^n = x^m,$ which was given by Fermat. Firstly, he found $\int_{0}^{1}x^{\frac{1}{2}} dx$, $\int_{0}^{1}x^{\frac{1}{3}},... dx$ by finding areas complementary to those under $y = x^2, y = x^3,....$ From these results, he obtained the results for other fractional powers of $x$.
+\indent There were quantities that tended to zero and Wallis was ambivalent about
+such quantities. Wallis treated them as nonzero once and
+zero the next. His arch-enemy Thomas Hobbes commented Wallis very badly regarding this:\\
+\\
+\textit{``Your scurvy book of Arithmetica infinitorum; where
+your indivisibles have nothing to do, but as they are supposed to have
+quantity, that is to say, to be divisibles.”}\cite{ref 3}\\
+\vspace{2ex}
+\hfill{Hobbes (1656), p. 301.}\\
+However, the reasoning
+of Wallis is incomplete by today’s standards because it is not correct to estimate a formula for all positive integers $p$ ''by induction” and for all fractional $p$ ``by interpolation” just by taking formulas for $p=1,2,3,...$ He neglected these flaws. Wallis gave infinite product formula,
+$$\frac{\pi}{4} = \frac{2}{3}\cdot\frac{4}{3}\cdot\frac{4}{5}\cdot\frac{6}{5}\cdot\frac{6}{7}\cdots$$
+\\
+The reasoning for Wallis's result was mentioned in Edwards (1979), pp. 171–176 \cite{ref 4}, and it was described as \textit{''one of the more audacious investigations by analogy and intuition that has ever yielded a correct result.”}
+In the year 1593, Viete had discovered
+\begin{eqnarray*}
+\frac{2}{\pi} =& \cos\frac{\pi}{4}\cos\frac{\pi}{8}\cos\frac{\pi}{16}\cdots\\
+=& \sqrt{\frac{1}{2}}\cdot\sqrt{\frac{1}{2}\left(1+\sqrt{\frac{1}{2}}\right)}\cdots
+\end{eqnarray*}
+Later on, based on rational operations, Wallis gave a result which involves $\pi$:\\
+$$\frac{4}{\pi} = 1 + \frac{1^2}{2 + \frac{3^2}{2 + \frac{5^2}{2 + \frac{7^2}{2 + \cdots}}}}$$
+\\
+and 
+$$\frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots.$$
+\\
+Brouncker obtained the continued fraction using Wallis’s result. This series is a special case of the following series
+$$\tan^{-1}x = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots$$
+\\
+which was discovered by the Indian mathematician named Madhava in the 15th century and the same was rediscovered by Newton, Gregory, and Leibniz.
+Brouncker’s continued fraction is linked with Euler's transformation of the series for $\pi/4$ ((1748a), p. 311). Using Wallis’s interpolation, Newton discovered the binomial theorem for fractional powers $r$ for the infinite series $(1+x)^r.$
+\\
+
+\section{Newton’s Calculus of Series}
+Works of Descartes, Viete, and Wallis had an impact of Newton's works. Most of the Newton's discoveries were in the year 1665. Newton discovered Hudde's rule for finding tangents to algebraic curves in Schooten’s edition
+of \textit{La Geometrie} and it is a complete differential calculus from Newton’s point of view. Using infinite series, Newton found chain rule, differentiation was a part of Newton's calculus. We cannot call Newton as the founder of calculus based on this. In Newton's calculus differentiation and integration are trivial as they are calculated term by term on powers of $x$.\\
+\\
+\indent When Newton just started his main work on calculus,\textit{A Treatise of the Methods of Series and Fluxions} (Latin name of \textit{De methodis}),Newton wrote:\\
+\\
+\textit{''Since the operations of computing in numbers and with variables are closely similar ... I am amazed that it has occurred
+to no one (if you except N. Mercator with his quadrature of
+the hyperbola) to fit the doctrine recently established for decimal numbers in similar fashion to variables, especially since
+the way is then open to more striking consequences. For since
+this doctrine in species has the same relationship to Algebra
+that the doctrine in decimal numbers has to common Arithmetic, its operations of Addition, Subtraction, Multiplication,
+Division and Root extraction may be easily learnt from the
+latter’s."}\cite{ref 5}\\
+\vspace{2ex}
+\hfill{Newton (1671), pp. 33–35}\\
+The quadrature (area determination) of the hyperbola which was mentioned by
+Newton was the following result\\
+$$\int_{0}^{x} \frac{dt}{1+t} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots,$$
+\\
+which was first published in the year 1668 by Mercator. Newton had rediscovered the same result
+in 1665, and this was a sign of distress for him and then he wrote \textit{De methodis} and an earlier work \textit{De analysi} in the year 1669; English title for this is \textit{On Analysis by Equations Unlimited in Their Number of
+Terms}. Newton discovered the series for $\tan^{-1}x, \sin x,$
+and $\cos x$ in \textit{De analysi}, without actually knowing that Indian mathematicians had already discovered all these three series before.
+Using method of expansion of a geometric series and integrating term by term, Newton rediscovered the results of Mercator and Indian mathematicians.\\
+\begin{align*}
+\int_{0}^{x} \frac{dt}{1+t} =& \int_{0}^{x}( 1 - t + t^2 - t^3 + \cdots)dt\\
+=& x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots\\
+\end{align*}
+and
+\begin{align*}
+\tan^{-1}x =& \int_{0}^{x}\frac{dt}{1+t^2}\\
+=& \int_{0}^{x} (1 - t^2 + t^4 - t^6 + \cdots)dt\\
+=& x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots.
+\end{align*}
+Newton used these methods frequently in \textit{De analysi} and \textit{De methodis}, and he extended their scope by algebraic manipulation. Newton found inverse functions by inverting infinite series along with finding sums,
+products, quotients, and roots. For instance, after Newton (1671), p. 61, found the series expansion $x - (x^2/2) + (x^3/3) - \cdots,$
+for $\int_{0}^{x} dt/(1 + t)$, which is $\log(1 + x)$, Newton put\\
+$$y = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots \hspace{3cm} (1)$$\\
+and found value of $x$(precisely what we remember is $e^{y}$, minus 1) by solving(1). Newton set $x = a_{0} + a_{1}y + a_{2}y^2 + \cdots$, then he substituted these values in the right-hand side of equation (1), and he determined values of  $a_{0}, a_{1}, a_{2},...$
+by comparing with the coefficients on the left-hand side of the equation.
+Newton found few terms,\\
+$$x = y + \frac{y^2}{2} + \frac{y^3}{6} + \frac{y^4}{24} + \frac{y^5}{120} + \cdots,$$\\
+and then Newton guessed $a_{n} = 1/n!$ so as Wallis did. Newton told \textit{''Now after the roots have been extracted to a suitable period, they may
+sometimes be extended at pleasure by observing the analogy of the series.”}\\
+\\
+\indent In the year 1698, De Moivre gave a formula for inverting series that justifies the results; Newton must be appreciated for giving such an extraordinary result. Also, his method of discovery of sine series (Newton (1669),
+pp. 233, 237) is using binomial series is interesting\\
+$$(1+a)^p =  1 + pa + \frac{p(p-1)}{2!}a^2 + \frac{p(p-1)(p-2)}{3!}a^3 + \cdots$$\\
+Newton substituted $a = -x^2, p = -\frac{1}{2} $ to obtain\\ 
+$$ \sin^{-1}x = z = x + \frac{1}{2}\frac{x^3}{3} + \frac{1\cdot3}{2\cdot4}\frac{x^5}{5} + \frac{1\cdot3\cdot5}{2\cdot4\cdot6}\frac{x^7}{7} + \cdots$$\\
+by term-by-term integration and then Newton found root of the equation that is,\\
+$$x = z - \frac{1}{6}z^3 + \frac{1}{120}z^5 - \frac{1}{5040}z^7 + \frac{1}{362880}z^9 - \cdots.$$\\
+Later, he added that coefficient of $z^{2n+1}$ is $1/(2n+1)!.$
+\section{The Calculus of Leibniz}
+Newton’s important works which were made in 1669, 1671 that seem extraordinary today were circulated among only some people and were not published
+at that time. There are reasons for this—one can see Westfall (1980), p. 231 for the reasons. However, shocking thing is that the first published paper on calculus was not by Newton but
+by Leibniz in the year 1684. Leibniz received credit due to this but then Newton and his followers questioned him of the about priority for the discovery and there was a dispute between them.\\
+
+\indent Leibniz discovered calculus independently, and he had a better notation. His followers helped in spreading the calculus way more than Newton's followers. However Leibniz’s work lacked the depth when compared with Newton's works but then Leibniz has only a part-time interest in mathematics. His \textit{Nova methodus}(1684) deals with some fundamentals such as the sum, product, and quotient rules for differentiation and it also introduces the $dy/dx$ notation. To Leibniz, $dy/dx$ was more than a symbol. He viewed it as quotient of infinitesimals $dy$ and $dx$, which he viewed it in terms of differences(the symbol $d$ is thus used) between neighboring values of $y$ and $x$, respectively.
+Leibniz also introduced the integral sign in his work \textit{De geometria} (1686) and
+proved the fundamental theorem of calculus that is, integration is the inverse
+of differentiation. This result was earlier known to Newton and Newton’s teacher Barrow, but it became more clear in Leibniz's terms. For Leibniz, $\int$ meant “sum,” and $\int f(x) dx$ meant sum of terms $f(x)dx$, which represents infinitesimal areas of height
+$f(x)$ and width $dx$. The difference operator $d$ gives us the term $f(x) dx$
+in the sum, and when we divide the same with $dx$, we get $f(x)$. \\
+\\
+$$\frac{d}{dx}\int f(x) dx = f(x)$$\\
+- the fundamental theorem of calculus ( integration is inverse of differentiation).
+The fundamental theorem given by Leibniz can be viewed in terms of infinitesimal geometry by estimating $\int f(x) dx$ as the area $A(x)$ under the curve $y = f(t)$
+between $t = a$ to $t = x$ (as shown in Figure 5.3). With infinitesimal increase in $t$ from $x$ to $x + dx$, $A(x)$ increases by an infinitesimal amount $dA(x)$, which is the area of an infinitesimal rectangle of width $dx$ and height $f(x)$.
+\begin{figure}
+\includegraphics[width=12cm]{WhatsApp Image 2024-04-30 at 6.09.12 PM (1) (1).jpeg}
+\centering
+\end{figure}
+$$\textbf{Figure 5.3: Fundamental theorem of calculus as infinitesimal geometry}$$
+\\
+\\
+Hence, $A(x)$ is an \textit{antiderivative} of $f(x)$:\\
+$$dA(x) = f(x)dx,$$
+$$\frac{dA(x)}{dx} = f(x).$$
+\\
+What makes Leibniz's works special is that he identifies important concepts.For instance, he introduced the word ''function” and was the first to lay a path for it. He identified differences between algebraic and transcendental functions. Leibniz and Newton's approaches were different. For Leibniz, in order to evaluate $\int f(x) dx$, he need to find function whose derivative is f(x), whereas for Newton viewed the same problem in terms of expansion of $f(x)$ in series, then integration would be easier.\\
+\\
+\indent Before integrating a function, one must know whether the given algebraic function can be integrated or not with the set of rules they have and mathematicians found the logic for the same. Howver, there was not a much more advance in calculus textbooks more than what Leibniz had done. But one thing for sure is, Newton faced a lot of problems in publishing his book and that job is much more easier now.
+\\
+\\
+\\
+\begin{thebibliography}{99}
+		\addcontentsline{toc}{chapter}{References}
+		
+		\bibitem{ref 1} Huygens, p. 337, 1659
+		
+		\bibitem{ref 2} Baron, pp. 129, 185, 1969 and
+Edwards, p. 116,1979
+  \bibitem{ref 3} Hobbes, p. 301,1656
+  \bibitem{ref 4} Edwards, pp. 171–176,1979
+  \bibitem{ref 5} Newton, pp. 33–35, 1671
+    \bibitem{ref 6}  Descartes, \textit{La Geometrie},Schooten (1659)
+		
+
+		
+		
+	\end{thebibliography}
+	
+
+
+	
+	
+	
+	
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

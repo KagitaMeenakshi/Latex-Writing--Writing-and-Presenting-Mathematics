@@ -1,0 +1,393 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsfonts,amsmath,multicol,setspace,amssymb,graphicx}
+\begin{document}
+\noindent KAGITA MEENAKSHI\\
+MA23BTECH11013.\\
+$$\textbf{CHAPTER 2}\\$$
+$$\textbf{EULER AND LOGARITHMS}$$
+$$07-03-2024.$$\\
+Euler published \textit{``Introductio in analysin infinitorum"} which is a two volume masterpiece in the year 1748. It is a prerequisite for calculus i.e. a 
+pre-calculus text which is useful in studying calculus.\\
+\\
+\noindent Carl Boyer gave the following words after referring Introductio, \textit{``It was this 
+work which made the function concept basic in mathematics."}\\
+\\
+Euler defined function as follows: 
+\textit{``A function of a variable quantity is an analytic expression composed in any way whatsoever of the variable quantity and numbers 
+or constant quantities."}\\
+\\
+E.W. Hobson complemented Euler for his work Introductio,
+\textit{``Hardly any other work in the history of Mathematical Science gives 
+to the reader so strong an impression of the genius of the author as 
+the Introductio."}\\
+\\
+We have different kinds of functions involving different variable terms say,
+polynomial functions, trignometric functions, multinomial functions, exponential functions.This chapter is about logarithms and we arrive at so called logarithms by taking inverse of exponential functions.This way, we enter the most important concept
+"\textbf{LOGARITHMS}".\\
+\\
+\textbf{Prologue}\\
+\\
+Pierre-Simon de Laplace (1749-1827) gave the following words on
+logarithms:
+\textit{``Logarithms,by shortening the labors, doubled the life of the astronomer."}\\
+According to Euler,\textit{``logarithms are useful in finding intricate roots."}\\
+\\
+John Napier(1550-1617) termed the word ``logarithm".
+Henry Briggs(1561-1631) constructed logarithmic table by taking commom base-10. Firstly he set the following: log 1 = 0 and log 10 =1 .However, we see later that this contradicts Napier's assertion which states log 10,000,000=0\\
+\\
+Briggs took the standard base as 10, hence it will be easier to find the logarithm of a number which is in the integral or rational powers of 10.
+But the question is how do we find the logarithm of a number which is not easier to represent in rational powers of 10.For example, how do we find log 5 in base 10 ?\\
+\\
+\\
+In order to calculate $\log_{10}5$, First, we need to construct a logarithmic table by taking logarithm of  numbers which are in powers of 10 (and base is 10) say,\\
+
+\noindent log 1 =0;\\
+log 10 =1;\\
+log $\sqrt{10}$ = log ( $10^\frac{1}{2}$) =$\frac{1}{2}$log 10 = 0.50000;\\
+We know that $\sqrt{10}$= 3.1622777, hence log 3. 1622777 = 0.5000. Similarly,\\
+$\log \sqrt{\sqrt{10}}= \log 1.7782794= 0.250000.$\\
+\\
+Continuing the process further, we would get,\\
+$\log 10^{1/4096} = \log 1.0005623 = 0.0002441,$\\
+$\log 10^{1/8192} = \log 1.0002811 = 0.00012207.\\$
+\\
+In order to find $\log 5 $:\\
+We know that $ \sqrt{5}$ = 2.2360980 and $\sqrt{\sqrt{5}}$ = 1.4953488.\\
+Continuing the process, we obtain $5^{1/4096}$ = 1.0003930 and this value is between $10^{1/4096}$ and $10^{1/8192}.$ Hence we use ratio and proportion to find the logarithm of unknown number.\\
+\\
+\textbf{NUMBER} \hspace{6.1cm} \textbf{LOGARITHM}\\
+$1.0005623 = 10^{1/4096}\hspace{5cm} 0.00024414 $\\
+$1.0003930 =  5^{1/4096} \hspace{5.2cm}  x$\\
+$1.0002811 = 10^{1/8192}\hspace{5cm} 0.00012207 $\\
+\\
+Using proportions, we get,\\
+$$\frac{x - 0.00012207}{0.00024414 -0.00012207} = \frac{1.0003930-1.0002811} {1.0005623 -1.0002811} $$
+ Hence,  $\log(5^{1/4096})
+ = x = 0.000170646$ . Therefore, 
+$\log 5 = 4096 (0.000170646) = 0.698966 . $ Approximating to six decimal places, we get,\\
+$$ \log 5 = 0.698970. $$
+
+\noindent This method is time-taking especially when we are aiming to find logarithm of decimal numbers say,log 6.34. \\
+\\
+Nicholas Mercator (1620-1687), James Gregory (1638-1675) and the great Isaac Newton (1642-1727) came up with the idea of infinite series which reduces the complexity of solving logarithms.\\
+\textbf{Newton expanded $(1 + x)^r$ as follows :}\\
+
+$(1+x)^r$ $=$ 1 + $rx$ +   $\frac{r(r-1)}{2\cdot1}$$x^2$ +  $\frac{r(r-1)(r-2)}{3\cdot2\cdot1}$$x^3$ + $\cdots\cdots.\\$
+\\
+
+\noindent This formula is valid for all r ,that is, r can be negative, positive , rational etc.
+For example , we can find $\sqrt{1.2}$ by substituting x=$\frac{1}{5}$ and r=$\frac{1}{2}$ in the above formula :\\
+\begin{align*}
+\sqrt{1.2}=& \left(1 + \frac{1}{5}\right)^{1/2} \\
+\indent \thickapprox& 1 +  \frac{1}{2}\left(\frac{1}{5}\right)  +  \frac{ \frac{1}{2}(\frac{1}{2}-1)}{2\cdot1}\left(\frac{1}{5}\right)^2  + \frac{ \frac{1}{2}(\frac{1}{2}-1)(\frac{1}{2}-2)}{3\cdot2\cdot1}\left(\frac{1}{5}\right)^3 \\
+\indent =& 1 +  \frac{1}{10}  -  \frac{1}{200} + \frac{1}{2000} = \frac{2191}{2000} = 1.09550.\\
+\end{align*}
+Hence $\sqrt{1.2} \thickapprox 1.09545$ (rounded off to 5 decimal places).\\
+Until now, we found square roots of numbers using infinite series expansion.
+Now, we are left with finding logarithms using the obtained values.
+\textbf{St. Vincent (1584--1667) and Alfonso de Sarasa (1618-1667)} linked logarithms with area under portions of a hyperbola and obtained wonderful results.\\
+Let $A(x)$ be the area under the hyperbola $y =\frac{1}{u}$  between $u = 1 $ and $u = x$(as shown in figure 2.1).
+$$A(x) = \int_{1}^{x}\frac{1}{u}du .$$ \\
+Then $A(ab)$ is the area under the hyperbola $y=\frac{1}{u}$ between $u=1$ and $u=ab$:\\
+$A(ab) = \int_{1}^{ab}\frac{1}{u}du $ = $\int_{1}^{a}\frac{1}{u}du$ + 
+$\int_{a}^{ab}\frac{1}{u}du$,\\
+By substituting $u=at$ in the second integral($du=adt$), we get :\\
+$A(ab)= \int_{1}^{a}\frac{1}{u}du$ + $\int_{1}^{b}\frac{1}{t}dt$.\\
+\noindent $A(ab)= \int_{1}^{a}\frac{1}{u}du$ + $\int_{1}^{b}\frac{1}{u}du$.\\
+$$\textbf{$A(ab)=A(a)+A(b).$}$$\\
+Now consider A($a^r$),\\
+A($a^r$) = $\int_{1}^{a^r}\frac{1}{u}du$.\\
+By substituting u=$t^r$, we get,\\
+A($a^r$) = $\int_{1}^{a}\frac{1}{t^r}r(t^{r-1})dt$ = $r\int_{1}^{a}\frac{1}{t}dt$ = $r\int_{1}^{a}\frac{1}{u}du.$\\
+$$\textbf{$A(a^r) = rA(a).$}$$
+\begin{figure}
+   \centering
+   \includegraphics[width=9cm]{WhatsApp Image 2024-03-30 at 4.11.32 PM.jpeg}
+\end{figure}
+$$ \textbf{FIGURE 2.1}$$
+\\
+Hence, it is clear that these two properties resemble logarithmic properties.\\
+Now, we make a minor modification in the above formula by introducing a left shift, i.e.,\\
+$$\textbf{$l(1+x) = \int_{0}^{x}\frac{1}{1+u}du$.}$$\\
+$\frac{1}{1+u}$ = $(1+u)^{-1}$. Expanding this using Newton's infinite series, we get:
+$l(1+x) = \int_{0}^{x}(1-u+u^2-u^3+u^4-\cdots)dt$ = x - $ \frac{x^2}{2} $ + $\frac{x^3}{3}$-$\cdots.$\\
+For small values of x, this series gives the exact values of logarithms.\\
+For example, if we put x=0.1 in the above expression, we get :\\
+$$\textbf{$l(1.1)=\int_{0}^{0.1}\frac{1}{1+u}du.$}$$\\
+These approximations (almost rounded off to 57 decimal places) made it possible to construct a table of base-10 logarithms.\\
+Until now, we have seen how Napier, Briggs and Newton approached logarithms.
+Now, we shall see how Euler defined logarithms.\\
+\\
+\textbf{Enter Euler}\\
+\\
+Euler defined the exponentials as the functions 
+of the form $y = a^z$ where $a>1.$\\
+Euler wrote,
+\textit{``The extent to which y depends on z,is easily understood from 
+the nature of exponents.''}\\
+To Euler, logarithms are nothing but the inverse of exponential functions.
+We need to obtain value of $z$ such that $a^z = y$ and this $z$ would be in terms of function of $y$ which is \textbf{logarithm} of $y$. Euler stated the following rules for logarithms :\\
+\\
+\textbf{GOLDEN RULE FOR LOGARITHMS:}\\
+\textbf{1st rule:}\\
+We can tranform logarithms from one base to the other base.For example, if we know $\log_ax$, we can easily find $\log_bx$.\\
+Consider, $\log_bx$= z, then x=$b^z$.\\
+$\log_ax$=$\log_a$b^z$$=z$\log_ab$.\\
+$$ \textbf{z= $\frac{\log_ax}{\log_ab}$.}\\$$
+\\
+\textbf{2nd rule:}\\
+The ratio of logarithms of two numbers remains the same even if we change the base of logs.\\
+$$\textbf{$\frac{\log_bt}{\log_bs}$ = $\frac{\log_at/\log_ab}{\log_as/\log_ab}$ = $\frac{\log_at}{\log_as}.$}\\$$
+\\
+Now, let us look into series expansion of the exponential function $y = a^x$, 
+where $a > 1$ (given by Euler). Let $\omega$ be an infinitely small number such that
+$a^\omega$  = l + $\psi$, where $\psi$ is also an 
+infinitely small number. $\omega$ is almost 0, so 
+$a^\omega $= $a^0$ =1,
+This gives us an infinitely small quantity $\psi$ = $a^\omega$ - 1.
+We have two infinitely small quantities $\omega$ and $\psi$.\\
+\\
+Now, the task is to relate both of them, let $\psi$ = k$\omega$,this gives us :
+$$\textbf{$a^\omega$ = 1 + $k\omega$.}$$
+We take two numerical 
+examples to find how k depends on a .\\
+\textbf{(1)} Let a = 10 and $\omega$= 0.000001,\\ so 
+ $10^{0.000001}$ = 1 + k(0.000001 ) . From table of logarithms, we find that\\ 
+k = 2.3026.\\ \textbf{(2)} Let a = 5 and $\omega$ = 0.00000 1,\\
+which gives us $5^{0.000001}$ = 1 + k(0.000001). \\We find that k=1.60944.\\
+\\
+With this, Euler concluded,\textit{`` k is a finite number that depends 
+on the value of the base a."}\\
+\\
+Now, we shall look into the expansion of $a^x$ for the finite values of $x$, let $j = x/w$,then \\
+
+\noindent \textbf{$a^x$ = $(a^\omega)^{x/\omega}$ = $(1 + k\omega)^j$ = $(1 + kx/j)^j$.}\\
+
+\noindent Now, we expand the latter using Newton's infinite series expansion.\\
+\\
+\textbf{$a^x$ = 1 + $j(\frac{kx}{j})$ + $\frac{j(j-1)}{2\cdot1}(\frac{kx}{j})^2$ + $\frac{j(j-1)(j-2)}{3\cdot2\cdot1}(\frac{kx}{j})^3$ + $\cdots$.}\\
+\\
+Since, $x$ is finte number and $\omega$ is infinitely small number, $j=x/\omega$ will be an infinitely large number.\\
+Hence,$ \lim_{j\to\infty}(j-n)/j = 1$ for $n\geq1.$. Thus,\\
+\\
+\indent $a^x$ = 1 + $kx$ + $\frac{k^2x^2}{2\cdot1}$ +  $\frac{k^3x^3}{3\cdot2\cdot1}$  + $\cdots$. \hspace{2cm} (2.1)\\
+\\
+Put x=1 in the above formula and then we get,\\
+\\
+\indent $a = 1 + k + \frac{k^2}{2\cdot1}$ + $\frac{k^3}{3\cdot2\cdot1}$ + $\cdots$.\\
+\\
+Euler had chosen 'a' as the particular base 
+for which $k = 1$. That means, select value of 'a' initially such that $a^\omega$ = 1 + $\omega$
+where $\omega$ is infinitely small. Putting $x = k = l$ into (2.1), we get,
+\\
+\\
+\indent $a = 1 + 1 + \frac{1}{2\cdot1}$ + $\frac{1}{3\cdot2\cdot1}$ + $\cdots$.\\
+\\
+\noindent Euler calculated this number to be approximately 
+$2. 71828182845904523536028$, 
+a constant which he designated as $e$. Euler called the logarithms associated with this base as \textit{``natural or hyperbolic."}\\ 
+\\
+Put $k = 1$ and $a = e$, the series in (2.1) would become,\\
+$$ e^x = 1 + x + \frac{x^2}{2\cdot1} + \frac{x^3}{3\cdot2\cdot1} + \cdots = 
+\sum_{r=0}^{\infty}\frac{x^r}{r!} $$.\\
+Now, we will look into the series expansion of logarithmic function using above formulae. Euler knew that, for infinitely small $\omega$,
+\textbf{$ e^\omega $ =1 + $\omega$}.
+Then, $\omega =\ln(1+\omega)$ and $j\omega = j\ ln(l + \omega) = \ln(l + \omega )^j$. \\
+We must note that $\omega$ is positive (though it is a infinitely small value)
+and $j$ is infinitely large and hence  $( 1 + \omega)^j$ exceeds 1.
+We need to find j such that $x = ( 1 + \omega)^j$ - 1.\\
+One must note three important points from above formulae :\\
+\textbf{(1)} $\omega$ = $(1 + x)^{1/j}$ - 1 \\
+\textbf{(2)}  $1 + x =  (1 + \omega)^j = e^{\omega j} $\\
+Hence, $\ln(1 + x) = j\omega$.\\
+\textbf{(3)}  $\ln(1 + x)$ is finite quantity and $\omega$ is infinitely small, hence $j$ must be 
+infinitely large. \\
+\\
+\\
+Now, we shall see the infinite series expansion of natural log function given by Euler:\\
+$\ln(1 + x) = j\omega = j [(1 + x)^{1/j} - 1] = j[ 1 + \frac{1}{j}x + \frac{\frac{1}{j}(\frac{1}{j}-1)}{2\cdot1}x^2 + \cdots] - j\\
+= x - \frac{j-1}{2j}x^2 + \frac{(j-1)(2j-1)}{2j\cdot3j}x^3 + \cdots$.\\
+Since, $j$ is infinitely large, $ \lim_{j\to\infty}(j-n)/j = 1$ for $n\geq1.$\\ 
+\noindent Hence,\\
+$$\textbf{$\ln(1+x)$ =  x - $\frac{x^2}{2}$ + $\frac{x^3}{3}$ - $\cdots$.}$$\\
+Replacing x with -x, we get,
+$$\textbf{$\ln(1-x)$ = - x - $\frac{x^2}{2}$ - $\frac{x^3}{3}$ - $\cdots$.}$$\\
+Thus,\\
+$$ \ln\frac{1+x}{1-x} = 2[ x + \frac{x^3}{3} + \frac{x^5}{5} + \cdots].$$
+\\
+Euler called this series ``strongly convergent" for small values of x.
+This makes our logarithmic calculations easier. For example if we want to calculate $\log_{10}5$ , \\
+Put x=$\frac{1}{3}$ in the above expression,\\
+$\ln\frac{1+\frac{1}{3}}{1-\frac{1}{3}}$ = 2[$\frac{1}{3}$ + $\frac{1}{81}$ + $\frac{1}{1215}$ + $\cdots$ ].or $\ln2$ = 0.693135.\\
+Now, put  x=$\frac{1}{9}$ in the above expression,\\
+$\ln\frac{1+\frac{1}{9}}{1-\frac{1}{9}}$ = 2[$\frac{1}{9}$ + $\frac{1}{2187}$ + $\cdots$ ], that means, $\ln(\frac{5}{4})$ = 0.223143.\\
+We know that, $\ln5$ = $\ln(\frac{5}{4}\times4)$ = $\ln(\frac{5}{4})$ + 2$\ln2$.\\
+Hence,  $\ln5$ = 1.609413.\\
+$\ln10$ = $\ln 5$ + $\ln 2$ = 1.609413 + 0.693135 = 2.302548.\\
+Now, using 2nd rule in \textbf{GOLDEN RULE OF LOGARITHMS},\\
+$$ \log_{10}5 = \frac{\ln5}{\ln10} = \frac{1.609413}{2.302548} = 0.698970.$$ \\
+Euler, in his 1755 textbook, the \textit{``Institutiones calculi differentialis"} found
+ differential of $\ln x$. \\
+Consider $y = \ln x$, \\
+Whenever $y=f(x)$, $\frac{dy}{dx}$= $\frac{f(x+h)-f(x)}{h}$. Consider $h=dx$ here,\\
+then $dy$= $\ln(x + dx)$ - $\ln x$ = $\ln( 1 + \frac{dx}{x})$.\\
+$$ dy= \left(\frac{dx}{x}\right) - \frac{(dx/x)^2}{2} +  \frac{(dx/x)^3}{3} + \cdots. $$\\
+$dx$ is a small quantity and hence higher powers of $dx$ are infinitely small and we could neglect all the higher powers of $dx$.\\
+\\
+Hence $dy = dx/x$.\\
+$dy/dx = 1/x$.\\
+Thus,Differential of $\ln x$ is 1/$x$.\\
+$$D_{x}{[ln x]} = dy/dx = 1/x. $$
+\\
+\textbf{EPILOGUE}\\
+\\
+Now, we will see how logarithms and harmonic series are related.\\
+Let us consider a harmonic series $\sum_{k=1}^{\infty}1/k$. The rate at which sum grows is too less. $\sum_{k=1}^{20}1/k \approx$ 3.60 , $\sum_{k=1}^{220}1/k \approx $ 5.98;
+From these two values, it is clear that sum of first 20 terms is greater than sum of next two-hundred terms and this slow increase in sum is termed as 
+\textit{``glacial slowness".}\\
+\textbf{The harmonic Series $\sum_{k=1}^{\infty}1/k$ diverges to infinity:}\\
+Though the increase in sum of numbers is too less when compared to number of terms added, there is certainly atleast a minute increase (to the previous terms) which makes the series to diverge even when the individual terms tend to zero.\\
+\\
+\textbf{Jakob Bernoulli},  in his 1689 classic, \textit{``Tractatus de 
+seriebus infinitis (Treatise on infinite series)"},  proved that the harmonic series diverges.\\
+\\
+\textbf{Theorem.}  \textit{The harmonic series diverges.}\\
+\textit{Proof.} Let $a>1$ , then we need to show that\\
+ $$ \frac{1}{a} + \frac{1}{a+1} + \frac{1}{a+2} + \cdots + \frac{1}{a^2} \geq 1. $$\\
+Now, consider the sum $ \frac{1}{a+1} + \frac{1}{a+2} + \cdots + \frac{1}{a^2} .$ \\
+This series has $a^2 - a$ fractions and we know that,\\
+Whenever $n \leq a$, $a+n \leq 2a \leq a^2$.\\
+Hence $\frac{1}{a+n} \geq \frac{1}{a^2}. $\\
+Thus  $ \frac{1}{a+1} + \frac{1}{a+2} + \cdots + \frac{1}{a^2} \geq (a^2-a)(\frac{1}{a^2}) = 1 - \frac{1}{a}. $\\
+Now, add 1/a to both sides, we get,\\
+ $\frac{1}{a} + \frac{1}{a+1} + \frac{1}{a+2} + \cdots + \frac{1}{a^2} \geq 1.$ \\
+ Now, let us consider,\\
+  $$\sum_{k=1}^{\infty}\frac{1}{k} = 1 + (\frac{1}{2} + \frac{1}{3} + \frac{1}{4}) +
+  (\frac{1}{5} + \frac{1}{6} + \cdots + \frac{1}{25}) + \cdots. $$\\
+        $$\sum_{k=1}^{\infty}\frac{1}{k}  \geq 1 + 1 + 1 + \cdots. $$\\
+This proves that harmonic series diverges to infinity because it grows larger than the previous quantity.Leibniz provided his own derivation for the formula $\frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots. $ Euler gave divergence proof for harmonic series in his book Introductio.Now, we shall see Euler's divergence proof for harmonic series:\\
+\textbf{Theorem.} \textit{ The harmonic series diverges.}\\
+\textit{Proof.} Euler started by taking the infinite series expansion of  $\ln(1-x)$.\\
+$$ \ln(1-x) = -x - \frac{x^2}{2} - \frac{x^3}{3} - \cdots. $$
+Put $x=1$, we get,\\
+$ \ln0 = -(1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots) $,\\
+$ 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots = -\ln0 = \ln\infty = \infty. $
+Now, Euler tried to find a relation between harmonic series and logartithmic series by substituting\\ $x = 1/n$ in $\ln (1+x)$ series.\\
+$ \ln(1+\frac{1}{n}) = \frac{1}{n} - \frac{1}{2n^2} + \frac{1}{3n^3} - \cdots. $\\
+$$ \frac{1}{n} = \ln(1+\frac{1}{n}) + \frac{1}{2n^2} - \frac{1}{3n^3} + \cdots. $$
+For large $n$, $\frac{1}{n} = \ln\left(1+\frac{1}{n}\right)$. Substituting $n$ = 1, 2, 3, ...we get :
+\begin{align*}
+1 =& \ln2 + \frac{1}{2} - \frac{1}{3} + \frac{1}{4} - \cdots\\
+\frac{1}{2} =& \ln\left(\frac{3}{2}\right) + \frac{1}{8} - \frac{1}{24} + \frac{1}{64} - \cdots\\
+\vdots& \hspace{0.5cm} \vdots \hspace{0.5cm} \vdots \hspace{0.5cm} \vdots \\
+\frac{1}{n} =& \ln\left(\frac{n+1}{n}\right) + \frac{1}{2n^2} - \frac{1}{3n^3} + \frac{1}{4n^4} - \cdots.\\
+\end{align*}
+We can add all the terms down the column to get :
+\begin{align*}
+\sum_{k=1}^{n} \frac{1}{k} =& [ \ln2 + \ln\frac{3}{2} + \ln\frac{4}{3} + \cdots + \ln(\frac{n+1}{n})]\\ +& \frac{1}{2}
+[1 + \frac{1}{4} + \cdots + \frac{1}{n^2}] - \frac{1}{3} [1 + \frac{1}{8} + \cdots + \frac{1}{n^3}] + \cdots. 
+\end{align*}
+We know that,\\
+$ \ln2 + \ln\frac{3}{2} + \ln\frac{4}{3} + \cdots + \ln(\frac{n+1}{n}) = \ln2 + \ln3 -\ln2 + \ln4 - \ln3 + \cdots + \ln(n+1) - \ln n = \ln(n+1) . $\\
+Euler approximated sum of remaining terms to be 0.577218.
+\\
+$$ \sum_{k=1}^{n} \frac{1}{k} \approx \ln(n+1) + 0.577218. $$ \\
+Greek letter $\gamma$ is known as \textbf{"EULER'S CONSTANT."}\\
+$$ \gamma = \lim_{n\to\infty}[\sum_{k=1}^{n} \frac{1}{k} - \ln(n+1) ].$$\\
+Now, we prove that that above defined number exists.\\
+\noindent \textbf{Theorem.} $ \lim_{n\to\infty}[\sum_{k=1}^{n} \frac{1}{k} - \ln(n+1) ]$ exists.\\
+\textit{Proof.}  Let,\\
+$$  c_{n} = \sum_{k=1}^{n} \frac{1}{k} - \ln(n+1). $$\\
+Consider,
+\begin{align*}
+c_{n+1} - c_{n}  =& [\sum_{k=1}^{n+1} \frac{1}{k} - \ln(n+2)] - [\sum_{k=1}^{n} \frac{1}{k} - \ln(n+1)] \\
+ =&  \frac{1}{n+1} - \ln(n+2) + \ln(n+1) \\
+=& \frac{1}{n+1} - \int_{n+1}^{n+2}\frac{1}{x}dx > 0,\\
+\end{align*}
+As shown in Figure 2.2, the integral is the shaded area below the hyperbola $y = 1/x$   and $1/(n + 1)$ is the area of larger rectangle (part under the hyperbola.)
+it. Hence $c_{1} < c_{2} < \cdots < c_{n} < c_{n+1}
+ < \cdots$ , thus the sequence \{$c_{n}$\} is 
+increasing.\\
+\newpage
+\begin{figure}
+    \centering
+    \includegraphics[width=10cm]{WhatsApp Image 2024-03-30 at 4.02.22 PM.jpeg}
+\end{figure}
+$$\textbf{FIGURE 2.2}$$
+\\
+From Figure 2.3, it is clear that the sum of the rectangular blocks 
+will be less than the  area under the curve.\\
+Hence,\\
+$\sum_{k=1}^{n}\frac{1}{k} = 1 + \sum_{k=2}^{n}\frac{1}{k}  < 1 + \int_{1}^{n}\frac{1}{x}dx = 1 + \ln n < 1 + \ln (n+1).$\\
+Thus,\\
+$$  c_{n} = \sum_{k=1}^{n} \frac{1}{k} - \ln(n+1) < 1$$ for all n.\\
+With this, we can conclude that \{$c_{n}$\} is an increasing sequence bounded above by 1. Hence,
+$\gamma = \lim_{n\to\infty}c_{n}$ exists.\\
+\\
+Slight modification of the formula gives,\\
+$$ \gamma = \lim_{n\to\infty}[\sum_{k=1}^{n} \frac{1}{k} - \ln n ].$$\\
+However there isn't a big difference between above two formulas and we will prove that.
+\newpage
+\begin{figure}
+          \centering
+        \includegraphics[width=13cm]{WhatsApp Image 2024-03-30 at 4.02.08 PM.jpeg}
+\end{figure}
+$$\textbf{FIGURE 2.3}$$
+\begin{align*}
+\lim_{n\to\infty}[\sum_{k=1}^{n} \frac{1}{k} - \ln n ]
+=& \lim_{n\to\infty}[\sum_{k=1}^{n} \frac{1}{k} -\ln(n+1) + \ln(n+1) - \ln n ]\\
+=& \lim_{n\to\infty}[\sum_{k=1}^{n} \frac{1}{k} -\ln(n+1)] + \lim_{n\to\infty}\ln(1+\frac{1}{n})\\
+=& \gamma + 0 = \gamma. 
+\end{align*}
+$\gamma$ is the most important constant term. 
+\\It was termed as \textit{``worthy of serious attention"} by Euler.\\
+\\
+We have many formulas for $\gamma$. Some of them are:\\
+$\gamma = -\int_{0}^{\infty}e^{-x}\ln x  dx .$\\
+$\gamma = [\frac{1}{2.2!} - \frac{1}{4.4!} + \frac{1}{6.6!} - \cdots] - \int_{1}^{\infty} \frac{cosx}{x} dx.$\\
+$\gamma = \lim_{x\to1^+} \sum_{n=1}^{\infty} ( \frac{1}{n^x} - \frac{1}{x^n} ) $ with symmetry in x and n.\\
+\\
+
+\noindent Lorenzo 
+Mascheroni (1750-1800) computed $\gamma$ upto 32-place accuracy. 
+Johann Georg von Soldner ( 1776-1833) gave $\gamma$ value which differs from that of
+Mascheroni's at the \textit{twentieth} decimal place. F. B. G. Nicolai ( 1793-1846) found the constant upto 40 places and proved that  von Soldner 
+was right and Mascheroni was wrong.\\
+\\
+Despite the fact that Mascheroni gave the wrong value for $\gamma$ (at twentieth decimal place) ,the effort Mascheroni put was appreciated and \\$\gamma$ is termed as \textbf{``EULER-MASCHERONI CONSTANT".}\\
+\\
+In this chapter, we have seen logarithms as functions and expansion of $\ln(1+x)$ as given by Euler. We have also seen how logarithms and harmonic series are related, which in turn led to the discovery of constant $\gamma.$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

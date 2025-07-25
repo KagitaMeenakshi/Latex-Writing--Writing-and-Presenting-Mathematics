@@ -1,0 +1,318 @@
+\documentclass[a4paper,reqno,11pt]{amsart}
+
+\usepackage{amsmath,amsfonts,mathtools,amsthm,amscd,amsxtra,amstext}
+\usepackage{amssymb,latexsym,verbatim}
+\usepackage{color,graphics}
+\usepackage{mathrsfs,listings,hyperref,cleveref,enumerate}
+
+\usepackage[top=2.7cm,bottom=2.7cm,left=2.4cm,right=2.4cm]{geometry}
+\renewcommand{\baselinestretch}{1.2}
+
+\theoremstyle{plain}%default 
+\newtheorem*{thm}{Theorem}
+
+
+
+\theoremstyle{definition} 
+\newtheorem{defn}{Definition}[section]
+\newtheorem{exmp}{Example}[section]
+\newtheorem{notation}{Notation}[section]
+\newtheorem{question}{Question}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{remark}{Remark}[section]
+
+\theoremstyle{remark} 
+\newtheorem*{rem}{Remark} 
+\newtheorem*{note}{Note} 
+\newtheorem{case}{Case}
+\newtheorem{fact}{Fact}
+
+
+
+
+
+\newcommand{\A}{{\mathcal A}}
+\newcommand{\R}{{\mathcal R}}
+\newcommand{\T}{{\mathcal T}}
+
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\CC}{{\mathbb C}}
+
+\newcommand{\NJ}{{\text{NEERAJ}}}
+
+\newcommand{\me}{\mathrm{e}}
+\newcommand{\mi}{\mathrm{i}}
+\newcommand{\dif}{\mathrm{d}}
+\begin{document}
+	
+	
+	\title{\textbf{Polynomial Equations}}
+	
+	\author[Kagita Meenakshi]{Kagita Meenakshi}
+	\email{ma23btech11013@iith.ac.in}
+	
+	\address{Department of Mathematics, Indian Institute of Technology Hyderabad, Kandi, Sangareddy - 502285}
+	
+	
+	\date{\today}
+	
+	
+	
+	\begin{abstract}
+		Finding solutions of a polynomial equation was given much importance. For instance,the ``degree of difficulty” of solving an equation is directly linked with the ``degree of polynomial".When we move onto higher degree equations, the complexity of solving polynomial equations increases.
+	\end{abstract}
+	
+	\maketitle
+It is easy to solve linear equations. Using \textbf{``Gaussian elimination"}, the Chinese solved $n$ linear equations containing $n$ unknowns(2000 years ago). 
+The question is how do we solve higher degree polynomial equations say, how do we solve \textbf{quintic} polynomials ( equations with degree 5) ? The methods used for solving lower degree equations are not enough to solve quintic polynomials. We need some special methods to solve them.
+Algebra laid a foundation to understand concepts like number theory, combinatorics and probability.\\
+\\
+\section{Algebra}
+The word ``algebra” is derived from the Arabic word \textit{al-jabr} which means ``restoring.” Al-Khwarizmi's book Al-jabr \textit{wal muqabala} that it science of restoring and opposition gives us the basis for algebra. Here, ``restoring” means adding equal terms on both sides of the equation and ``opposition” means making two sides of the equation equal. The surgical meaning of al-jabr is resetting of broken bones. Later on, the word al-jabr became \textbf{``algebra"} in Spanish, Italian and English. The surgical meaning is included in the \textit{Oxford English Dictionary}. \\
+\\
+\indent Al-Khwarizmi had given the word \textbf{``algorithm"}. His work was quite elementary and important too. He did not work on higher degree equations. He dealt with the solution of quadratic equations and gave some important conclusions.There is another mathematician named \textbf{Brahmagupta} who had done advanced work in algebra. His work was much more advanced than Al-Khwarizmi's work in terms of notations, consideration of negative numbers and treatment of Diophantine equations.\\
+\indent Despite doing all these, Al-Khwarizmi's algebra is known as \textbf{definitive algebra} because this algebra gives us elementary and fundamental conclusions.
+Algebra goes hand-in-hand with number theory and geometry. \\
+\section{Linear Equations and Elimination}
+The Chinese solved linear equations containing unknowns using so-called Gaussian elimination, a method in which we obtain triangular system to solve the equations. This method is included in the book \textit{Jiuzhang suanshu} (Nine Chapters of Mathematical Art;Shen et al. (1999)).\\
+\\
+Consider $n$ linear equations with unknowns :\\
+\begin{align*}
+a_{11}x_{1} + a_{12}x_{2} + \cdots + a_{1n}x_{n} =& b_{1}\\
+\vdots&\\
+a_{n1}x_{1} + a_{n2}x_{2} + \cdots + a_{nn}x_{n} =& b_{n}
+\end{align*}
+By doing mathematical operations, we can obtain triangular system which looks like :\\
+\begin{align*}
+a\prime_{11}x_{1} + a\prime_{12}x_{2} + \cdots + a\prime_{1n}x_{n} =& b'_{1}\\
+\indent \hspace{2cm} a\prime_{22}x_{2} + \cdots + a\prime_{2n}x_{n} =& b'_{2}\\
+\vdots&\\
+a\prime_{nn}x_{n} =& b'_{n}\\
+\end{align*}
+We can solve the last equation first and then use back substitution to solve the above linear equations. Long back, these calculations were done on a Chinese device called counting board which uses row operations similar to what we do by taking matrices to solve equations. Detailed explanation is provided by Li and Du (1987) or Martzloff (2006).\\
+Later on, Chinese mathematicians found polynomial equations in two or
+more variables can also be solved using elimination that is, by eliminating one of the variables. Consider the following equations :\\
+$$a_{0}(x)y^m + a_{1}(x)y^{m-1} + \cdots + a_{m}(x) = 0 \hspace{3cm} (1)$$
+$$b_{0}(x)y^m + b_{1}(x)y^{m-1} + \cdots + b_{m}(x) = 0 \hspace{3cm} (2)$$
+Here, $a_{i}(x)$ and $b_{j}(x)$ are polynomials in $x$ where $0 \leq i,j \leq m.$ We can eliminate $y^m$ by doing $b_{0}(x) \times (1) - a_{0}(x) \times (2)$ and the equation transforms as follows :
+$$c_{0}(x)y^{m-1} + c_{1}(x)y^{m-2} + \cdots + c_{m-1}(x) = 0 \hspace{3cm} (3)$$
+Now, we need to form a second equation of degree $m−1$ involving variable $y$ and this can be achieved by multiplying $(3)$ by
+$y$ first and then eliminating $y^m$ term between the equations $(3) \times y$ and $(1)$ which gives :\\
+$$d_{0}(x)y^{m-1} + d_{1}(x)y^{m-2} + \cdots + d_{m-1}(x) = 0 \hspace{3cm} (4)$$
+Now, we can continue the process further to eliminate $y$ terms between the equations (3) and (4). At last, we will be left with the equations which contain $x$ alone.\\ \indent The same method
+was extended to polynomial equations containing four variables in the book written by Zhu Shijie(1303) named
+\textit{Siyuan yujian} (Jade Mirror of Four Unknowns).
+Linear equations can be solved using cramer's rule. This method involves determinants to solve equations.\\
+\\
+\section{Quadratic Equations}
+Earlier, in 2000 BCE, Babylonians were able to solve the pair of equations which are in the form :\\
+$$x + y = p,$$
+$$xy = q,$$
+which gives the quadratic equation,\\
+$$x^2 + q = px.$$
+The two roots of the quadratic equation can be obtained from pair of equations taken, that is,\\
+$$x,y = \frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q},$$
+Babylonians did not take negative roots into consideration. In the above result, both the roots were positive.\\
+The mechanism involved to obtain roots is as follows :\\
+(i) First form $\frac{x+y}{2}.$\\
+(ii) Then $\left(\frac{x+y}{2}\right)^2.$\\
+(iii) Take $\left(\frac{x+y}{2}\right)^2 - xy.$\\
+(iv) Then form $\sqrt{\left(\frac{x+y}{2}\right)^2 - xy} = \frac{1}{2}\sqrt{(x-y)^2} = \frac{x-y}{2}.$\\
+(v) Find $x, y$ using (i) and (iv).\\
+\\
+Brahmagupta expressed the formula in his words as follows :\\
+\\
+\indent \textit{``To the absolute number multiplied by four times the [coefficient of the] square, add the square of the [coefficient of the]
+middle term; the square root of the same, less the [coefficient
+of the] middle term, being divided by twice the [coefficient of
+the] square is the value."}\cite{ref 1}\\
+\vspace{2ex}
+\hfill {-Colebrooke (1817), p.346}\\
+The solution for quadratic equation $ax^2 + bx = c$ is $x = \frac{\sqrt{4ac + b^2} - b}{2a}$ and the same can also be written as\\
+$$x = \frac{\sqrt{ac + (b/2)^2} - (b/2)}{a}.$$
+\\
+The basis for Babylonians and Brahmagupta's solutions is not clear. However, one can find and understand the basis for the solutions of quadratic equations in Euclid’s \textit{Elements}, Book VI.\\
+\indent Algebra is linked with geometry and now, we shall solve an algebraic problem using geometry. In order to solve $x^2 + 10x = 39$ using geometry, we can think of squares and rectangles. Let $x^2$ be a square of side $x$, and $10x$ be two $5 \times x$ rectangles as shown in Figure 5.1. We need to add an extra square of area 25 to complete the square of side $x + 5$.Hence,
+$$(x + 5)^2 =39 + 25 =64.$$
+\\
+\begin{figure}
+\includegraphics[width=8cm]{WhatsApp Image 2024-04-06 at 12.29.23 PM.jpeg}
+\end{figure}
+$$\textbf{Figure 5.1}$$
+\\
+That is, $x+5 = 8$ and $x = 3.$ Al-Khwarizmi did not take negative solutions into consideration, that is the reason he avoided $x = -13$ as the solution.Avoiding negative coefficients is not always possible as it causes algebraic complications. The following equations shows different ways of distributing positive terms in between the two sides: $x^2 + ax = b, x^2 = ax + b,
+x^2 + b = ax.$\\
+\section{Quadratic Irrationals}
+The roots of quadratic equations containing rational coefficients are in the form of $a + \sqrt{b}$, where $a, b$ are rational. Euclid gave a detailed study of numbers of the form $\sqrt{\sqrt{a}\pm\sqrt{b}}$, where $a,b$ are rational in Book X of the \textit{Elements}. Book X is
+the longest book in the \textit{Elements}. Apollonius worked on theory of irrationals, but his work was lost.\\
+\indent Fibonacci showed that roots of the cubic equation $x^3 + 2x^2 + 10x = 20$ does not contain Euclid’s irrationals. Historian thought that the roots cannot be constructed by ruler and compass. It is difficult show that a specific number, say, $\sqrt[3]{2}$ cannot be constructed from rational numbers by square roots.\\
+\\
+\section{The Solution of the Cubic}
+\textit{In our own days Scipione del Ferro of Bologna has solved
+the case of the cube and first power equal to a constant, a
+very elegant and admirable accomplishment. Since this art
+surpasses all human subtlety and the perspicuity of mortal
+talent and is a truly celestial gift and a very clear test of the
+capacity of men’s minds, whoever applies himself to it will
+believe that there is nothing that he cannot understand. In
+emulation of him, my friend Niccolo Tartaglia of Brescia, `
+wanting not to be outdone, solved the same case when he got
+into a contest with his [Scipione’s] pupil, Antonio Maria Fior,
+and, moved by my many entreaties, gave it to me ... having
+received Tartaglia’s solution and seeking a proof of it, I came
+to understand that there were a great many other things that
+could also be had. Pursuing this thought and with increased
+confidence, I discovered these others, partly by myself and
+partly through Lodovico Ferrari, formerly my pupil.}\cite{ref 2}\\
+\vspace{2ex}
+\hfill{-Cardano (1545), p.8}\\
+\\
+Finding the solution of cubic equations is indeed a great work. It unfolded the power of algebra. Tartaglia gave his solution for cubic equations on February 12, 1535. Everyone blamed Cardano for copying Tartaglia’s solution, but Cardano thought of giving credit fairly. Carano's algebra goes hand-in-hand with Al-Khwarizmi's geometric style, but without the distinctions caused by avoiding negative coefficients. Cardano tranformed the cubic equation $x^3+ax^2+bx+c = 0$ into one with no quadratic term by taking, $x = y - a/3.$ Say,\\
+$$y^3 = py + q.$$
+Put $y = u + v$, the left-hand side term of the equation becomes
+$$(u^3 + v^3) + 3uv(u + v) = 3uvy + (u^3 + v^3),$$
+by comparing right-hand side terms of both equations, we get
+\begin{align*}
+3uv = p,\\
+u^3 + v^3 = q.
+\end{align*}
+We can eliminate $v$ to get a quadratic in $u^3$,\\
+$$u^3 + \left(\frac{p}{3u}\right)^3 = q,$$
+which has the roots\\
+$$\frac{q}{2} \pm \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3}.$$
+By symmetry, we get the same values for $v^3$. We have $u^3 + v^3 = q$, hence
+one of the roots is $u^3$, and the other will be $v^3$.Thus, we can take
+$$u^3 = \frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3},$$
+$$v^3 = \frac{q}{2} - \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3},$$
+which gives,\\
+$$y = u+v = \sqrt[3]{\frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3}} + \sqrt[3]{\frac{q}{2} - \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3}}.$$\\
+\\
+\section{Angle Division}
+Viete(1540–1603) helped to understand algebra in a better way by introducing letters for unknown terms and using plus and minus signs
+to ease manipulation.He linked algebra with trignometry. Viete found solution of the cubic by circular functions (Viete (1591),
+Ch. VI, Theorem 3), which gives the result that solving the cubic equation is equivalent to trisecting an arbitrary angle.\\
+For example, if we take the cubic equation in the form
+$$x^3 + ax + b = 0,$$
+we can the above equation into
+$$4y^3 - 3y = c,$$\\
+by taking $x = ky$ and choosing $k$ such that $\frac{k^3}{ak} = \frac{-4}{3},$
+$$k = \sqrt{\frac{-4a}{3}}.$$
+We know that, $4\cos^3\theta - 3\cos\theta = \cos3\theta,$ by taking $y = \cos\theta,$ we get $\cos3\theta = c.$
+If we know the value of $c$, then we can construct a triangle with angle $\cos^{-1}c = 3\theta$. By trisecting this angle,we get as solution $y = \cos \theta$ for the equation. 
+Conversely, trisecting an angle with cosine $c$ gives the solutions for the cubic equation $4y^3 - 3y = c.$\\
+\indent When $|c| > 1$, we require complex numbers for its resolution. Complex numbers are involved in Cardano’s formula, since the expression which is present under the square root $(q/2)^2 - (p/3)^3$ can be negative too. However, complex numbers were avoided.\\
+\\
+We see that, if we divide an angle into any odd number
+of equal parts, it has an algebraic solution similar to that of the algebraic solution of the cubic equation. Viete (1579) found expressions for $\cos n\theta$ and $\sin n\theta$ as polynomials in $\cos \theta$ and $\sin\theta$, for some values of $n$. Newton found the equation:\\
+$$y = nx - \frac{n(n^2-1)}{3!}x^3 + \frac{n(n^2-1)(n^2-3^2)}{5!}x^5 + \cdots.$$
+Newton related $y = \sin n\theta$ and $x = \sin \theta$, and asserted the result for any $n$. However, we are interested only in odd integral n.
+Newton’s equation contains a solution by $n$th roots which is similar to that of Cardano's formula for cubic equations,\\
+$$x = \frac{1}{2}\sqrt[n]{y + \sqrt{y^2 - 1}} + \frac{1}{2}\sqrt[n]{y - \sqrt{y^2 - 1}}, \hspace{3cm} (1) $$
+the above formmula is valid only for $n$ of the form $4m + 1$. This formula appears in blue in de Moivre (1707)\cite{ref 3}. Newton gave the following result. However, Newton did not explain how he found it.\\
+$$\sin \theta = \frac{1}{2}\sqrt[n]{\sin n\theta + i\cos n\theta} + \frac{1}{2}\sqrt[n]{\sin n\theta - i\cos n\theta}, \hspace{2cm} (2) $$
+This gives us de Moivre’s formula,\\
+$$(\cos\theta + i\sin\theta)^n = \cos n\theta + i\sin n\theta \hspace{4.5cm} (3)$$
+whenever $n = 4m+1.$ Viete came very close in obtaining (3) in his published work, Viete (1615). He observed that the alternate terms in the expansion
+$(\cos \theta + \sin \theta)^n$ gives the products of $\sin \theta, \cos \theta$ which occur in $\cos n\theta, \sin n\theta$,but he did not notice some minus signs. He failed in noticing that the signs could be explained by giving coefficient $i$ before the $\sin \theta$ term.\\
+\\
+\section{Higher-Degree Equations}
+General quartic equation( fourth degree equation)
+$x^4 + ax^3 + bx^2 + cx + d = 0$
+was solved by Cardano’s student Ferrari. This solution was published
+in Cardano (1545), p. 237. This equation can be reduced to the equation given below using a linear transformation.\\
+\\
+$x^4 + px^2 + qx + r = 0,$  or  $(x^2+p)^2 = px^2 - qx + p^2 - r.$\\
+\\
+For any y, we have,
+\begin{align*}
+(x^2 + p + y)^2 =& (px^2 − qx + p^2 − r) + 2y(x^2 + p) + y^2\\
+=& (p + 2y)x^2 − qx + (p^2 − r + 2py + y^2).
+\end{align*}
+The right-hand side of the equation is in the form of quadratic equation $Ax^2 + Bx + C$ and it will be a square if $B^2 - 4AC = 0$, which will be a cubic equation for $y$. We can solve $y$ and then obtain an equation in $x$ to solve it. Hence, using square and cube roots of rational functions of the coefficients, we can obtain formula for $x$.\\
+\indent However, it was not easy to solve the general equations of fifth degree (quintic equations) using the same basis. We can reduce it to the form of
+$$x^5 - x - A = 0$$
+which contains only one parameter. Bring (1786) had done this and a basis for
+his method could be seen in Pierpont (1895). Bring’s result was unnoticed for 50 years else  or it could have given hope to other mathematicians to find the solution of the quintic by using radicals.
+Ruffini (1799) gave the first proof that this is impossible. Ruffini’s proof
+was not clear, but later on, a satisfactory proof was given by Abel (1826). Galois(1831b) had given general theory of equations.\\
+\indent Hermite (1858) gave analytic solution for the quintic using Bring's result that is,by reducing to an equation which contains only one parameter . Suitable functions, the elliptic modular functions, had been discovered Gauss, Abel, and Jacobi discovered suitable functions, the elliptic modular functions and Galois (1831a) had related them with quintic equation. Klein (1884) took these ideas as the main subject.\\
+\indent Descartes(1637) made two important contributions:\\
+\textbf{(1)} Superscript notation for powers that are in use: $x^3, x^4, x^5$, and so on.\\ \textbf{(2)} A polynomial $p(x)$ which becomes 0 when $x = a$ has factor $(x - a)$.\\
+\\When we divide a polynomial $p(x)$ of degree $n$ by $(x - a)$, we get a polynomial of degree $n-1$, Descartes’s theorem gave the hope for
+factorizing each $n$th-degree polynomial into $n$ linear factors.\\
+\\
+\section{The Binomial Theorem}
+
+Chinese mathematicians discovered ``Pascal’s triangle” in the 17th century. Levi ben Gershon (1321) gave formulas for permutations and combinations.
+The Chinese used Pascal’s triangle as a basis to generate binomial coefficients, that is, the coefficients in the formulas of \\
+\\
+$(a + b)^1=\hspace{2.5cm}a + b\\
+(a + b)^2=\hspace{2cm}a^2 + 2ab + b^2\\
+(a + b)^3=\hspace{1.5cm}a^3 + 3a^2b + 3ab^2 + b^3\\
+(a + b)^4=\hspace{1cm}a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4\\
+(a + b)^5=\hspace{0.5cm}a^5 + 5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + b^5\\
+(a + b)^6=a^6 + 6a^5b + 15a^4b^2 + 20a^3b^3 + 15a^2b^4 + 6ab^5 + b^6$\\
+\\
+and so on. By taking the binomial coefficients of $a$ and $b$ in rows, we find that the $k$th element $\binom{n}{k}$ of the $n$th row can be represented as the sum of the two elements in the above $(n-1)$th row,that is, $\binom{n-1}{k-1} + \binom{n-1}{k}$.\\
+$$(a+b)^n = (a+b)^{n-1}a + (a+b)^{n-1}b.$$
+\\
+Zhu Shijie's(1303) triangle appears to a depth of eight.$\binom{n}{k}$ can be viewed as the number of combinations of $n$ things taken $k$ at a time according to Hebrew writings. Levi ben Gershon (1321) gave the formula\\
+ $$\binom{n}{k} = \frac{n!}{(n-k)!k!}$$
+ \\
+using the fact that there are $n!$ permutations of $n$ elements taken.\\
+\indent We call table of binomial coefficients as Pascal's triangle. In Pascal's \textit{Traite du triangle arithmetique}, he united the
+algebraic and combinatorial theories by showing that the elements of 
+arithmetic triangle could be represented in two ways: first being the coefficients of $a^{n-k}b^k$ in $(a + b)^n$ and second being the number of combinations of $n$ things taken $k$ at a time.\\
+\\
+\section{Fermat’s Little Theorem}
+Fermat(1640) gave a famous theorem on number theory based on algebra of binomial coefficients.\\
+\begin{thm}\label{thm:Type 1}If $p$ is prime and $\gcd(n, p) = 1$, then $n^{p-1} - 1$ is divisible by $p$ or,equivalently, $n^p - n$ is divisible by $p$.\\
+\end{thm}
+The equivalence is true because $p$ divides $n^p - n = n(n^{p-1} - 1)$
+if and only if $p$ divides $n^{p-1} - 1$,this is because $p$ is a prime number and it does not divide $n$. Fermat's actual proof is unknown. Weil(1984), p. 56 told that the theorem follows from the fact that $\binom{p}{1},\binom{p}{2},....,\binom{p}{p-1},$ are divisible by $p$ for any prime $p$:\\
+$$2^p = (1+1)^p = 1 + \binom{p}{1} + \binom{p}{2} + \cdots + \binom{p}{p-1} + 1, $$
+which gives\\
+$$2^p - 2 = \binom{p}{1} + \binom{p}{2} + \cdots + \binom{p}{p-1} $$\\
+is divisible by $p$, and thus $2^{p-1} -1 $ is divisible by $p$.e Levi ben Gershon gave the formula\\
+$$\binom{p}{k} = \frac{p!}{(p-k)!k!},$$
+\\
+from which one can conclude that $\binom{p}{1},\binom{p}{2},....,\binom{p}{p-1}$ are divisible by $p$.
+Because the formula shows that the prime $p$ divides numerator but not the
+denominator. The denominator divides the numerator because $\binom{p}{k}$
+is an integer, and by unique prime factorization) the factor $p$ must
+be there even after the division. Divisibility property could also be understood from the following formula\\
+$$n\binom{n+m-1}{m-1} = m\binom{n+m-1}{m}.$$
+\\
+Till now,we have seen a proof of Fermat’s little theorem for $n = 2$. Weil
+(1984) suggested two possible ways to obtain the general theorem from this result.First,by iteration of the binomial theorem and the second by
+direct application of the \textit{multinomial theorem},this was the method used for the earliest proof and it was in unpublished paper of Leibniz in the late 1670s (Weil (1984), p.56). To extend this,
+coefficient of $a_{1}^{q_{1}}a_{2}^{q_{2}}\cdots a_{n}^{q_{n}}$ in $(a_{1} + a_{2} + \cdots + a_{n})^p$ = $p!/q_{1}!q_{2}!\cdots q_{n}!$
+where $q_{1}+q_{2}+\cdots+q_{n} = p$ and $p$ divides this multinomial coefficient and proof for this follows from the previous argument. This completes the proof.\\
+\indent In this report, we have seen how algebra is linked with geometry, methods to solve higher degree equations, angle division, Pascal's triangle and Fermat's little theorem. \\
+\\
+\begin{thebibliography}{99}
+		\addcontentsline{toc}{chapter}{References}
+		
+		\bibitem{ref 1} Colebrooke,\textit{Algebra}, p.346, 1817
+		
+		\bibitem{ref 2} Cardano, \textit{Ars Magna}, p.8, 1545
+  \bibitem{ref 3} Schneider (1968), pp. 224–228
+  \bibitem{ref } J.Stillwell, \textit{Mathematics and Its History}, Undergraduate Texts in Mathematics,1989.
+ 
+		
+
+		
+		
+	\end{thebibliography}
+	
+
+
+
+
+
+
+ 
+
+
+\end{document}

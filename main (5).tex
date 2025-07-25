@@ -1,0 +1,395 @@
+\documentclass[a4paper,reqno,11pt]{amsart}
+
+\usepackage{amsmath,amsfonts,mathtools,amsthm,amscd,amsxtra,amstext}
+\usepackage{amssymb,latexsym,verbatim}
+\usepackage{color,graphics}
+\usepackage{mathrsfs,listings,hyperref,cleveref,enumerate}
+
+\usepackage[top=2.7cm,bottom=2.7cm,left=2.4cm,right=2.4cm]{geometry}
+\renewcommand{\baselinestretch}{1.2}
+
+\theoremstyle{plain}%default 
+\newtheorem{thm}{Theorem}[section] 
+
+
+\begin{document}
+	
+
+	\title{\textbf{Euler and Infinite Series}}
+	
+	\author[Kagita Meenakshi]{Kagita Meenakshi}
+	\email{ma23btech11013@iith.ac.in}
+	
+	
+	
+	\address{Department of Mathematics, Indian Institute of Technology Hyderabad, Kandi, Sangareddy - 502285}
+	
+	
+	\date{\today}
+	
+	
+	
+	\begin{abstract}
+	 Before seventeenth century, people had very less knowledge about infinite series but by the end of seventeenth century, Jakob Bernoulli and Euler gave interesting theorems and proofs on infinite series and thus people gained knowledge on this particular topic too.Jakob Bernoulli mentioned infinite series in his book \textit{Tractatus de seriebus infinitis} in the year 1689.
+Euler worked on infinite series and found so-called ``Basel Problem".\\
+	\end{abstract}
+	
+	\maketitle
+\section*{PROLOGUE}
+Jakob Bernoulli proved the divergence of 
+the harmonic series $\sum_{k=1}^{\infty}\frac{1}{k}$. Along with this, he found exact sums of many convergent series. For instance, he gave the exact sum for simplest infinite geometric series.\\
+$$a + ar + ar^2 + ar^3 + \cdots + ar^k + \cdots = \frac{a}{1-r}$$
+where $-1 < r < 1.$\\
+\\
+Consider the infinite series $1 + \frac{1}{3} + \frac{1}{6} + \frac{1}{10} + \cdots.$\\
+We observe that the denominators in the above infinite series are in the form of $k(k+1)/2$ for some value of $k$ and hence $kth$ denominator in the infinite series is the $kth$ triangular number.\\
+We proceed in the following manner :\\
+$1 + \frac{1}{3} + \frac{1}{6} + \frac{1}{10} + \cdots.$\\
+= $2[\frac{1}{2} + \frac{1}{6} + \frac{1}{12} + \cdots ]$\\
+= $2[(1-\frac{1}{2}) + (\frac{1}{2}-\frac{1}{3}) + (\frac{1}{3}-\frac{1}{4}) + \cdots]$\\
+= 2[1]=2.\\
+This is because we can cancel all the terms in the square bracket in pairs except the first and this procedure is known as \textbf{''telescoping series."}\\
+$$\sum_{k=1}^{\infty} \frac{1}{k(k+1)/2} = 2.$$
+\noindent Now, we shall see how Jakob Bernoulli found the exact sum of the following infinite series :\\
+$$ \frac{a}{b} + \frac{a+c}{bd} + \frac{a+2c}{bd^2} + \frac{a+3c}{bd^3} + \cdots.$$
+\\
+It is clear that the numerators $a,a+c,a+2c,a+3c,.... $ are in arithmetic progression and denominators $b,bd^2,bd^3,.....$ are in geometric progression.
+Jakob solved this infinite series in Section XIV of his book \textit{Tractatus} by splitting up the terms :\\
+\begin{eqnarray*}
+\frac{a}{b} + \frac{a+c}{bd} + \frac{a+2c}{bd^2} + \frac{a+3c}{bd^3} + \cdots.\\
+= (\frac{a}{b} + \frac{a}{bd} + \frac{a}{bd^2} + \frac{a}{bd^3} + \cdots)\\
+ \indent + (\frac{c}{bd} + \frac{c}{bd^2} + \frac{c}{bd^3} + \cdots)\\
+\indent + (\frac{c}{bd^2} + \frac{c}{bd^3} + \cdots)\\
+  \indent + (\frac{c}{bd^3} + \cdots)\\
+  \end{eqnarray*}
+  \\
+We find that each infinite series in parentheses is in geometric progression and, given $d > 1$, each infinite series will be convergent. Hence, we can use sum of infinite geometric series to proceed further.\\
+\begin{align*}
+\frac{a}{b} + \frac{a+c}{bd} + \frac{a+2c}{bd^2} + \frac{a+3c}{bd^3} + \cdots\\
+\indent =& \frac{a/b}{1-1/d} + \frac{c/bd}{1-1/d} + \frac{c/bd^2}{1-1/d} + \cdots\\
+\indent =& \frac{ad}{bd-b} + \frac{c}{bd-b}[1 + \frac{1}{d} + \frac{1}{d^2} + \cdots] \\
+\indent =& \frac{ad}{bd-b} + \frac{c}{bd-b}[\frac{1}{1-1/d}] \\
+\indent =& \frac{ad^2 - ad + cd}{bd^2 - 2bd + b}.\\
+\end{align*}
+For example, take $a = 1, b = 3, c = 5, d = 7$, then,\\
+$$\frac{1}{3} + \frac{6}{21} + \frac{11}{147} + \cdots = \frac{77}{108}.$$
+Jakob Bernoulli also found exact sum of some other convergent series like,\\
+$$\sum_{k=1}^{\infty}\frac{k^2}{2^k} = 6.$$
+$$\sum_{k=1}^{\infty}\frac{k^3}{2^k} = 26.$$
+Now, we shall look into the series of the form $\sum_{k=1}^{\infty}\frac{1}{k^p}$.\\
+$$\sum_{k=1}^{\infty}\frac{1}{k^p} = 1 + \frac{1}{2^{p}} + \frac{1}{3^p} + \cdots + \frac{1}{k^p} + \cdots.$$
+The above series is called as \textbf{"$p$-series"} and if $p=1$, this series becomes divergent harmonic series which Jakob had proved already. Now, we deal with the case where $p=2$ and the above series becomes :\\
+$$ 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots + \frac{1}{k^2} + \cdots .$$
+Pietro Mengoli and Leibniz tried solving the above infinite series but failed in doing so.\\
+Bernoulli solved this infinite series using the equation $2k^2 \geq k(k+1)$ which is obvious and can be proved using induction.Thus, he established :\\
+$$ \frac{1}{k^2} \leq \frac{1}{k(k+1)/2}. $$
+Thus,\\
+$ 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots + \frac{1}{k^2} + \cdots \leq 1 + \frac{1}{3} + \frac{1}{6} + \frac{1}{10} + \cdots \frac{1}{k(k+1)/2} + \cdots.$\\
+\\
+We proved earlier that the latter series converges to 2 and hence\\
+$\sum_{k=1}^{\infty}1/k^2 \leq 2.$ For $p \geq 2$, $k^p \geq k^2$ and $1/k^p \leq 1/k^2.$ Hence , for all $p \geq 2,$\\
+$$\sum_{k=1}^{\infty}1/k^p \leq 2.$$
+Thus $\sum_{k=1}^{\infty}1/k^p$ converges for $p=3,4,5....$
+The method used above is termed as \textbf{''comparison test"} which led us to the conclusion that the given infinite series converges.
+However, Jakob Bernoulli failed in giving the exact sum of the above infinite series. He wrote in his book \textit{Tractatus} from Basel :\\
+\indent \textit{"If anyone finds and communicates to us that which thus far has eluded our efforts, great will be our gratitude."}\\
+Years later, the challenging ''Basel Problem" was solved by Euler.\\
+\section*{ENTER EULER}
+
+Euler started approximating the infinite series $\sum_{k=1}^{\infty}1/k^2$
+by adding first few terms.He found that the series converges very slowly.For instance, he found sum of the first ten, hundred and thousand terms to be 
+1.54977, 1.63498, 1.64393 respectively.\\
+$$1 + \frac{1}{4} + \frac{1}{9} + \cdots + \frac{1}{100} = 1.54977;$$
+$$1 + \frac{1}{4} + \frac{1}{9} + \cdots + \frac{1}{10000} = 1.63498;$$
+$$1 + \frac{1}{4} + \frac{1}{9} + \cdots + \frac{1}{1000^2} = 1.64393.$$
+\\
+Though the number of terms added is huge, the sum is getting increased only by a bit i.e., the rate at which sum grows is too less and this is termed as \textbf{``glacial slowness"} in increase in the sum. We must note that all three values of sum are less than 2 (follows Jakob's comparison test). However, direct numerical approximation cannot be done for infinite number of terms.\\
+\\
+Thus, Euler changed his approach and then he started solving the following improper integral :\\
+$$I = \int_{0}^{1/2} -\frac{\ln(1-t)}{t} dt.$$
+He solved this integral in two different ways and linked both of them. Firstly, he solved the integral using expansion of $\ln(1-t).$\\
+We know that $\ln(1-t) = -t -t^2/2 -t^3/3 - \cdots.$ Thus,\\
+\begin{align*}
+I =& \int_{0}^{1/2} -\frac{-t -t^2/2 -t^3/3 - \cdots}{t} dt\\
+=& \int_{0}^{1/2} (1 + \frac{t}{2} + \frac{t^2}{3} + \frac{t^3}{4} + \cdots)dt\\
+= & \left[t + \frac{t^2}{4} + \frac{t^3}{9} + \frac{t^4}{16} + \cdots\right]_0^{1/2}\\
+= & \frac{1}{2} + \frac{1/2^2}{4} + \frac{1/2^3}{9} + \frac{1/2^4}{16} + \cdots. \hspace{3cm} (3.1)\\
+\end{align*}
+Then, he solved the same integral by substituting $z=1-t$ and the above intregral tranforms as follows :\\
+\\
+$I = \int_{0}^{1/2} -\frac{\ln(1-t)}{t} dt = \int_{1}^{1/2} \frac{\ln z}{1-z} dz \\
+\\
+\indent = \int_{1}^{1/2} (1 + z + z^2 +\cdots)\ln zdz\\
+\indent = \int_{1}^{1/2}\ln zdz + \int_{1}^{1/2}z\ln zdz + \int_{1}^{1/2} z^2\ln zdz + \cdots,$\\
+\\
+this is because,\\$1/(1-z) = (1-z)^{-1} = 1 + z + z^2 + z^3 + \cdots.$\\
+\\
+We could use integration by parts to find $\int_{1}^{1/2}z^n\ln zdz$ :\\
+$$\int_{1}^{1/2}z^n\ln zdz = \left[\frac{z^{n+1}}{n+1}\ln z - \frac{z^{n+1}}{(n+1)^2}\right]_1^{1/2}.$$
+Thus, we obtain :
+\begin{align*}
+I =&  \left[(z\ln z - z) + \left(\frac{z^2}{2}\lnz - \frac{z^2}{4}\right) + \left(\frac{z^3}{3}\lnz - \frac{z^3}{9}\right) + \cdots\right]_1^{1/2}\\
+=& \left[\lnz\left[z + \frac{z^2}{2} + \frac{z^3}{3} + \frac{z^4}{4} + \cdots\right] - \left(z + \frac{z^2}{4} + \frac{z^3}{9} + \frac{z^4}{16} + \cdots\right)\right]_1^{1/2}\\
+=& \left[\ln z[-\ln(1-z)] - \left(z + \frac{z^2}{4} + \frac{z^3}{9} + \frac{z^4}{16} + \cdots\right)\right]_1^{1/2}\\
+=& -\left[\ln\left(\frac{1}{2}\right)\right]^2 - \left(\frac{1}{2} + \frac{1/2^2}{4} + \frac{1/2^3}{9} + \cdots\right) + [\ln1][\ln0] + \sum_{k=1}^{\infty}\frac{1}{k^2}.
+\end{align*}
+We know that, $lim_{z\to1^-}[\ln z][\ln(1-z)]$ = 0, Hence $[\ln1][\ln0]$ can be neglected. Thus,\\
+$I = -[\ln2]^2 - \left(\frac{1}{2} + \frac{1/2^2}{4} + \frac{1/2^3}{9} + \cdots\right) + \sum_{k=1}^{\infty}\frac{1}{k^2}.$ \hspace{3cm} (3.2)\\
+\\
+We can equate (3.1) and (3.2) to get :\\
+\begin{align*}
+\sum_{k=1}^{\infty}\frac{1}{k^2} =& 2\left(\frac{1}{2} + \frac{1/2^2}{4} + \frac{1/2^3}{9} + \cdots\right) + [\ln2]^2. \\
+=& \sum_{k=1}^{\infty}\frac{1}{k^22^{k-1}}  + [\ln2]^2.
+\end{align*}
+The above proof was given a huge hype and there is a clear reason behind it. It is not easy to find an integral which finally leads us to obtain the value of $\sum_{k=1}^{\infty}1/k^2$ and Euler had done that. Euler's effort was appreciated.Euler used many topics like integration by parts, logarithmic expansions etc, to solve the proof and final result which Euler gave is as follows :
+
+$$\sum_{k=1}^{\infty}\frac{1}{k^2} = \sum_{k=1}^{\infty}\frac{1}{k^22^{k-1}}  + [\ln2]^2.$$
+This is a rapidly converging series as it contains $2^{k-1}$ in the denominator and Euler knew the value of $[\ln2]^2$. By taking only fourteen terms in the formula,we get : $$\sum_{k=1}^{\infty}1/k^2 \approx 1.644934,$$ an accurate value upto six decimal places.\\
+Jakob Bernoulli had challenged mathematicians across the world to find the 
+exact value of $\sum_{k=1}^{\infty}1/k^2$ and four years later, in 1735, Euler finally completed this challenge.\\
+\indent Euler asserted that,\\
+$$\sum_{k=1}^{\infty}\frac{1}{k^2} = \frac{\pi^2}{6}.$$
+The proof for this requires two observations: First one is,let us consider an $n$th degree polynomial equation $P(x) = 0$ which has non-zero roots $a_{1},a_{2},a_{3},.....,a_{n}$ such that $P(0) = 1$, then $P(x)$ can be represented as
+$$P(x) = \left(1-\frac{x}{a_{1}}\right)\left(1-\frac{x}{a_{2}}\right)\cdots\left(1-\frac{x}{a_{n}}\right)$$
+This is clear, because if we substitue $x = 0$, we get $P(0) = 1.$ also substituting $x = a_{k}$ gives $P(a_{k}) = 0$ for $k = 1, 2, ... n.$ He also needed series expansion of $\sin x$ for his proof,
+$$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots.$$
+\\
+Now, we shall see Euler's solution of the Basel problem.\\
+\\
+\begin{thm}\label{thm:Type 1} $\sum_{k=1}^{\infty}\frac{1}{k^2} = \frac{\pi^2}{6}.$\\
+\end{thm}
+\begin{Proof}
+Euler considered an infinite polynomial say,\\
+$$P(x) = 1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \cdots.$$
+It is clear that $P(0) = 1.$ In order to find the roots of $P(x)$, for $x \neq 0,$ we must note that,
+\begin{align*}
+P(x) =& x\left[\frac{1 - x^2/2! + x^4/5! - x^6/7! + \cdots}{x}\right]\\
+=& \frac{x - x^3/3! + x^5/5! - x^7/7! + \cdots}{x} = \frac{\sin x}{x}.
+\end{align*}
+$P(x) = 0$ implies that $\sin x = 0$ that means, $x = \pm k\pi$ for 
+$k = 1, 2,....$. $x = 0$ is not a solution to $P(x) = 0$ because $P(0) = 1$. 
+Hence, Euler now factorised $P(x)$ as:\\
+\begin{align*}
+P(x) =& \left(1 - \frac{x}{\pi}\right)\left(1 - \frac{x}{-\pi}\right)\left(1 - \frac{x}{2\pi}\right)\left(1 - \frac{x}{-2\pi}\right)\cdots\\
+=& \left[1 - \frac{x^2}{\pi^2}\right]\left[1 - \frac{x^2}{4\pi^2}\right]\left[1 - \frac{x^2}{9\pi^2}\right]\cdots \hspace{3.7cm} (3.3)
+\end{align*}
+Euler expanded the right-hand side of (3.3) to get:\\
+\\
+$$1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \cdots = 1 - \left(\frac{1}{\pi^2} + \frac{1}{4\pi^2} + \frac{1}{9\pi^2} + \cdots \right)x^2 + \cdots \hspace{0.5cm} (3.4) $$
+Euler neglected the coefficients of $x^4$ and higher even powers. Then, he equated the coefficients of $x^2$ in (3.4) to get:
+\begin{align*}
+-\frac{1}{3!} =& -\left(\frac{1}{\pi^2} + \frac{1}{4\pi^2} + \frac{1}{9\pi^2} + \cdots \right)\\
+=& -\frac{1}{\pi^2}\left(1 + \frac{1}{4} + \frac{1}{9} + \cdots \right),
+\end{align*}
+and then he concluded that
+$$\left(1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots \right) = \frac{\pi^2}{6}.$$
+\end{Proof.}
+
+The Basel Problem was finally solved. Euler had answered Bernoulli's unresolved question. For instance, a calculation revealed that $\pi^2 /6 \approx 1.644934$, Euler had discovered the same a few years earlier. So, his proof and numerical value makes sense. John Wallis (1616-1703) demonstrated that\\
+$$ \frac{2}{\pi} = \frac{1\cdot3\cdot3\cdot5\cdot5\cdot7\cdot7\cdot9\cdots}{2\cdot2\cdot4\cdot4\cdot6\cdot6\cdot8\cdot8\cdots}.$$
+Euler showed that the infinite product in expression (3.3) leads to an 
+alternate derivation of Wallis's formula. He put $x = \pi/2$ in the expressiona and obtained the following:
+$$P\left(\frac{\pi}{2}\right) = \left[1 - \frac{(\pi/2)^2}{\pi^2}\right]\left[1 - \frac{(\pi/2)^2}{4\pi^2}\right]\left[1 - \frac{(\pi/2)^2}{9\pi^2}\right]\cdots,$$
+which gives,\\
+\begin{align*}
+\frac{\sin(\pi/2)}{\pi/2} =& \left[1-\frac{1}{4}\right]\left[1-\frac{1}{16}\right]\left[1-\frac{1}{36}\right]\cdots\\
+=&  \frac{3}{4} \times \frac{15}{16} \times \frac{35}{36} \times \cdots.
+\end{align*}
+which in  turn gives,
+$$ \frac{2}{\pi} = \frac{1\cdot3\cdot3\cdot5\cdot5\cdot7\cdot7\cdot9\cdots}{2\cdot2\cdot4\cdot4\cdot6\cdot6\cdot8\cdot8\cdots}.$$
+\\
+Johann Bernoulli,after learning the solution, wrote : \textit{``Utinam Frater superstes effet !" (If only my brother were alive!)}
+Andre Weil called this as \textit{``One of Euler's most sensational early discoveries, perhaps the one which established his growing reputation most firmly."} Euler turned his attention to find the exact sum of p-series 
+with $p > 2$. Euler realized that he need to find coefficients of $x^4, x^6,$ and so on in equation (3.4) for this. The tools to determine these coefficients could be found in ``Newton's formulas." These formulae describes the link between the roots and the coefficients of a polynomial equations. According to Newton:\\
+\indent \textit{``he coefficient of the second term in an equation is, if its sign be changed, equal to the aggregate of all the roots under their proper 
+signs; that of the third equal to the aggregate of the products of the 
+separate roots two at a time; that of the fourth, if its sign be changed, 
+equal to the aggregate of the products of the individual roots three at 
+a time; that of the fifth equal to the aggregate of the products of the 
+roots four at a time; and so on indefinitely."}\cite{ref 1}\\
+\vspace{2ex}
+\hfill{-Euler-The Master of Us All,Chapter 3,pg.50}
+\begin{thm}\label{thm : Type 1}If the $n$th degree polynomial $P(y) = y^n - Ay^{n-1} + By^{n-2} - Cy^{n-3} + \cdots \pm N$ is factorised as $P(y) = (y-r_{1})(y-r_{2})\cdots(y-r_{n}),$ then 
+\begin{align*}
+    \sum_{k=1}^{n}r_{k} =& A,\\
+    \sum_{k=1}^{n}r_{k}^2 =& A\sum_{k=1}^{n}r_{k} - 2B,\\
+    \sum_{k=1}^{n}r_{k}^3 =& A\sum_{k=1}^{n}r_{k}^2 - B\sum_{k=1}^{n}r_{k} + 3C,\\
+    \sum_{k=1}^{n}r_{k}^4 =& A\sum_{k=1}^{n}r_{k}^3 -B\sum_{k=1}^{n}r_{k}^2 + C\sum_{k=1}^{n}r_{k} - 4D,...
+    \end{align*}
+    \end{thm}
+\begin{Proof}
+Euler's main objective was to connect the coefficients of polynomial equation $A,B,C,....,N$ with its roots $r_{1},r_{2},...,r_{n}.$ First, he took logs:\\
+$$\ln P(y) = \ln(y-r_{1}) + \ln(y-r_{2}) + \cdots +\ln(y-r_{n}).$$
+Euler differentiated on both sides to get:\\
+$$\frac{1}{P(y)}\frac{dP}{dy} = \frac{1}{y-r_{1}} + \frac{1}{y-r_{2}} + \cdots + \frac{1}{y-r_{n}}. \hspace{2cm} (3.5) $$
+Euler converted each fraction $1/ (y -r_{k})$ into its geometric series: 
+\begin{align*}
+ \frac{1}{y-r_{k}} =& \frac{1}{y}\left(\frac{1}{1-(r_{k}/y)}\right)\\
+ =& \frac{1}{y}\left(1 + \frac{r_{k}}{y} + \frac{r_{k}^2}{y^2} + \cdots\right)\\
+ =& \frac{1}{y} + \frac{r_{k}}{y^2} + \frac{r_{k}^2}{y^3} + \cdots
+ \end{align*}
+ From (3.5), we get
+\begin{align*}
+\frac{P'(y)}{P(y)} =& \frac{1}{y-r_{1}} + \frac{1}{y-r_{2}} + \cdots + \frac{1}{y-r_{n}}\\
+ =& \frac{n}{y} + [\sum_{k=1}^{n}r_{k}]\frac{1}{y^2} + [\sum_{k=1}^{n}r_{k}^2]\frac{1}{y^3} + \cdots. \hspace{2cm} (3.6)
+ \end{align*}
+We have,\\
+$$\frac{P'(y)}{P(y)} = \frac{ny^{n-1} - A(n-1)y^{n-2} + B(n-2)y^{n-3} - \cdots}{y^n - Ay^{n-1} + By^{n-2} - Cy^{n-3} + \cdots \pm N}, \hspace{1cm} (3.7)$$
+Euler equated the expressions from (3.6) and (3.7) to get:\\
+\\
+$ny^{n-1} - A(n-1)y^{n-2} + B(n-2)y^{n-3} - \cdots$
+\begin{align*}
+=& (y^n - Ay^{n-1} + By^{n-2} - Cy^{n-3} + \cdots \pm N)\\ \times&  \left(\frac{n}{y} + [\sum_{k=1}^{n}r_{k}]\frac{1}{y^2} + [\sum_{k=1}^{n}r_{k}^2]\frac{1}{y^3} + \cdots\right)\\
+=& ny^{n-1} + \left(-nA + \sum_{k=1}^{n}r_{k}\right)y^{n-2}\\\ +& \left(nB -A\sum_{k=1}^{n}r_{k} + \sum_{k=1}^{n}r_{k}^2\right)y^{n-3} - \cdots.
+\end{align*}
+Now, we compare coefficients of polynomial equation on both sides to get desired relationships which have been stated, that is,\\
+$\sum_{k=1}^{n}r_{k} = A,\\
+\sum_{k=1}^{n}r_{k}^2 = A\sum_{k=1}^{n}r_{k} - 2B,\\
+\sum_{k=1}^{n}r_{k}^3 = A\sum_{k=1}^{n}r_{k}^2 - B\sum_{k=1}^{n}r_{k} + 3C,\\
+\sum_{k=1}^{n}r_{k}^4 = A\sum_{k=1}^{n}r_{k}^3 -B\sum_{k=1}^{n}r_{k}^2 + C\sum_{k=1}^{n}r_{k} - 4D.$
+\end{Proof}
+\\
+Using above results, Euler returned to (3.3) and then gave some more important formulae:
+$$\sum_{k=1}^{\infty}\frac{1}{k^4} = \frac{\pi^4}{90},$$
+$$\sum_{k=1}^{\infty}\frac{1}{k^6} = \frac{\pi^6}{945}.$$
+We are almost at the end of the chapter and now we shall see $p-$series in detail.\\
+\section*{EPILOGUE}
+Now, we shall see the Euler's alternate solution for the Basel Problem. As noted, some of Euler's contemporaries, while accepting his answer 
+to the Basel Problem, wondered about the validity of the argument that got 
+him there. Daniel Bernoulli was especially concerned and wrote Euler in this 
+regard.\cite{ref 2}
+Euler gave a proof for the expression $\sum_{k=1}^{\infty}1/k^2 = \pi^2/6.$
+This proof requires three important results, they are :\\
+\textbf{A.} $\frac{1}{2}(\sin^{-1}x)^2 = \int_{0}^{x} \frac{\sin^{-1}t}{\sqrt(1-t^2)}dt :$\\
+The proof for this is simple, we get it by substituting $u = \sin^{-1}t$, therefore $du = \frac{1}{\sqrt(1-t^2)}dt$ . Hence,\\
+$\int_{0}^{x} \frac{\sin^{-1}t}{\sqrt(1-t^2)}dt = \int_{0}^{\sin^{-1}x}u du = \frac{1}{2}(\sin^{-1}x)^2. $\\
+\\
+\textbf{B.} We need to find a series expansion for $\sin^{-1}x:$\\
+We know that, $\sin^{-1}x = \int_{0}^{x} \frac{1}{\sqrt(1-t^2)} dt = \int_{0}^{x} (1-t^2)^{-1/2} dt.  $\\
+Using binomial series to solve the above expression, we get :\\
+\begin{align*}
+\sin^{-1}x =& \int_{0}^{x} \left(1 + \frac{t^2}{2} + \frac{1\cdot3}{2^2\cdot2!}t^4 + \frac{1\cdot3\cdot5}{2^3\cdot3!}t^6 + \cdots\right)dt \\
+=& x + \frac{1}{2} \times \frac{x^3}{3} + \frac{1\cdot3}{2\cdot4} \times \frac{x^5}{5} + \frac{1\cdot3\cdot5}{2\cdot4\cdot6} \times \frac{x^7}{7} + \cdots.
+\end{align*}
+\\
+\textbf{C.} We need to prove that $\int_{0}^{1} \frac{t^{n+2}}{\sqrt(1-t^2)}dt = \frac{n+1}{n+2}\int_{0}^{1}\frac{t^{n}}{\sqrt(1-t^2)}dt$ for all $n \geq 1 :$ \\
+Let, $$J = \int_{0}^{1} \frac{t^{n+2}}{\sqrt(1-t^2)}dt,$$
+We can apply integration by parts to the above expression with $u = t^{n+1}$ and $dv = (t/\sqrt{1-t^2})dt$, then we get :\\
+\begin{align*}
+J =& \left[(-t^{n+1}\sqrt{1-t^2})\right]_0^{1} + (n+1)\int_{0}^{1} t^{n}\sqrt{1-t^2} dt\\
+=& 0 + (n+1)\int_{0}^{1} t^{n}\frac{1-t^2}{\sqrt{1-t^2}} dt\\
+=& (n+1)\int_{0}^{1} \frac{t^{n}}{\sqrt{1-t^2}} dt - (n+1)J.
+\end{align*}
+This gives us :\\
+$$(n+2)J = (n+1)\int_{0}^{1} \frac{t^{n}}{\sqrt{1-t^2}} dt.$$
+Now, put $x=1$ in (A), we get :
+$$ \frac{\pi^2}{8} = \frac{1}{2}(\sin^{-1}1)^2 = \int_{0}^{1} \frac{\sin^{-1}t}{\sqrt(1-t^2)}dt $$
+From (B), we can use series expansion to get :\\
+\\
+\begin{eqnarray*}
+\frac{\pi^2}{8} = \int_{0}^{1}\frac{t}{\sqrt{1-t^2}}dt + \frac{1}{2\cdot3}\int_{0}^{1}\frac{t^3}{\sqrt{1-t^2}}dt + \frac{1\cdot3}{2\cdot4\cdot5}\int_{0}^{1}\frac{t^5}{\sqrt{1-t^2}}dt + \frac{1\cdot3\cdot5}{2\cdot4\cdot6\cdot7}\int_{0}^{1}\frac{t^7}{\sqrt{1-t^2}}dt +\cdots.\\
+\end{eqnarray*}
+\\
+We know that,$\frac{d}{dt}(-\sqrt{1-t^2}) = \frac{t}{\sqrt{1-t^2}}.$\\
+Hence,\\
+$$\int_{0}^{1} \frac{t}{\sqrt{1-t^2}}dt = 1.$$
+Using the result obtained in (C), we get :\\
+\begin{align*}
+\frac{\pi^2}{8} =& 1 + \frac{1}{2\cdot3}\left[\frac{2}{3}\right] + \frac{1}{2\cdot4\cdot5}\left[\frac{2}{3} \times \frac{4}{5}\right] + \frac{1}{2\cdot4\cdot6\cdot7}\left[\frac{2}{3} \times \frac{4}{5} \times \frac{6}{7}\right] + \cdots\\
+=& 1 + \frac{1}{9} + \frac{1}{25} + \frac{1}{49} + \cdots\\
+=& \sum_{k=0}^{\infty}\frac{1}{(2k+1)^2},
+\end{align*}
+It is clear that this summation contains squares of odd numbers only.\\
+Then, Euler proceeded in the following way to prove the result :\\
+\begin{thm}\label{thm : Type 3} $\sum_{k=1}^{\infty}\frac{1}{k^2} = \frac{\pi^2}{6}.$\\
+\end{thm}
+\begin{Proof}
+\begin{align*}
+\sum_{k=1}^{\infty}\frac{1}{k^2} =& \left[1 + \frac{1}{9} + \frac{1}{25} + \frac{1}{49} + \cdots\right] + \left[\frac{1}{4} + \frac{1}{16} + \frac{1}{36} + \frac{1}
+{64} + \cdots\right]\\
+=& \left[1 + \frac{1}{9} + \frac{1}{25} + \frac{1}{49} + \cdots\right] + \frac{1}{4}\left[1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots\right]\\
+=& \frac{\pi^2}{8} + \frac{1}{4}\sum_{k=1}^{\infty}\frac{1}{k^2}.
+\end{align*}
+Hence, \\
+$$\frac{3}{4}\sum_{k=1}^{\infty}\frac{1}{k^2} = \frac{\pi^2}{8},$$
+which in turn gives :
+$$\sum_{k=1}^{\infty}\frac{1}{k^2} = \frac{4}{3} \times \frac{\pi^2}{8} = \frac{\pi^2}{6}.$$
+\end{Proof}
+In this way, Euler completed the proof for Basel problem. Euler told,\textit{"the principal use of these results is in the calculation of logarithms."} Now, we shall see how the above results are used in computing logarithms.
+Consider the following equation again :\\
+$$P(x) = \left[1-\frac{x^2}{\pi^2}\right]\left[1-\frac{x^2}{4\pi^2}\right]\left[1-\frac{x^2}{9\pi^2}\right]\left[1-\frac{x^2}{16\pi^2}\right]\cdots.$$
+For $x \neq 0,$ $P(x) = \sin x/x.$ Substitute this in the above formula, we get:\\
+$$\sin x = x \left[1-\frac{x^2}{\pi^2}\right]\left[1-\frac{x^2}{4\pi^2}\right]\left[1-\frac{x^2}{9\pi^2}\right]\left[1-\frac{x^2}{16\pi^2}\right]\cdots,$$
+The above result is true for $x = 0$ also. Now, apply logarithm on both sides to get :\\
+\begin{eqnarray*} \ln(\sin x) = \ln x + \ln\left(1-\frac{x^2}{\pi^2}\right) + \ln\left(1-\frac{x^2}{4\pi^2}\right) + \ln\left(1-\frac{x^2}{9\pi^2}\right) + \cdots,\\ \end{eqnarray*}
+Put $x = \pi/n,$ the above equation becomes :\\
+\begin{eqnarray*} \ln(\sin \frac{\pi}{n}) = \ln \pi - \ln n + \ln\left(1-\frac{1}{n^2}\right) + \ln\left(1-\frac{1}{4n^2}\right) + \ln\left(1-\frac{1}{9n^2}\right) + \cdots.\\ \end{eqnarray*}
+\\
+We know that,\\
+$$\ln(1-x) = -x -\frac{x^2}{2} -\frac{x^3}{3} -\frac{x^4}{4} -\cdots.$$
+Substituting this logarithmic expansion in the above expression, we get :\\
+\begin{align*}
+\ln(\sin \frac{\pi}{n}) =& \ln \pi - \ln n + \left[-\frac{1}{n^2} -\frac{1}{2n^4} -\frac{1}{3n^6} \cdots\right]\\ +& \left[-\frac{1}{4n^2} -\frac{1}{32n^4} -\frac{1}{192n^6}\cdots\right]\\ +& \left[-\frac{1}{9n^2} -\frac{1}{162n^4} -\frac{1}{2187n^6} \cdots\right] + \cdots\\
+=& \ln \pi - \ln n - \frac{1}{n^2}\left(1 + \frac{1}{4} + \frac{1}{9} + \cdots\right)\\ -& \frac{1}{2n^4}\left(1 + \frac{1}{16} + \frac{1}{81} + \cdots\right)\\ -& \frac{1}{3n^6}\left(1 + \frac{1}{64} + \frac{1}{729} + \cdots\right) - \cdots.
+\end{align*}
+It is clear that the above formula contains the $p$ -series given by Euler.\\
+Hence,\\
+\begin{eqnarray*} \ln(\sin \frac{\pi}{n}) = \ln \pi - \ln n -\frac{1}{n^2}\left(\frac{\pi^2}{6}\right) -\frac{1}{2n^4}\left(\frac{\pi^4}{90}\right) -\frac{1}{3n^6}\left(\frac{\pi^6}{945}\right) -\cdots.\\ \end{eqnarray*}
+This is a rapidly converegent series. For instance, let $n = 7,$ we get,\\
+\begin{align*}
+\ln(\sin \frac{\pi}{7}) =& \ln \pi - \ln 7 -\frac{1}{49}\left(\frac{\pi^2}{6}\right) -\frac{1}{4802}\left(\frac{\pi^4}{90}\right) -\frac{1}{352947}\left(\frac{\pi^6}{945}\right) -\cdots\\
+\approx& -0.83498,
+\end{align*}
+and it is accurate to within $\pm0.00000005.$ Hence, Euler was able to find logarithms of sines accurately.
+ Euler wrote :\\
+\indent \textit{``with these formulas, we can find both the natural and the common 
+logarithms of the sine and cosine of any angle, even without knowing 
+the sines and cosines."} \\
+
+Now, we shall see how Euler evaluated the p-series for odd values of p. Consider,\\
+$$\sum_{k=1}^{\infty}\frac{1}{k^3} = 1 + \frac{1}{8} + \frac{1}{27} + \frac{1}{64} + \frac{1}{125} + \cdots. $$
+But Euler's original proof from expression (3.3) involves only even powers of $x$, and thus only even values of $p$. So, Euler evaluated the following series
+$$1 - \frac{1}{27} + \frac{1}{125} - \frac{1}{343} + \cdots = \sum_{k=0}^{\infty} \frac{1}{(2k+1)^3} = \frac{\pi^3}{32}.$$
+Euler took numerical approximations. Because $\sum_{k=1}^{\infty} =1/k^2 = \pi^2/6$ and $\sum_{k=1}^{\infty} =1/k^4 = \pi^4/90$, he claimed that $\sum_{k=1}^{\infty} =1/k^3 = \pi^3/m$, where $6 < m < 90.$ Finally, Euler calculated the value $\sum_{k=1}^{\infty} =1/k^3 = \pi^3/m \approx  1.202056903$, Euler deduced that $m = 25.79435$. Finally, Euler gave the formula,\\
+$$\sum_{k=1}^{\infty}\frac{1}{k^3} = \alpha(\ln2)^2 + \beta\frac{\pi^2}{6} -\ln2,$$
+where $\alpha$ and $\beta$ are rational numbers\cite{ref 3}. In 1978, Roger Apery had shown that $\sum_{k=1}^{\infty}1/k^3$ sums to an irrational number. But that was too broad, mathematicians wanted specific value as the answer.\\
+\indent So, we did not get a perfect solution for odd-valued $p$-series and thus Jakob's challenge from 1689: \textit{``If anyone finds and 
+communicates to us that which has thus far eluded our efforts, great will be our gratitude."} makes sense because it was really hard to find a specific value for such a series. In this chapter, we have seen interesting theorems and proofs on infinite series given by Jakob Bernoulli and Euler.\\
+\begin{thebibliography}{99}
+		\addcontentsline{toc}{chapter}{References}
+		
+		
+		\bibitem{ref 1} Whiteside, ed , \textit{The Mathematical Papers of Isaac Newton}, Vol 5, p. 359
+		\bibitem{ref 2} Euler, \textit{Opera Omnia}, Ser. I, Vol 14, p 141 
+		\bibitem{ref 3} Euler, \textit{Opera Omnia}, Ser I, Vol 4, pp 143-144 
+		
+		
+		
+	\end{thebibliography}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+\end{document}

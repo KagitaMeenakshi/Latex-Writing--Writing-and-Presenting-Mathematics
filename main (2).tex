@@ -1,0 +1,376 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsfonts,amsmath,amstext}
+\begin{document}
+\noindent KAGITA MEENAKSHI\\
+MA23BTECH11013\\
+\\
+\\
+$$\textbf{CHAPTER 1}$$
+$$\textbf{EULER AND NUMBER THEORY}$$
+$${18-03-2024}.$$\\
+\\
+Positive integers are the most fundamental part of mathematical entries. In this chapter, we deal with perfect numbers first.
+
+
+ Euclid (ca. 300 BCE) gave a theorem about perfect 
+numbers in his book, the \textbf{``Elements"}. Twenty centuries later, Leonhard 
+Euler made some changes in the topic given by Euclid .
+Victor Klee and Stan Wagon wrote, \textit{``Perfect numbers is perhaps the oldest unfinished 
+project of mathematics.}" \\
+
+\noindent \textbf{Prologue}\\
+Euclid
+devoted three of the thirteen chapters of the book, the Elements to number 
+theory.
+
+Euclid started writing Book VII of the Elements with 
+22 definitions. For example,these definitions include prime numbers, perfect numbers. Euclid defined 
+a ``prime number" to be one that is \textit{``measured by a unit alone.}" \\
+ \textbf{Definition. A perfect number is that which is equal to its own parts.}\\ 
+According to Euclid, ``part" meant ``proper 
+whole number divisor" and  ``equal to" meant ``equal to the sum of."Thus the Euclid's definition now becomes:\\
+ \textbf{Definition.
+ A whole number is perfect if it is equal to the sum of its proper 
+divisors.} \\
+(Proper divisor is a postive divisor of a number,excluding itself.)\\
+For example, \\
+\textbf{1.} Proper divisors of 6 are 1,2,3.\\
+1+2+3 = 6.\\ Thus it is a perfect number according to the definition.\\
+\textbf{2.} Proper divisors of 28 are 1,2,4,7,14.\\
+1+2+4+7+14 = 28. \\ Hence it is a perfect number.\\
+\textbf{3.} Proper divisors of 496 are 1,2,4,8,16,31,62,124,248.\\
+1 + 2 + 4 + 8 + 16 + 31 + 62 + 124 + 248 = 496. It is a perfect number.\\
+\noindent \textbf{4.} Proper divisors of 8128 are 1,2,4,8,16,32,64,127,254,504,1016,2032,4064.\\
+
+\noindent 1+2+4+8+16+32+64+127+254+508+1016+2032+4064 = 8128. \\A perfect number according to the definition.\\
+\\
+These four numbers were the only perfect numbers known in ancient Greece.\\ 
+\\ \textbf{Nicomachus}, a Greek mathematician ,worked on perfect numbers and observed that perfect numbers are rare. Scholars identified number 6 as the \textit{``perfect union of the sexes"} i.e., $ 6=3\times2$, where 3 is a ``male" number and 2 is a ``female" number.\\
+Euler began Book VII with perfect numbers ,but then, he did not mention about perfect numbers again until the end of Book IX.\\
+
+\noindent \textbf{Proposition 36 of Book IX, was stated by Euclid as: }\\
+
+\textit{``If as many numbers as we please beginning from a unit be set out 
+continuously in double proportion, until the sum of all becomes 
+prime, and if the sum multiplied into the last make some number, the 
+product will be perfect."}\\
+\vspace{2ex}
+\hfill {- Euler-The Master of Us All, Chapter 1, pg3.}
+\\
+Beginning from a unit and proceeding in double 
+proportion means the series 1 + 2 + 4 + 8 + · · · . 
+Euler supposed that, if the above process is continued, the sum will be a prime 
+number at certain stage i.e., he assumed that,\\
+$$1 + 2 + 4 +\cdots+2^{k
+-
+1}$$ is prime. 
+If this sum is multiplied with the last term, we get 
+$1 + 2 + 4 + \cdots + 2^
+{k
+- 1}$ by $ 2^
+{k- 1}$ and Euclid
+asserted that this product is a perfect number. \\
+ $ 1 + 2 + 4 + \cdots + 2^{
+k
+- 1}$  = $(2^k - 1 )/(2 - 1) = 2^
+k - 1.$ Thus, Euclid's 
+proposition in simpler terms:\\
+\\
+\textbf{Theorem. lf $2^k - 1$ is prime and if $N = 2^{
+k-1}
+(2^k - 1)$, then $N $ is perfect. }\\
+
+\noindent \textit{Proof.} Let $p = 2^
+k - 1 $ and this is supposed to be the prime number mentioned in the definition. The 
+proper divisors of $N$ = $2^
+{k-1}(2^k - 1) = 2^{
+k
+- 1}p$ must  contain only 
+the primes 2 and p since p is a prime. Hence, we can easily find sum of proper divisors of $N$. \\
+\newpage
+Sum of proper divisors of $ N $
+\begin{align*}
+=& 1 + 2 + 4 +\cdots + 2^{k- 1} + p + 2p + 4p + \cdots + 2^{k-2} p \\
+=& (1 + 2 + 4 + \cdots+ 2^{k- 1}) + p(1 + 2 + 4 + \cdots+ 2^{k-2})\\
+=& (2^k -1) + p(2^{k- 1}- 1) = p + p2^{k- 1} - p \\
+=& p2^{k- 1} = N.\\
+\end{align*}
+$ N $ is equal to the sum of its proper divisors,hence it is perfect.\\
+\\
+Thus, Euclid found sufficiency condition for a perfect number. For instance,\\ \textbf{1.} If k = 2, then $2^
+2 -1 = 3$ is prime, and so $N= 2(2^2 -1) = 
+6$ is perfect.\\ \textbf{2.} If k = 3, then $2^
+3 - 1 = 7$ is prime, and 
+$N = 2^2(2^3 -1) = 28$ is perfect.\\ \textbf{3.} If $k$ = 13 , we see that $2^{13}-1 = 8191$ is prime, 
+ $ N = 2^{12}(2^{13}-1) = 33,550,336$ is a perfect number.\\
+  \\
+The prime numbers of the form $M_{p} = 2^p - 1$ where $p$ is a prime number are called \textbf{"Mersenne primes"} given by Marin
+Mersenne (1588-1648). \\
+
+\noindent \textbf{Lemma.} If $k$ is composite, then so is $2^k - 1.$\\ \textit{Proof.}  Let k=ab where 1 $<$ a,b $<$ k.
+\begin{align*}
+2^k - 1 =& (2^a)^b - 1.\\
+=& [2^a-1] [(2^a)^{b-1} + (2^a)^{b-2} + (2^a)^{b-3} + ... + (2^a) + 1].
+\end{align*}
+Hence $ 2^
+a - 1$ is  a factor which makes $2^k-1$ composite.\\\textbf{Example.} If $k = 6 = 2 \times 3$, then,\\
+$2^
+6 - 1 = (2^2
+)^
+3 -1 = [2^2 -1][(2^2
+)^
+2 + 2^
+2 + 1].$ \\
+Hence 63 (i.e., $2^
+6 - 1)$ is divisible by 3 (i.e., $2^
+2 - 1)$ and thus it is not prime.\\
+\\
+Thus we can easily dismiss certain numbers like $2^
+{75} - 1$ from 
+ Mersenne primes because the exponent is composite. 
+It cannot be said that if $k$ is 
+prime, then so is $ 2^
+k - 1. $ For example, consider $2^
+{11} - 1,$ \\
+$$2^
+{11} - 1 = 2047 = 23 \times 89. $$
+Hence it is not a prime number despite having a prime exponent.\\
+ In  1772 ,
+ Euler claimed that $2^
+{31} -1$ is prime.
+This is the eighth-largest Mersenne prime and applying Euclid's theorem ,
+we get a perfect number
+$2^
+{30}
+(2^{31} - 1) = 2,305,843,008,139,952,128. $\\
+In 1998, it was announced that$ 2^
+{3021377} - 1$ is a Mersenne prime. Combining this with Euclid's theorem, we get a perfect number.
+ 
+\noindent \textbf{Corollary.} $ 2^
+{3021376}(2^{3021377} - 1)$ is a perfect number.\\
+This number has 1.8 million digits approximately and it takes weeks to  right the value.\\
+\\
+\noindent \textbf{Sufficiency and necessity are two different things.}\\The former statement implies latter does not necessarily means latter implies former. \\
+\\
+\noindent In 1509, \textbf{Carolus Bovillus (1470-1553)} claimed that every perfect number is even. 
+Bovillus claimed that the perfect number must be in the form $2^
+{k- 1 }(2^k - 1 )$, 
+where $(2^k - 1)$ is prime and 2 is a factor of this number which makes the number even.\\
+This proof is wrong because he confused sufficiency with necessity. Hence it is very important to understand difference between sufficiency and necessity.\\
+\\
+In 1598,  \textbf{Unicornus (1523-1610)} claimed :
+\\
+\noindent \textbf{ If $k$ is odd, then $ N = 2^
+{k-1 }(2^k - 1) $ is perfect.} \\
+This would definitely guarantee that there are infinitely many perfect numbers because
+ there are infinitely many odd $k$ but we see that the above claim is wrong.\\ If $k = 9$, we have 
+$N = 2^
+8
+(2^9 - 1) = 130,816,$ the sum of proper divisors is 171,696(not a perfect number).
+\\
+\textbf{Rene Descartes 
+(1596-1650)} in the year 1638, stated that
+even perfect number is ``Euclidean" that is,every even perfect number looks 
+like $ 2^
+{k-1}
+(2^k - 1 ),$ where $ k > 1$ and $2^k-1$ is prime.\\
+However, We don't have the proof for his assertion. People are confused whether he guessed it or he gave a proof but it was lost.\\
+\\
+\textbf{Enter Euler}\\
+In 1729, Christian Goldbach gave the following words about the work of Pierre de Fermat: 
+\textit{``Is Fermat's observation known to you, that all numbers $2^{2^n} + 1$ are 
+prime? He said he could not prove it; nor has anyone else done so to 
+my knowledge."}\\
+\\
+Euler proved that Fermat's lemma was 
+wrong by taking counterexample i.e., $2^{2^5}+1$
+ = 4,294,967,297 is divisible by 641 and thus it is not a prime.\\
+Euler had a challenge to find four different whole numbers such that the sum 
+of any two should be a perfect square. Euler found a correct answer and successfully completed this challenge and those four numbers are 18530, 
+38114, 45986, and 65570.\\
+\\
+Euler devoted four volumes of \textit{Opera Omnia} to number theory.\\ \textbf{Harold Edwards} gave the following words about Euler's work, \textit{``his contributions to number theory alone would suffice 
+to establish a lasting reputation in the annals of mathematics."}\\
+In comprehensive paper \textit{``De numeris amicabilibus"}, Euler mentioned about perfect numbers and amicable numbers.\\
+\textbf{Amicable Numbers : } Two numbers m and n are said to be amicable numbers if the sum of the proper divisors of m is n and \textit{vice versa}. These pairs are rare. The smallest pair of amicable numbers are 
+220 and 284. In earlier centuries, only three such pairs were known. Euler provided 59 such pairs later.\\
+\\
+\textbf{Definition.} $\sigma(n)$ is the sum of all whole number divisors of $n$.\\
+For example, $\sigma(6)$ = 1+2+3+6 = 12 and $\sigma$(8) = 1+2+4+8 = 15.
+The sum of the proper divisors of $n$ will be $\sigma(n) - n$. Hence, two numbers are amicable if and only if they exhibit the following symmetry:
+$$\sigma(m) = m+n = \sigma(n).$$
+Now, we come across some basic conclusions.\\
+\textbf{1.} $p$ is prime if and only if $\sigma(p) = p + 1$ because the only divisors of a prime number are 1 and itself.\\
+\textbf{2.} $N$ is perfect if and only if $\sigma(N) = N + N = 2N$. Explanation: A number is perfect if sum of all proper divisors of a number equals the number.
+Hence, $\sigma(N) - N = N$,thus, $\sigma(N) = 2N.$\\
+\textbf{3.} If $p$ is prime, then $\sigma(p^s) = (p^{s+1} - 1 )/(p - 1)$.\\
+\textit{Proof.} We know that all the divisors of $p^s$ will be in the form of $p^t$ where\\ 0 $\leq t \leq s.$\\
+$$\sigma(p^s) = 1 + p + p^2 + \cdots + p^s = \frac{p^{s+1} - 1}{p-1}. $$
+* If $N = 2^s$, then
+$\sigma(N) = \sigma(2^s) = 2^{s+1}-1 = 2N - 1.$\\
+Hence, it is clear that numbers which are in the form of powers of 2 that is, numbers of the form $2^s$ are not perfect because $\sigma(N) \neq 2N.$\\
+\textbf{4.} If $p$ and $q$ are distinct primes, then $\sigma(pq) = \sigma(p)\sigma(q)$. \\
+\textit{Proof.} The only divisors of two distinct primes $p$ and $q$ are $1, p, q$
+and $pq.$\\
+ $\sigma(pq) = l + p + q + pq = (1+p) + q(1+p) = (1+p)(1+q) = \sigma(p)\sigma(q).$ \\
+ \textbf{Example.} Consider two primes 3 and 5.\\
+ $\sigma(15) = 1 + 3 + 5 + 15 = (1+3)(1+5) = \sigma(3) \times \sigma(5).$\\
+\textbf{5.} If $a$ and $b$ are relatively prime, then $\sigma(ab) = \sigma(a)\sigma(b).$\\
+This property is called \textbf{multipicative property} of $\sigma$.\\
+We shall prove this statement by taking a specific case i.e.,
+$a = p^2$ and $b = qr$, where $p, q,$ and $r$ three distinct primes which gives us the fact that $a$ and $b$ relatively prime.\\
+\textit{Proof.}
+\begin{align*}
+\sigma(ab) =& \sigma(p^2qr) \\
+=& 1 + p + p^2 + q + pq + p^2q + r + pr + p^2r + qr + pqr + p^2qr \\
+=& (1 + p + p^2) + q(1 + p + p^2) + r(1 + p + p^2) + qr(l + p + p^2) \\
+=& (1 + p + p^2)(1 + q + r + qr) = (1 + p + p^2)(1 + q)(l + r) \\
+=& \sigma(p^2)\sigma(q)\sigma(r) \\
+=& \sigma(p^2)\sigma(qr)\\
+=& \sigma(a)\sigma(b).
+\end{align*}
+The proof for 5th point is taken from :\\
+\vspace{2ex}
+\hfill {- Euler-The Master of Us All, Chapter 1, pg9.}\\
+This multiplicative property plays an important role in finding sum of divisors of bigger numbers. First, we need to find prime factorisation of the given number and then we can proceed with multiplicative property. For example,\\
+$\sigma(1500) = \sigma(2^2\times3\times5^3) = \sigma(2^2)\sigma(3)\sigma(5^3) = 7 \times 4 \times 156 = 4368.$\\
+Euler gave the following theorem. This states that Euclid's sufficient condition is necessary when even perfect numbers are taken into consideration.\\
+\textbf{Theorem.} If $N$ is an even perfect number; then $N = 2^{k- 1} (2^k-1)$, where $2^k - 1 $ is prime. \\
+\textit{Proof.} Consider $N$ to be an even and perfect number.\\
+Let $N = 2^{k-1}b$ where $b$ is an odd number that is, $2^{k-1}$ and $b$ are relatively primes. It is clear that $k > 1$ since $N$ is an even number and it must have 2 in its prime factorisation.\\
+We know that $\sigma(N) = 2N$ because $N$ is perfect.\\
+$$\sigma(N) = 2N = 2^kb.$$
+Using multiplicative property of $\sigma$, we get,\\
+$\sigma(N) = \sigma(2^{k-1})\sigma(b) = (2^k-1)\sigma(b).$\\
+Thus, $2^kb = (2^k-1)\sigma(b). $\\
+$$\frac{2^k}{2^k-1} = \frac{\sigma(b)}{b}.$$
+$2^k > 2^k-1$ and hence left hand side fraction is greater than 1 which gives us the fact that $\sigma(b) > b.$ Consider $c \geq 1$,\\
+$$\sigma(b) = c2^k.$$
+$$b = c(2^k-1).$$
+\textbf{Case 1.} Let $c > 1$.\\
+Then 1,$ b, c$, and $2^k - 1$ are clearly the divisors of $b$. We claim that these four divisors are distinct and thus we prove that there is no pairwise equality between them. \\
+\textbf{(a)} 1 $\neq b$.\\
+If 1 = $b$, then $N=2^{k-1}$ which cannot be a perfect number(any number which is in the form of power of 2 alone cannot be perfect.)\\
+\textbf{(b)} 1 $\neq c$ because our case is $c > 1$.\\
+\textbf{(c)} 1 $\neq 2^k-1.$\\
+If $2^k-1 = 1 $ then $2^k =2$ which gives $k=1$ and $N=b$ and this contradicts that $N$ is an even number.\\
+\textbf{(d)} $b \neq c$.\\
+If $b=c$, then $2^k-1 = 1$ which is already eliminated.\\
+\textbf{(e)} $b \neq 2^k-1$.\\
+Otherwise $b = c(2^k-1) = cb$ which gives $c=1$ and this is not possible because we began by taking $c > 1.$\\
+\textbf{(f)}  $c \neq 2^k-1.$\\
+If $c = 2^k-1$ ,then $b=c^2$ . Thus factors of $b$ contains $1,c,c^2$ which are distinct since $c > 1$. Thus,
+$\sigma(b) \geq 1+c+c^2$. From $\sigma(b)= c2^k,$ we get, $\sigma(b)$ = $c(c+1)$= $c^2 + c$ and this leads to a contradiction that $\sigma(b) \geq 1+c+c^2$.\\
+\\
+Thus, our claim is correct and hence,\\
+$\sigma(b) \geq 1 + b + c + (2^k-1) = b + c + 2^k = c(2^k-1) + c + 2^k 
+= 2^k(c+1)>c2^k = \sigma(b). $ \\
+This gives us a contradiction that $\sigma(b) > \sigma(b).$ Hence case 1 is not possible. Now the only option left is :\\
+\\
+\textbf{Case 2.} Let $c=1$.\\
+From our assumption that $b = c(2^k-1)$ and $\sigma(b) = c2^k,$ we get $b = 2^k-1 $ and $\sigma(b) = 2^k$ that is, \\
+$$\sigma(b) = b + 1.$$
+Hence, the only divisors of $b$ are 1 and $b$ and thus $b$ is a prime number.\\
+\\
+This leads to the conclusion that if $N$ is an even perfect number, then 
+$N = 2^{k- 1} b = 2^{k-1} (2^k-1)$, where $2^k - 1$ is prime. This establishes the necessity of Euclid's condition when even perfect numbers are taken into consideration.\\
+\\
+This completes the theorem and it is called as \textbf{``Euclid-Euler theorem."}\\
+\\
+\textbf{EPILOGUE}\\
+\\
+So far we have seen some important theorems and proofs given by Euler and Euclid about perfect numbers. But the question which arises is whether there are infinitely many perfect numbers. This would follow from infinitude of Mersenne primes but the proof of later is not clear. Hence, this question remained unsolved.\\
+We must note that all the perfect numbers we have seen so far are even (Exampes : 6, 28, 496) and the question which arises now is ``Are there any odd perfect numbers ?" Now we shall calculate $\sigma(n)$ for some odd numbers.\\
+\\
+$\sigma(3) = 4$ \hspace{1cm} $\sigma(9) = 13$ \hspace{1.1cm}   $\sigma(15) = 24$\\
+$\sigma(5) = 6$ \hspace{1cm} $\sigma(11) = 12$ \hspace{1cm} $\sigma(17) = 18$\\
+$\sigma(7) = 8$ \hspace{1cm} $\sigma(13) = 14$ \hspace{1cm}  $\sigma(19) = 20$\\
+A number is perfect if and only if $\sigma(N) = 2N.$
+In all the above cases $\sigma(N) < 2N $ and these numbers are not perfect.\\
+An even number has 2 as its divisor and thus it contains a proper divisor which is half of it whereas that it not possible when odd numbers are taken into consideration.\\
+For example, 2 divides 496 and thus 496/2 = 248 is the biggest proper divisor of 496. For this number to be perfect, sum of all other proper divisors of 496 should be equal to 496-248=248 and this makes sense because\\ 496 = $2^4(2^5-1).$\\
+Consider an odd number, say 497, the biggest proper divisor of 497 is 71 and for this number to be perfect, sum of all other proper divisors of 497 should be equal to 497 - 71 = 426 but this number is far bigger than what we actually get.\\
+\\
+\textbf{Conjecture.} If $N$ is odd, then $\sigma(N)$ is always less than $2N$. \\
+This conjecture is true for every odd number till 943.\\ $\sigma(943) = 1008 < 2 \times 943$. \\
+The immediate next odd number 945 violates this conjecture that is, \\$\sigma(945) = 1920 > 2 \times 945$ and thus it disproves the conjecture.\\
+\\
+If there are examples of odd numbers for which $\sigma(N) < 2N$ and $\sigma(N) > 2N$, why can't we think of odd numbers which follows $\sigma(N) = 2N ? $\\
+\\
+Euler addressed this matter in his 1747 paper,\textit{``Whether .... there are any odd perfect numbers, is a most difficult (difficillima) question."}
+Richard Guy told ,the existence of odd perfect numbers is \textit{``one of the 
+more notorious unsolved problems of number theory."}\\
+\\
+J. J. Sylvester (1814-1897) gave the following proof :\\
+\textbf{Theorem.} \textit{An odd perfect number must have at least three different prime factors.}\\
+\textit{Proof.} Consider $N$ to be an odd perfect number with a single prime 
+factor that is, $N = p^r$ where $p$ is an odd prime and $r \geq$ 1. If it is perfect, then $2N = \sigma(N)$. We get,\\
+$$ 2p^r = \sigma(p^r) = \frac{p^{r+1}-1}{p-1}.$$
+Solving this, we get, $2p^r - p^{r+1} = 1$ and this leads to a contradiction because we can divide prime $p$ as shown in the left hand side of the equation but not into right hand side of the equation.\\
+Thus odd perfect number cannot have a single prime factor.\\
+\\
+\noindent Now consider $N$ to be an odd perfect number with exactly two prime factors that is, $N = p^kq^r$, where $p < q$ are odd primes. \\
+$$2N = \sigma(N) = \sigma(p^kq^r) = \sigma(p^k)\sigma(q^r).$$
+We use multiplicative property to solve $\sigma(N)$.\\
+$2N = (1 + p + p^2 + \cdots + p^k) \times (1 + q + q^2 + \cdots + q^r).$\\
+Divide both left hand side and right hand side of the expression by $N = p^kq^r$:\\
+$2 = (1 + \frac{1}{p} + \frac{1}{p^2} + \cdots + \frac{1}{p^k}) \times (1 + \frac{1}{q} + \frac{1}{q^2} + \cdots + \frac{1}{q^r}).$\\
+Since $p$ and $q$ are odd primes and $p<q$, it is clear that $p \geq 3 $ and $q \geq 5$. Thus, the above expression can be modified as follows :\\
+$2 \leq (1 + \frac{1}{3} + \frac{1}{9} + \cdots + \frac{1}{3^k}) \times (1 + \frac{1}{5} + \frac{1}{5^2} + \cdots + \frac{1}{5^r}).$\\
+Now,we can replace the finite geometric series in each parenthesis with the infinite geometric series and doing in that way , we get,\\
+$$2 \leq \sum_{h=0}^{\infty} \frac{1}{3^h} \times \sum_{j=0}^{\infty} \frac{1}{5^j} = \frac{3}{2} \times \frac{5}{4} = \frac{15}{8}.$$
+Thus, we obtain $2 \leq \frac{15}{8}$ which is a contradiction.\\
+Hence, it is proved that odd perfect number cannot contain only two prime factors.\\
+\\
+In this way, \textbf{J. J. Sylvester} concluded that an odd perfect number, if it exists, must contain atleast three prime factors.
+Sylvester continued his work further and proved that an odd perfect number must have at least four, and then at least five distinct prime factors. \\
+\indent However, he failed in giving a number which is odd and perfect. He was unable to prove the existence of odd perfect numbers. Thus, this theorem could lead to a proof of non-existence too.\\
+\\
+The following are certain properties exhibited by odd perfect numbers(if they exist) :\\
+1. An odd perfect number cannot be divisible by 105. \\
+2. An odd perfect number must contain at least 8 different prime factors (an 
+extension of Sylvester's work). \\
+3. The smallest odd perfect number must exceed $10^{300}$.\\
+4. The second largest prime factor of an odd perfect number exceeds 1000. \\
+5. The sum of the reciprocals of all odd perfect numbers is finite.Symbolically,
+$$ \sum_{odd perfect} \frac{1}{n} < \infty.$$
+The above five points are taken from the book :\\
+\vspace{2ex}
+\hfill {- Euler-The Master of Us All, Chapter 1, pg15.}\\
+\noindent In 1888, Sylvester wrote,\textit {``a prolonged meditation on the subject has satisfied me that the 
+existence of any one such-its escape, so to say, from the complex 
+web of conditions which hem it in on all sides-would be little short 
+of a miracle."}\\
+\\
+We did not prove the existence of odd perfect numbers and at the same time, we did not disprove it. Eric Temple Bell wrote, \textit{``To 
+say that number theory is mistress of its own domain when it cannot subdue 
+a childish thing like odd perfect numbers is undeserved flattery."} \\
+\\
+In this chapter, though the existence of odd perfect numbers remained unsolved, we have seen the exact nature of the even perfect numbers and also interesting theorems and proofs related to even perfect numbers given by Euclid and Euler.\\
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
