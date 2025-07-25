@@ -1,6 +1,6 @@
 # 📚 LaTeX Academic Chapters – Mathematics and Computing
 
-This repository contains four structured academic chapters written using LaTeX. Each chapter covers a fundamental topic from mathematics or computing, showcasing technical documentation, academic writing, and LaTeX formatting skills.
+This repository contains five structured academic chapters written using LaTeX. Each chapter covers a fundamental topic from mathematics or computing, showcasing technical documentation, academic writing, and LaTeX formatting skills.
 
 ---
 
@@ -12,6 +12,7 @@ This repository contains four structured academic chapters written using LaTeX. 
 | `chapter2.tex`  | Mathematical Constants – Euler’s Number and Logarithmic Identities |
 | `chapter3.tex`  | Mathematical Analysis – Euler’s Identity and Infinite Series      |
 | `chapter4.tex`  | Algebra – Polynomial Equations and Their Properties               |
+| `report5.tex`   | Calculus – Derivatives, Integration, Limits and Applications      |
 
 
 > 📎 Also includes `main.tex` to compile the entire document and `main.pdf` for the output.
@@ -24,7 +25,7 @@ This repository contains four structured academic chapters written using LaTeX. 
 - ✅ Includes math environments (theorems, proofs, equations)
 - ✅ Organized structure using `\chapter`, `\section`, `\subsection`
 - ✅ Academic document class styling
-- ✅ Clean bibliography and figure support (if added later)
+- ✅ Clean bibliography and figure support.
 
 ---
 
@@ -51,15 +52,8 @@ Or use Overleaf to open `main.tex` directly for online editing and compilation.
 
 ## 📎 Output
 
-You can view the complete compiled document here: [`main.pdf`](./main.pdf)
-
----
-
-## 📝 License
-
-This project is shared for academic and learning purposes under the MIT License.
+View the complete compiled document here: [`main.pdf`](./main.pdf)
 
 ---
 
 🔗 **Author:** [Meenakshi Kagita](https://www.linkedin.com/in/meenakshi-kagita-a085a5366)  
-📬 For questions or suggestions, feel free to raise an issue or reach out via LinkedIn.
