@@ -49,11 +49,11 @@ Or use Overleaf to open `main.tex` directly for online editing and compilation.
 - Built habit of writing clean, modular `.tex` files
 
 ---
+## 📘 Preview the Full Book
 
-## 📎 Output
+You can view or download the compiled PDF that includes all chapters here:
 
-View the complete compiled document here: [`main.pdf`](./main.pdf)
-
+[📄 Download BOOK_1.pdf](BOOK_1.pdf)
 ---
 
 🔗 **Author:** [Meenakshi Kagita](https://www.linkedin.com/in/meenakshi-kagita-a085a5366)  
