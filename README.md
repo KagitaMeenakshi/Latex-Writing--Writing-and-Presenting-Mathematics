@@ -3,16 +3,16 @@
 This repository contains five structured academic chapters written using LaTeX. Each chapter covers a fundamental topic from mathematics or computing, showcasing technical documentation, academic writing, and LaTeX formatting skills.
 
 ---
+## 📂 File Structure
 
-## 📄 Chapters Overview
-
-| File            | Topic                                                             |
-|-----------------|-------------------------------------------------------------------|
-| `chapter1.tex`  | Number Theory – Euler’s Theorem and Modular Arithmetic            |
-| `chapter2.tex`  | Mathematical Constants – Euler’s Number and Logarithmic Identities |
-| `chapter3.tex`  | Mathematical Analysis – Euler’s Identity and Infinite Series      |
-| `chapter4.tex`  | Algebra – Polynomial Equations and Their Properties               |
-| `report5.tex`   | Calculus – Derivatives, Integration, Limits and Applications      |
+| File Name         | Description                                                |
+|------------------|------------------------------------------------------------|
+| `chapter1.tex`   | Euler's Theorem and Elementary Number Theory               |
+| `chapter2.tex`   | Euler’s Identity and Introduction to Logarithms            |
+| `chapter3.tex`   | Infinite Series and Euler’s Contributions                  |
+| `chapter4.tex`   | Polynomial Equations and Roots of Unity                    |
+| `report5.tex`    | Calculus Concepts and Continuity                           | 
+| `BOOK_1.pdf`     | ✅ Compiled book containing all chapters (final output)     |
 
 
 > 📎 Also includes `main.tex` to compile the entire document and `main.pdf` for the output.
